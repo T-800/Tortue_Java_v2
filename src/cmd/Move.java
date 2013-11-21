@@ -115,11 +115,12 @@ public class Move extends Cmd {
 	}
 
 	private int randomDistance(Dessin dessin){
-		int max,dist;
-		max = (int)Math.sqrt((dessin.curseur.getAbscisse()*dessin.curseur.getAbscisse())+(dessin.curseur.getOrdonnee()*dessin.curseur.getOrdonnee()));
-		dist =  0 + (int)(Math.random()*max);
-		System.out.println("distmax = "+max);
-		System.out.println("distRandom = "+dist);
+		int max,dist, coor[];
+		do{
+			max = (int)Math.sqrt((dessin.curseur.getAbscisse()*dessin.curseur.getAbscisse())+(dessin.curseur.getOrdonnee()*dessin.curseur.getOrdonnee()));
+			dist =  0 + (int)(Math.random()*max);
+			coor = calculeCoordArrive(dessin,dist);
+		}while(! dans_Le_Dessin(dessin,coor));
 		return dist;
 	}
 
