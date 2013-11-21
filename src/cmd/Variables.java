@@ -4,7 +4,7 @@ import ihm.Dessin;
 
 public class Variables extends Cmd {
 
-	int execute(String[] commande, Dessin dessin, HashTable table){
+	String execute(String[] commande, Dessin dessin, HashTable table){
 		if (commande[0].charAt(0) == '_') { //affectation
 			
 		}
@@ -13,7 +13,7 @@ public class Variables extends Cmd {
 			declaration(commande[1]);
 		}
 		
-		return 0;
+		return "";
 
 	}
 
@@ -41,7 +41,7 @@ public class Variables extends Cmd {
 
 	protected class ObjetVariables {
 		private String nom_Variable;
-		private int valeur_Variable;
+		private int valeur_Variable = 10;
 
 		public ObjetVariables(String nom_Variable) {
 			this.nom_Variable = nom_Variable;

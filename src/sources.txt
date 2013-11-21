@@ -55,5 +55,6 @@
 ./cmd/PenColor.java
 ./cmd/PenDown.java
 ./cmd/PenUp.java
+./cmd/Move.java
 ./cmd/Variables.java
 ./cmd/Fonctions.java

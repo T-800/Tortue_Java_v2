@@ -7,8 +7,10 @@ import java.util.Random;
 
 public class BackgroundColor extends Cmd {
 
-	int execute(String[] commande, Dessin dessin, HashTable table){
-		if(commande.length != 2)return 1;
+	/*
+	Ajouter BGC 255 255 255*/
+	String execute(String[] commande, Dessin dessin, HashTable table){
+		if(commande.length != 2)return "1";
 		commande[1] = commande[1].toLowerCase();
 		switch(commande[1]){
 			case "noir":
@@ -80,10 +82,10 @@ public class BackgroundColor extends Cmd {
 					Color f = new Color(c.intValue());
 					dessin.setBackground(f);
 				} catch (NumberFormatException e1) {
-					return 2;
+					return "2";
 				}
 		}
-		return 0;
+		return "0";
 
 	}
 

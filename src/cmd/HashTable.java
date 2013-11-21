@@ -31,6 +31,7 @@ public class HashTable {
 		hashCommande.put("PENCOLOR", new PenColor());
 		hashCommande.put("PENUP", new PenUp());
 		hashCommande.put("PENDOWN", new PenDown());
+		hashCommande.put("MOVE", new Move());
 		hashCommande.put("VAR", new Variables());
 		hashCommande.put("FONCION", new Fonctions());
 		/*
@@ -38,7 +39,6 @@ public class HashTable {
 		hashCommande.put("GO", new Go());
 		hashCommande.put("ERASE", new Erase());
 		hashCommande.put("HELP", new Help());
-		hashCommande.put("MOVE", new Move());
 		hashCommande.put("NEW", new New());
 		hashCommande.put("OPEN", new Open());
 		hashCommande.put("PENDOWN", new PenDown());
@@ -58,7 +58,7 @@ public class HashTable {
 
 
 	public String executerCommande(String commande){
-		int codeErreur = -1;
+		String codeErreur = "-1";
 
 		String [] cmdTab = stringCmdToTab(commande);
 		
@@ -105,20 +105,20 @@ public class HashTable {
 		return cmdTab;
 	}
 
-	private String ErrorToString(int code, String nomCmd){
+	private String ErrorToString(String code, String nomCmd){
 		switch(code){
-			case 0 :
+			case "" :
 				return "";
-			case -1:
+			case "-1":
 				return "Cette Commande n'éxiste pas";
-			case 1:
+			case "1":
 				return "Paramètre(s) incorrect(s) <br> voir : \"help "+nomCmd+" \"";
-			case 2:
+			case "2":
 				return "Ce code couleur n'éxiste pas <br> voir : \"http://code-couleur.outils-webmaster.com/ \"";
-			case 3:
+			case "3":
 				return "Impossible de re-déclarer une variable existante <br> voir : \"help "+nomCmd+" \"" ;
 			default:
-				return "default";
+				return code;
 		}
 	}
 

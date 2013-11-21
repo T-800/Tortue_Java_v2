@@ -19,7 +19,7 @@ abstract class Cmd {
 	 * @param addToHistory
 	 * @throws IOException
 	 */
-	abstract int execute(String[] parametres, Dessin dessin, HashTable table);
+	abstract String execute(String[] parametres, Dessin dessin, HashTable table);
 
 	/**
 	 * 
@@ -37,7 +37,7 @@ abstract class Cmd {
 
 	protected ObjetVariables get_Variable(String nom_Variable){
 		for (ObjetVariables var : liste_Variables) {
-				if(var.getNom_Variable() == nom_Variable) return var;
+				if(var.getNom_Variable().equals(nom_Variable)) return var;
 		}
 		return null;
 	}

@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class Fonctions extends Cmd {
 
-	int execute(String[] commande, Dessin dessin, HashTable table){
+	String execute(String[] commande, Dessin dessin, HashTable table){
 		if (commande[0].charAt(0) == ':') { //affectation
 			
 		}
@@ -15,7 +15,7 @@ public class Fonctions extends Cmd {
 			declaration(commande[1]);
 		}
 		
-		return 0;
+		return "0";
 	}
 
 	private void declaration(String nom_Fonction){

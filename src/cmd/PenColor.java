@@ -7,8 +7,8 @@ import java.util.Random;
 
 public class PenColor extends Cmd {
 
-	int execute(String[] commande, Dessin dessin, HashTable table){
-		if(commande.length != 2)return 1;
+	String execute(String[] commande, Dessin dessin, HashTable table){
+		if(commande.length != 2)return "1";
 		commande[1] = commande[1].toLowerCase();
 		switch(commande[1]){
 			case "noir":
@@ -80,10 +80,10 @@ public class PenColor extends Cmd {
 					Color f = new Color(c.intValue());
 					dessin.curseur.setCouleur(f);
 				} catch (NumberFormatException e1) {
-					return 2;
+					return "2";
 				}
 		}
-		return 0;
+		return "0";
 
 	}
 

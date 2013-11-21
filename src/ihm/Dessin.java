@@ -16,8 +16,9 @@ import javax.swing.JPanel;
 
 import objetQuiDessine.CurseurQuiDessine;
 
-import commande.HashTable;
-import commande.Move.Ligne;
+import cmd.HashTable;
+
+import cmd.Move.Ligne;
 import commande.Pensize.Size;
 
 @SuppressWarnings("serial")
@@ -222,13 +223,13 @@ public class Dessin extends JPanel implements MouseMotionListener,
 		} else {
 			y = -(y - this.getHeight() / 2);
 		}
-		try {
-			HashTable.hgj("GO " + x + " " + y, true);
+		/*try {
+			//HashTable.hgj("GO " + x + " " + y, true);
 			// System.out.println("kjbhfbkf");
 		} catch (IOException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
-		}
+		}*/
 
 	}
 
