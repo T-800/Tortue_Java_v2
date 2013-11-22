@@ -58,3 +58,4 @@
 ./cmd/Move.java
 ./cmd/Variables.java
 ./cmd/Fonctions.java
+./cmd/Go.java

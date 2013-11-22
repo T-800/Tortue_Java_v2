@@ -24,7 +24,6 @@ import commande.Pensize.Size;
 @SuppressWarnings("serial")
 public class Dessin extends JPanel implements MouseMotionListener,
 		MouseListener {
-
 	public ArrayList<Object> cmd = new ArrayList<Object>();
 	public CurseurQuiDessine curseur;
 	public jPanelParametres JPanelParametres;
@@ -223,13 +222,8 @@ public class Dessin extends JPanel implements MouseMotionListener,
 		} else {
 			y = -(y - this.getHeight() / 2);
 		}
-		/*try {
-			//HashTable.hgj("GO " + x + " " + y, true);
-			// System.out.println("kjbhfbkf");
-		} catch (IOException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}*/
+		table.executerCommande("GO " + x + " " + y);
+		
 
 	}
 

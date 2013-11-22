@@ -34,9 +34,10 @@ public class HashTable {
 		hashCommande.put("MOVE", new Move());
 		hashCommande.put("VAR", new Variables());
 		hashCommande.put("FONCION", new Fonctions());
+		
+		hashCommande.put("GO", new Go());
 		/*
 		hashCommande.put("BACKGROUNDCOLOR", new BackgroundColor());
-		hashCommande.put("GO", new Go());
 		hashCommande.put("ERASE", new Erase());
 		hashCommande.put("HELP", new Help());
 		hashCommande.put("NEW", new New());
