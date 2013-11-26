@@ -222,7 +222,7 @@ public class Dessin extends JPanel implements MouseMotionListener,
 		} else {
 			y = -(y - this.getHeight() / 2);
 		}
-		table.executerCommande("GO " + x + " " + y);
+		//table.executerCommande("GO " + x + " " + y);
 		
 
 	}

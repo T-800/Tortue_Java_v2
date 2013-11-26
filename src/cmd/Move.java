@@ -26,11 +26,19 @@ public class Move extends Cmd {
 					String varNameString = argsString[0].substring(1);
 
 					ObjetVariables var = get_Variable(varNameString);
-				if(var == null) return "La variable "+ argsString[0]+" n'éxiste pas.";
+					if(var == null) return "La variable "+ argsString[0]+" n'éxiste pas.";
 					argsInt[0] = var.getValeur_Variable();
 				}
 				else if(argsString[0].toLowerCase().equals("random")){
 						argsInt[0] = randomDistance(dessin);
+				}
+				else if(argsString[0].startsWith("(")){
+					if (canDoAllCalcule(argsString[0])){
+						System.out.println("1");
+						argsInt[0] = doCalcule(argsString[0]);
+						
+					}
+					else return "4";
 				}
 				else{
 					try{
@@ -60,6 +68,13 @@ public class Move extends Cmd {
 						else 
 							argsInt[i] = 0 + (int)(Math.random()*(dessin.getHeight()));
 					}
+					else if(argsString[i].startsWith("(")){
+						if (canDoAllCalcule(argsString[i])){
+							System.out.println("1");
+							argsInt[i] = doCalcule(argsString[i]);
+						}
+						else return "4";
+				}
 					else{
 						try{
 							argsInt[i] = Integer.parseInt(argsString[i]);
@@ -105,8 +120,6 @@ public class Move extends Cmd {
 		coor[1] = dessin.curseur.getOrdonnee() + distance * (int)Math.sin(Math.toRadians(180 + dessin.curseur.getDirection()));
 		return coor;
 	}
-
-	// TODO : Réecrire Les fonction Random
 
 	private boolean dans_Le_Dessin(Dessin dessin, int [] coor){
 		if(coor[0] > dessin.getWidth() || coor[0] < 0)return false;

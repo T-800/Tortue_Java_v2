@@ -5,6 +5,7 @@ import ihm.Dessin;
 import java.util.ArrayList;
 import java.util.Hashtable;
 
+
 /**
  * Cette classe fait le lien entre l'interpreteur de commande et les differentes
  * fonctions possible
@@ -60,18 +61,25 @@ public class HashTable {
 
 	public String executerCommande(String commande){
 		String codeErreur = "-1";
-
-		String [] cmdTab = stringCmdToTab(commande);
+		String [] cmdTab;
+		if (commande.charAt(0) == ':'){
+			commande = commande.replaceAll("\\s+", " ");
+			cmdTab = commande.split(" " ,2 );
+			codeErreur = hashCommande.get("FONCTION").execute(cmdTab,dessin,this);
+		}else if(commande.charAt(0) == '_'){
+			commande = commande.replaceAll("\\s+", " ");
+			cmdTab = commande.split(" " ,2 );
+			codeErreur = hashCommande.get("VAR").execute(cmdTab,dessin,this);
+		}else{
+			cmdTab = stringCmdToTab(commande);
+		}
 		
+
 
 		/*
 		 * Si la commande existe
 		 */
-		if (cmdTab[0].charAt(0) == ':'){
-			codeErreur = hashCommande.get(cmdTab[0]).execute(cmdTab,dessin,this);
-		}else if(cmdTab[0].charAt(0) == '_'){
-			codeErreur = hashCommande.get("VAR").execute(cmdTab,dessin,this);
-		}
+		
 		if (hashCommande.containsKey(cmdTab[0])) {
 			codeErreur = hashCommande.get(cmdTab[0]).execute(cmdTab,dessin,this);
 		}
@@ -118,6 +126,8 @@ public class HashTable {
 				return "Ce code couleur n'éxiste pas <br> voir : \"http://code-couleur.outils-webmaster.com/ \"";
 			case "3":
 				return "Impossible de re-déclarer une variable existante <br> voir : \"help "+nomCmd+" \"" ;
+			case "4":
+				return "Impossible d'éffectuer ce calcule" ;
 			default:
 				return code;
 		}
