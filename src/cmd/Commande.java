@@ -39,6 +39,22 @@ abstract class Cmd {
 		return s;
 	}
 
+	public String [] splitArgs(String s){
+		int tmp =0;
+		int begin = 0;
+		ArrayList<String> list = new ArrayList<String>();
+		for (int i =0 ; i<s.length() ;i++ ) {
+			if (s.charAt(i)== '(') tmp++;
+			else if (s.charAt(i)== ')') tmp--;
+			else if (s.charAt(i) == ' ' && tmp==0){
+				list.add(s.substring(begin,i));
+				begin = i+1;
+			}
+		}
+		list.add(s.substring(begin));
+		return list.toArray(new String[list.size()]);
+	}
+
 	public void afficheVar(){
 		for (ObjetVariables o : liste_Variables ) {
 			System.out.println("nom = "+o.getNom_Variable()+" val = "+o.getValeur_Variable());
@@ -55,47 +71,70 @@ abstract class Cmd {
 		return null;
 	}
 
-	public boolean canDoAllCalcule(String s){
-		if (bienP(s)){
-			int valeur = 0;
-			ArrayList<String> list = new ArrayList<String>();
-			int g = nbP(s);
-			int result;
-			for (int j = 0; j<g ; j++) {
-				String ss = subParenthese(s);
-				list = toList(ss);
+	public boolean parenthese(String s){
+		for(int i = 0; i<s.length(); i++){
+			if(s.charAt(i)=='(')return true;
+		}
+		return false;
+	}
+	public String calculeTab(String tab[]){
+		int a = 0,b = 0;
+		if(tab.length != 3)return "ERROR";
 
-				if(!canCalcul(list)) return false;
-				result = calculeList(list);
-				s = s.replace("("+ss+")",""+result);
-				
-			}
-			try{
-				valeur = Integer.parseInt(s);
-			}catch (NumberFormatException e1){
-				return false;
-			}
+		if(tab[0].charAt(0) == '_' ){
+
+			System.out.println("VAR11");
+			ObjetVariables v = get_Variable(tab[0].substring(1));
+			if(v != null) a = v.getValeur_Variable();
+			else return "Impossible de faire le calcul la variable "+tab[0]+" n'éxiste pas";
 		}
 		else {
-			return false;
+			System.out.println("VAR12");
+			try{
+				a = Integer.parseInt(tab[0]);
+			}catch (NumberFormatException e1){
+				return "Impossible de faire le calcul "+tab[0]+" n'est pas un nombre";
+			}
 		}
-		return true;
-	}
-
-	public int doCalcule(String s){
-		ArrayList<String> list = new ArrayList<String>();
-		int g = nbP(s);
-		int result = 0;
-		for (int j = 0; j<g ; j++) {
-			String ss = subParenthese(s);
-			list = toList(ss);
-			result = calculeList(list);
-			s = s.replace("("+ss+")",""+result);				
+		if(tab[2].charAt(0) == '_' ){
+			System.out.println("VAR21");
+			ObjetVariables v = get_Variable(tab[2]);
+			if(v != null) a = v.getValeur_Variable();
+			else return "Impossible de faire le calcul la variable "+tab[2]+" n'éxiste pas";
 		}
-		return result;
-	}
+		else {
+			System.out.println("VAR22");
+			try{
+				b = Integer.parseInt(tab[2]);
+			}catch (NumberFormatException e1){
+				return "Impossible de faire le calcul "+tab[2]+" n'est pas un nombre";
+			}
+		}
+		switch(tab[1]){
+			case "/" :
 
-	private boolean canCalcul(ArrayList<String> s){
+				try{
+					return ""+(a/b);
+				}catch (ArithmeticException e1){
+					return "Impossible de faire le calcul "+tab[2];
+				}
+
+			case "*" :
+				return ""+(a*b);
+			case "%" :
+				return ""+(a%b);
+			case "+" :
+				return ""+(a+b);
+			case "-" :
+			 	return ""+(a-b);
+			default :
+				return "ERROR";
+
+		}
+
+
+	}
+	public boolean canCalcul(ArrayList<String> s){
 		for (int i = 0 ; i<s.size() ;i++ ) {
 			s.set(i,s.get(i).trim());
 		}
@@ -105,8 +144,6 @@ abstract class Cmd {
 				if(!(Pattern.matches("(-?[0-9]+)", s.get(i)) || Pattern.matches("^_[a-zA-Z]+)", s.get(i)))){
 					return false;
 				}
-
-				// TODO : Ajouter le remplacement de variable
 			}
 			else {
 				if(!Pattern.matches("[-+*/%]", s.get(i))){
@@ -116,76 +153,7 @@ abstract class Cmd {
 		}
 		return true;
 	}
-	private int nbP(String s){
-		int tmp =0;
-		for (int i =0 ; i<s.length() ;i++ ) {
-			if (s.charAt(i)== '(') tmp++;
-			
-		}
-		return tmp;
-	}
-	private int calculeList(ArrayList<String> s){
-		int a,b,c;
-		for (int i = 0 ; i<s.size() ;i++ ) {
-			switch(s.get(i)){
-				case "/" :
-
-						a = Integer.parseInt(s.get(i-1));
-						b = Integer.parseInt(s.get(i+1));
-						c = (a/b);
-						s.set(i,""+c);
-						s.remove(i-1);
-						s.remove(i);
-						i--;
-					break;
-				case "*" :
-						a = Integer.parseInt(s.get(i-1));
-						b = Integer.parseInt(s.get(i+1));
-						c = (a*b);
-						s.set(i,""+c);
-						s.remove(i-1);
-						s.remove(i);
-						i--;
-					break;
-				case "%" :
-						a = Integer.parseInt(s.get(i-1));
-						b = Integer.parseInt(s.get(i+1));
-						c = (a%b);
-						s.set(i,""+c);
-						s.remove(i-1);
-						s.remove(i);
-						i--;
-					break;
-			}
-		}
-		for (int i = 0 ; i<s.size() ;i++ ) {
-			switch(s.get(i)){
-				case "+" :
-
-						a = Integer.parseInt(s.get(i-1));
-						b = Integer.parseInt(s.get(i+1));
-						c = (a+b);
-						s.set(i,""+c);
-						s.remove(i-1);
-						s.remove(i);
-						i--;
-					break;
-				case "-" :
-						a = Integer.parseInt(s.get(i-1));
-						b = Integer.parseInt(s.get(i+1));
-						c = (a-b);
-						s.set(i,""+c);
-						s.remove(i-1);
-						s.remove(i);
-						i--;
-					break;
-				
-			}
-		}
-		return Integer.parseInt(s.get(0));
-	}
-
-	private boolean bienP(String s){
+	public boolean bienP(String s){
 		int tmp =0;
 		for (int i =0 ; i<s.length() ;i++ ) {
 			if (s.charAt(i)== '(') tmp++;
@@ -194,41 +162,13 @@ abstract class Cmd {
 		}
 		return (tmp==0);
 	}
-
-	private String subParenthese(String s){
+	public String subParenthese(String s){
 		int begin = 0;
 		for (int i =0 ; i<s.length() ;i++ ) {
 			if (s.charAt(i)== '(') begin = i+1;
 			else if (s.charAt(i)== ')') return s.substring(begin,i);
 		}
 		return null;
-	}
-
-	private ArrayList<String> toList(String s){
-		ArrayList<String> list = new ArrayList<String>();
-		int begin = 0;
-
-		for (int i = 0; i<s.length() ;i++ ) {
-			if(s.charAt(i) == '+' || s.charAt(i) == '*' || s.charAt(i) == '/' || s.charAt(i) == '%'){
-
-				list.add(s.substring(begin,i));
-				list.add(""+s.charAt(i));
-				begin = i+1;
-			}
-			else if(s.charAt(i) == '-' && i>0 && (s.charAt(i) == '+' || s.charAt(i) == '*' || s.charAt(i) == '/' || s.charAt(i) == '%' || s.charAt(i) == '-' || s.charAt(i) == '(')){
-				list.add(s.substring(begin,i));
-				begin = i;	
-			}
-			
-		}
-
-		list.add(s.substring(begin));
-		for (int i = 0 ;i < list.size();i++) {
-			if(list.get(i).equals("")) list.remove(i);
-		}
-
-		return list;
-
 	}
 
 

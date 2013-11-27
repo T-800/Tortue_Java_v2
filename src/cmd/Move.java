@@ -12,10 +12,10 @@ public class Move extends Cmd {
 
 	String execute(String[] commande, Dessin dessin, HashTable table){
 		if(commande.length!=2)return "1";
-		
+		System.out.println("HI");
 		
 		int coor[] = new int[2];
-		String argsString[] = commande[1].split(" ");
+		String argsString[] = splitArgs(commande[1]);
 		int argsInt[] = new int[argsString.length];
 		
 		if (argsString.length >2) return "1";
@@ -33,10 +33,28 @@ public class Move extends Cmd {
 						argsInt[0] = randomDistance(dessin);
 				}
 				else if(argsString[0].startsWith("(")){
-					if (canDoAllCalcule(argsString[0])){
-						System.out.println("1");
-						argsInt[0] = doCalcule(argsString[0]);
-						
+					if(bienP(argsString[0])){
+						System.out.println("HIi");
+						boolean canContinue = true;
+						while(parenthese(argsString[0]) && canContinue){
+							String ss = subParenthese(argsString[0]);
+							String subS[] = ss.split(" ");
+							String cal = calculeTab(subS);
+							try{
+								int i = Integer.parseInt(cal);
+								System.out.println(cal);
+								argsString[0] = argsString[0].replace("("+ss+")",""+i);
+							}catch (NumberFormatException e1){
+								canContinue = false;
+								return(cal);
+							}
+				
+						}
+						try{
+							argsInt[0] = Integer.parseInt(argsString[0]);
+						}catch(NumberFormatException e1){
+							return "Erreur "+argsString[0]+" n'est pas un nombre";
+						}
 					}
 					else return "4";
 				}
@@ -69,10 +87,27 @@ public class Move extends Cmd {
 							argsInt[i] = 0 + (int)(Math.random()*(dessin.getHeight()));
 					}
 					else if(argsString[i].startsWith("(")){
-						if (canDoAllCalcule(argsString[i])){
-							System.out.println("1");
-							argsInt[i] = doCalcule(argsString[i]);
+						if(bienP(argsString[i])){
+						boolean canContinue = true;
+						while(parenthese(argsString[i]) && canContinue){
+							String ss = subParenthese(argsString[i]);
+							String subS[] = ss.split(" ");
+							String cal = calculeTab(subS);
+							try{
+								int k = Integer.parseInt(cal);
+								argsString[i] = argsString[i].replace("("+ss+")",""+k);
+							}catch (NumberFormatException e1){
+								canContinue = false;
+								System.out.println("Impossible de faire le calcul ("+ss+") n'est pas un nombre");
+							}
+			
 						}
+						try{
+							argsInt[i] = Integer.parseInt(argsString[i]);
+						}catch(NumberFormatException e1){
+							return "Erreur "+argsString[i]+" n'est pas un nombre";
+						}
+					}
 						else return "4";
 				}
 					else{

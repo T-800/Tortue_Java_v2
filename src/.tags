@@ -1,0 +1,554 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+ActionListen	ihm/ActionListen.java	/^public class ActionListen implements ActionListener {$/;"	c
+ActionListenColor	ihm/ActionListenColor.java	/^public class ActionListenColor implements ActionListener {$/;"	c
+ActionListenPlus	ihm/SuperLabel.java	/^	public class ActionListenPlus implements ActionListener {$/;"	c	class:SuperLabel
+Autocompletion	commande/Autocompletion.java	/^public class Autocompletion {$/;"	c
+Back	cmd/Back.java	/^public class Back extends Cmd {$/;"	c
+BackgroundColor	cmd/BackgroundColor.java	/^public class BackgroundColor extends Cmd {$/;"	c
+CDICompteur	commande/Repeat.java	/^	static int CDICompteur = 0;$/;"	f	class:Repeat
+Center	cmd/Center.java	/^public class Center extends Cmd {$/;"	c
+Clear	cmd/Clear.java	/^public class Clear extends Cmd {$/;"	c
+Clear	commande/Clear.java	/^public class Clear implements Commande {$/;"	c
+Cmd	cmd/Commande.java	/^abstract class Cmd {$/;"	c
+Commande	commande/Commande.java	/^public interface Commande {$/;"	i
+CommandeExeption	commande/CommandeExeption.java	/^	public CommandeExeption(){$/;"	m	class:CommandeExeption
+CommandeExeption	commande/CommandeExeption.java	/^public class CommandeExeption extends Exception{$/;"	c
+Commentaire	commande/Commentaire.java	/^public class Commentaire implements Commande {$/;"	c
+Curseur	ihm/Fenetre.java	/^	static CurseurQuiDessine Curseur;$/;"	f	class:Fenetre
+CurseurQuiDessine	objetQuiDessine/CurseurQuiDessine.java	/^	public CurseurQuiDessine(jPanelParametres info, int x, int y) {$/;"	m	class:CurseurQuiDessine
+CurseurQuiDessine	objetQuiDessine/CurseurQuiDessine.java	/^public class CurseurQuiDessine {$/;"	c
+Dessin	ihm/Dessin.java	/^	public Dessin(jPanelParametres JPanelParametres) {$/;"	m	class:Dessin
+Dessin	ihm/Dessin.java	/^public class Dessin extends JPanel implements MouseMotionListener,$/;"	c
+Down	cmd/Down.java	/^public class Down extends Cmd {$/;"	c
+Erase	commande/Erase.java	/^public class Erase implements Commande {$/;"	c
+ErrorToString	cmd/HashTable.java	/^	private String ErrorToString(String code, String nomCmd){$/;"	m	class:HashTable	file:
+ExeptionCommande	commande/ExeptionCommande.java	/^public class ExeptionCommande {$/;"	c
+ExitListen	ihm/ExitListen.java	/^public class ExitListen implements ActionListener{$/;"	c
+ExtensionFileFilter	commande/Open.java	/^		public ExtensionFileFilter(String description, String extension) {$/;"	m	class:Open.ExtensionFileFilter
+ExtensionFileFilter	commande/Open.java	/^		public ExtensionFileFilter(String description, String extensions[]) {$/;"	m	class:Open.ExtensionFileFilter
+ExtensionFileFilter	commande/Open.java	/^	class ExtensionFileFilter extends FileFilter {$/;"	c	class:Open
+Fenetre	ihm/Fenetre.java	/^	public Fenetre() {$/;"	m	class:Fenetre
+Fenetre	ihm/Fenetre.java	/^public class Fenetre extends JFrame {$/;"	c
+Fonctions	cmd/Fonctions.java	/^public class Fonctions extends Cmd {$/;"	c
+Go	cmd/Go.java	/^public class Go extends Cmd {$/;"	c
+Go	commande/Go.java	/^public class Go implements Commande {$/;"	c
+HashTable	cmd/HashTable.java	/^	public HashTable() {$/;"	m	class:HashTable
+HashTable	cmd/HashTable.java	/^public class HashTable {$/;"	c
+HashTable	commande/HashTable.java	/^	public HashTable(PanelHistory panel) {$/;"	m	class:HashTable
+HashTable	commande/HashTable.java	/^public class HashTable {$/;"	c
+Help	commande/Help.java	/^	public Help() {$/;"	m	class:Help
+Help	commande/Help.java	/^public class Help implements Commande {$/;"	c
+History	history/History.java	/^public interface History {$/;"	i
+HistoryTerminal	history/HistoryTerminal.java	/^	public HistoryTerminal() {$/;"	m	class:HistoryTerminal
+HistoryTerminal	history/HistoryTerminal.java	/^public class HistoryTerminal {$/;"	c
+HistoryTortue	history/HistoryTortue.java	/^	public HistoryTortue() {$/;"	m	class:HistoryTortue
+HistoryTortue	history/HistoryTortue.java	/^public class HistoryTortue implements History {$/;"	c
+If	commande/If.java	/^	public If() {$/;"	m	class:If
+If	commande/If.java	/^public class If implements Commande {$/;"	c
+Info	ihm/Info.java	/^	public Info() {$/;"	m	class:Info
+Info	ihm/Info.java	/^public class Info extends JPanel implements ActionListener{$/;"	c
+Infos	ihm/Fenetre.java	/^	public static void Infos() {$/;"	m	class:Fenetre
+JPanelParametres	ihm/Dessin.java	/^	public jPanelParametres JPanelParametres;$/;"	f	class:Dessin
+JPanelParametres	ihm/Fenetre.java	/^	public static jPanelParametres JPanelParametres;$/;"	f	class:Fenetre
+KeyListenTerminal	ihm/jInviteDeCommande.java	/^		public KeyListenTerminal(jInviteDeCommande terminal) {$/;"	m	class:jInviteDeCommande.KeyListenTerminal
+KeyListenTerminal	ihm/jInviteDeCommande.java	/^	public class KeyListenTerminal implements KeyListener {$/;"	c	class:jInviteDeCommande
+Left	cmd/Left.java	/^public class Left extends Cmd {$/;"	c
+Ligne	cmd/Move.java	/^		public Ligne(int xd, int yd, int xa, int ya, Color color) {$/;"	m	class:Move.Ligne
+Ligne	cmd/Move.java	/^	public class Ligne {$/;"	c	class:Move
+Ligne	commande/Move.java	/^		public Ligne(int xd, int yd, int xa, int ya, Color color, Stroke strok) {$/;"	m	class:Move.Ligne
+Ligne	commande/Move.java	/^	public class Ligne {$/;"	c	class:Move
+Main	Main.java	/^public class Main {$/;"	c
+Move	cmd/Move.java	/^public class Move extends Cmd {$/;"	c
+Move	commande/Move.java	/^public class Move implements Commande {$/;"	c
+New	commande/New.java	/^public class New implements Commande {$/;"	c
+ObjetFonction	cmd/Fonctions.java	/^		public ObjetFonction(String nom_Fonction) {$/;"	m	class:Fonctions.ObjetFonction
+ObjetFonction	cmd/Fonctions.java	/^	protected class ObjetFonction {$/;"	c	class:Fonctions
+ObjetHistory	history/ObjetHistory.java	/^	public ObjetHistory(String histo, Dessin dessin) {$/;"	m	class:ObjetHistory
+ObjetHistory	history/ObjetHistory.java	/^public class ObjetHistory {$/;"	c
+ObjetVariables	cmd/Variables.java	/^		public ObjetVariables(String nom_Variable) {$/;"	m	class:Variables.ObjetVariables
+ObjetVariables	cmd/Variables.java	/^	protected class ObjetVariables {$/;"	c	class:Variables
+ObjetVariables	commande/Variables.java	/^		public ObjetVariables(String nom_Variable, int valeur_Variable) {$/;"	m	class:Variables.ObjetVariables
+ObjetVariables	commande/Variables.java	/^	public class ObjetVariables {$/;"	c	class:Variables
+Open	commande/Open.java	/^	public Open() {$/;"	m	class:Open
+Open	commande/Open.java	/^public class Open implements Commande {$/;"	c
+PanelHistory	ihm/PanelHistory.java	/^	public PanelHistory() {$/;"	m	class:PanelHistory
+PanelHistory	ihm/PanelHistory.java	/^public class PanelHistory extends JEditorPane {$/;"	c
+PenColor	cmd/PenColor.java	/^public class PenColor extends Cmd {$/;"	c
+PenDown	cmd/PenDown.java	/^public class PenDown extends Cmd {$/;"	c
+PenUp	cmd/PenUp.java	/^public class PenUp extends Cmd {$/;"	c
+Pensize	commande/Pensize.java	/^public class Pensize implements Commande {$/;"	c
+Redo	commande/Redo.java	/^public class Redo implements Commande {$/;"	c
+Remember	commande/Remember.java	/^public class Remember implements Commande {$/;"	c
+Repeat	commande/Repeat.java	/^	public Repeat() {$/;"	m	class:Repeat
+Repeat	commande/Repeat.java	/^public class Repeat implements Commande {$/;"	c
+Right	cmd/Right.java	/^public class Right extends Cmd {$/;"	c
+Save	commande/Save.java	/^	public Save() {$/;"	m	class:Save
+Save	commande/Save.java	/^public class Save implements Commande {$/;"	c
+Size	commande/Pensize.java	/^		public Size(int strokeSize) {$/;"	m	class:Pensize.Size
+Size	commande/Pensize.java	/^	public class Size {$/;"	c	class:Pensize
+SuperLabel	ihm/SuperLabel.java	/^	public SuperLabel() {$/;"	m	class:SuperLabel
+SuperLabel	ihm/SuperLabel.java	/^public class SuperLabel implements ActionListener {$/;"	c
+Test	Test.java	/^public class Test {$/;"	c
+ToString	commande/Clear.java	/^	public String ToString(String[] tab) {$/;"	m	class:Clear
+ToString	commande/Commande.java	/^	public String ToString(String[] tab);$/;"	m	interface:Commande
+ToString	commande/Commentaire.java	/^	public String ToString(String[] tab) {$/;"	m	class:Commentaire
+ToString	commande/Erase.java	/^	public String ToString(String[] tab) {$/;"	m	class:Erase
+ToString	commande/Go.java	/^	public String ToString(String[] tab) {$/;"	m	class:Go
+ToString	commande/Help.java	/^	public String ToString(String[] tab) {$/;"	m	class:Help
+ToString	commande/If.java	/^	public String ToString(String[] tab) {$/;"	m	class:If
+ToString	commande/Move.java	/^	public String ToString(String[] tab) {$/;"	m	class:Move
+ToString	commande/New.java	/^	public String ToString(String[] tab) {$/;"	m	class:New
+ToString	commande/Open.java	/^	public String ToString(String[] tab) {$/;"	m	class:Open
+ToString	commande/Pensize.java	/^	public String ToString(String[] tab) {$/;"	m	class:Pensize
+ToString	commande/Redo.java	/^	public String ToString(String[] tab) {$/;"	m	class:Redo
+ToString	commande/Remember.java	/^	public String ToString(String[] tab) {$/;"	m	class:Remember
+ToString	commande/Repeat.java	/^	public String ToString(String[] tab) {$/;"	m	class:Repeat
+ToString	commande/Save.java	/^	public String ToString(String[] tab) {$/;"	m	class:Save
+ToString	commande/Turn.java	/^	public String ToString(String[] tab) {$/;"	m	class:Turn
+ToString	commande/Undo.java	/^	public String ToString(String[] tab) {$/;"	m	class:Undo
+ToString	commande/Variables.java	/^	public String ToString(String[] tab) {$/;"	m	class:Variables
+Turn	cmd/Turn.java	/^public class Turn extends Cmd {$/;"	c
+Turn	commande/Turn.java	/^public class Turn implements Commande {$/;"	c
+Undo	commande/Undo.java	/^public class Undo implements Commande {$/;"	c
+Up	cmd/Up.java	/^public class Up extends Cmd {$/;"	c
+Variables	cmd/Variables.java	/^public class Variables extends Cmd {$/;"	c
+Variables	commande/Variables.java	/^	public Variables() {$/;"	m	class:Variables
+Variables	commande/Variables.java	/^public class Variables implements Commande {$/;"	c
+abscisse	objetQuiDessine/CurseurQuiDessine.java	/^	private int direction, abscisse, ordonnee;$/;"	f	class:CurseurQuiDessine	file:
+accept	commande/Open.java	/^		public boolean accept(File file) {$/;"	m	class:Open.ExtensionFileFilter
+actionPerformed	ihm/ActionListen.java	/^	public void actionPerformed(ActionEvent arg0) {$/;"	m	class:ActionListen
+actionPerformed	ihm/ActionListenColor.java	/^	public void actionPerformed(ActionEvent arg0) {$/;"	m	class:ActionListenColor
+actionPerformed	ihm/ExitListen.java	/^	public void actionPerformed(ActionEvent arg0) {$/;"	m	class:ExitListen
+actionPerformed	ihm/Info.java	/^	public void actionPerformed(ActionEvent arg0) {$/;"	m	class:Info
+actionPerformed	ihm/SuperLabel.java	/^		public void actionPerformed(ActionEvent arg0) {$/;"	m	class:SuperLabel.ActionListenPlus
+actionPerformed	ihm/SuperLabel.java	/^	public void actionPerformed(ActionEvent arg0) {$/;"	m	class:SuperLabel
+addCom	ihm/PanelHistory.java	/^	public void addCom(String txt) {$/;"	m	class:PanelHistory
+addError	ihm/PanelHistory.java	/^	public void addError(String txt) {$/;"	m	class:PanelHistory
+addTexte	ihm/PanelHistory.java	/^	public void addTexte(String txt) {$/;"	m	class:PanelHistory
+addTexteIndent	ihm/PanelHistory.java	/^	public void addTexteIndent(String txt) {$/;"	m	class:PanelHistory
+addToHistory	history/History.java	/^	public void addToHistory(String comande) throws IOException;$/;"	m	interface:History
+addToHistory	history/HistoryTerminal.java	/^	public void addToHistory(String Comande) {$/;"	m	class:HistoryTerminal
+addToHistory	history/HistoryTortue.java	/^	public void addToHistory(String Comande) {$/;"	m	class:HistoryTortue
+addToPanelHistory	ihm/PanelHistory.java	/^	public void addToPanelHistory(String nomCmd , String cmd,String errorMessage){$/;"	m	class:PanelHistory
+addVar	ihm/PanelHistory.java	/^	public void addVar(String txt) {$/;"	m	class:PanelHistory
+affectation	cmd/Variables.java	/^	private boolean affectation(ObjetVariables var, String sAffectation){$/;"	m	class:Variables	file:
+afficheVar	cmd/Commande.java	/^	public void afficheVar(){$/;"	m	class:Cmd
+args	commande/Open.java	/^	private int args(String[] parametres) {$/;"	m	class:Open	file:
+background	ihm/Dessin.java	/^	private Color background;$/;"	f	class:Dessin	file:
+background	objetQuiDessine/CurseurQuiDessine.java	/^	private Color background;$/;"	f	class:CurseurQuiDessine	file:
+bienP	Test.java	/^	public static boolean bienP(String s){$/;"	m	class:Test
+bienP	cmd/Commande.java	/^	private boolean bienP(String s){$/;"	m	class:Cmd	file:
+bounds	ihm/Fenetre.java	/^	static Rectangle bounds = ge.getMaximumWindowBounds();$/;"	f	class:Fenetre
+cDImove	commande/Move.java	/^	static int cDImove = 0;$/;"	f	class:Move
+calculeCoordArrive	cmd/Go.java	/^	private int [] calculeCoordArrive(Dessin dessin, int distance){$/;"	m	class:Go	file:
+calculeCoordArrive	cmd/Move.java	/^	private int [] calculeCoordArrive(Dessin dessin, int distance){$/;"	m	class:Move	file:
+calculeList	cmd/Commande.java	/^	private int calculeList(ArrayList<String> s){$/;"	m	class:Cmd	file:
+calculeTab	Test.java	/^	private static String calculeTab(String tab[]){$/;"	m	class:Test	file:
+canCalcul	Test.java	/^	public static boolean canCalcul(ArrayList<String> s){$/;"	m	class:Test
+canCalcul	cmd/Commande.java	/^	private boolean canCalcul(ArrayList<String> s){$/;"	m	class:Cmd	file:
+canDoAllCalcule	cmd/Commande.java	/^	public boolean canDoAllCalcule(String s){$/;"	m	class:Cmd
+canDoIt	commande/Clear.java	/^	public boolean canDoIt(String[] parametres) {$/;"	m	class:Clear
+canDoIt	commande/Commande.java	/^	public boolean canDoIt(String[] parametres);$/;"	m	interface:Commande
+canDoIt	commande/Commentaire.java	/^	public boolean canDoIt(String[] parametres) {$/;"	m	class:Commentaire
+canDoIt	commande/Erase.java	/^	public boolean canDoIt(String[] parametres) {$/;"	m	class:Erase
+canDoIt	commande/Go.java	/^	public boolean canDoIt(String[] parametres) {$/;"	m	class:Go
+canDoIt	commande/Help.java	/^	public boolean canDoIt(String[] parametres) {$/;"	m	class:Help
+canDoIt	commande/If.java	/^	public boolean canDoIt(String[] parametres) {$/;"	m	class:If
+canDoIt	commande/Move.java	/^	public boolean canDoIt(String[] parametres) {$/;"	m	class:Move
+canDoIt	commande/New.java	/^	public boolean canDoIt(String[] parametres) {$/;"	m	class:New
+canDoIt	commande/Open.java	/^	public boolean canDoIt(String[] parametres) {$/;"	m	class:Open
+canDoIt	commande/Pensize.java	/^	public boolean canDoIt(String[] parametres) {$/;"	m	class:Pensize
+canDoIt	commande/Redo.java	/^	public boolean canDoIt(String[] parametres) {$/;"	m	class:Redo
+canDoIt	commande/Remember.java	/^	public boolean canDoIt(String[] parametres) {$/;"	m	class:Remember
+canDoIt	commande/Repeat.java	/^	public boolean canDoIt(String[] parametres) {$/;"	m	class:Repeat
+canDoIt	commande/Save.java	/^	public boolean canDoIt(String[] parametres) {$/;"	m	class:Save
+canDoIt	commande/Turn.java	/^	public boolean canDoIt(String[] parametres) {$/;"	m	class:Turn
+canDoIt	commande/Undo.java	/^	public boolean canDoIt(String[] parametres) {$/;"	m	class:Undo
+canDoIt	commande/Variables.java	/^	public boolean canDoIt(String[] parametres) {$/;"	m	class:Variables
+clear	ihm/PanelHistory.java	/^	public void clear() {$/;"	m	class:PanelHistory
+cmd	cmd/Back.java	/^package cmd;$/;"	p
+cmd	cmd/BackgroundColor.java	/^package cmd;$/;"	p
+cmd	cmd/Center.java	/^package cmd;$/;"	p
+cmd	cmd/Clear.java	/^package cmd;$/;"	p
+cmd	cmd/Commande.java	/^package cmd;$/;"	p
+cmd	cmd/Down.java	/^package cmd;$/;"	p
+cmd	cmd/Fonctions.java	/^package cmd;$/;"	p
+cmd	cmd/Go.java	/^package cmd;$/;"	p
+cmd	cmd/HashTable.java	/^package cmd;$/;"	p
+cmd	cmd/Left.java	/^package cmd;$/;"	p
+cmd	cmd/Move.java	/^package cmd;$/;"	p
+cmd	cmd/PenColor.java	/^package cmd;$/;"	p
+cmd	cmd/PenDown.java	/^package cmd;$/;"	p
+cmd	cmd/PenUp.java	/^package cmd;$/;"	p
+cmd	cmd/Right.java	/^package cmd;$/;"	p
+cmd	cmd/Turn.java	/^package cmd;$/;"	p
+cmd	cmd/Up.java	/^package cmd;$/;"	p
+cmd	cmd/Variables.java	/^package cmd;$/;"	p
+cmd	ihm/Dessin.java	/^	public ArrayList<Object> cmd = new ArrayList<Object>();$/;"	f	class:Dessin
+color	cmd/Move.java	/^		private Color color;$/;"	f	class:Move.Ligne	file:
+color	commande/Move.java	/^		private Color color;$/;"	f	class:Move.Ligne	file:
+commande	commande/Autocompletion.java	/^	final static String[] commande = { "BACK", "BACKGROUNDCOLOR", "CENTER",$/;"	f	class:Autocompletion
+commande	commande/Autocompletion.java	/^package commande;$/;"	p
+commande	commande/Clear.java	/^package commande;$/;"	p
+commande	commande/Commande.java	/^package commande;$/;"	p
+commande	commande/CommandeExeption.java	/^package commande;$/;"	p
+commande	commande/Commentaire.java	/^package commande;$/;"	p
+commande	commande/Erase.java	/^package commande;$/;"	p
+commande	commande/ExeptionCommande.java	/^package commande;$/;"	p
+commande	commande/Go.java	/^package commande;$/;"	p
+commande	commande/HashTable.java	/^package commande;$/;"	p
+commande	commande/Help.java	/^package commande;$/;"	p
+commande	commande/If.java	/^package commande;$/;"	p
+commande	commande/Move.java	/^package commande;$/;"	p
+commande	commande/New.java	/^package commande;$/;"	p
+commande	commande/Open.java	/^package commande;$/;"	p
+commande	commande/Pensize.java	/^package commande;$/;"	p
+commande	commande/Redo.java	/^package commande;$/;"	p
+commande	commande/Remember.java	/^package commande;$/;"	p
+commande	commande/Repeat.java	/^package commande;$/;"	p
+commande	commande/Save.java	/^package commande;$/;"	p
+commande	commande/Turn.java	/^package commande;$/;"	p
+commande	commande/Undo.java	/^package commande;$/;"	p
+commande	commande/Variables.java	/^package commande;$/;"	p
+complete	commande/Autocompletion.java	/^	public static ArrayList<String> complete(String terminal) {$/;"	m	class:Autocompletion
+compteur	commande/Repeat.java	/^	static int compteur = 0;$/;"	f	class:Repeat
+convertTo	commande/Repeat.java	/^	public Object[] convertTo(String[] parametres) {$/;"	m	class:Repeat
+couleur	history/ObjetHistory.java	/^	private Color couleur;$/;"	f	class:ObjetHistory	file:
+couleur	ihm/Info.java	/^	private JLabel curseur,souris,dessine,remember,couleur;$/;"	f	class:Info	file:
+couleur	objetQuiDessine/CurseurQuiDessine.java	/^	private Color couleur;$/;"	f	class:CurseurQuiDessine	file:
+current	history/HistoryTerminal.java	/^	private static  int current,last;$/;"	f	class:HistoryTerminal	file:
+curs	ihm/Info.java	/^	public CurseurQuiDessine curs;$/;"	f	class:Info
+curseur	ihm/Dessin.java	/^	public CurseurQuiDessine curseur;$/;"	f	class:Dessin
+curseur	ihm/Info.java	/^	private JLabel curseur,souris,dessine,remember,couleur;$/;"	f	class:Info	file:
+curseurImg	objetQuiDessine/CurseurQuiDessine.java	/^	private Image curseurImg;$/;"	f	class:CurseurQuiDessine	file:
+dans_Le_Dessin	cmd/Go.java	/^	private boolean dans_Le_Dessin(Dessin dessin, int [] coor){$/;"	m	class:Go	file:
+dans_Le_Dessin	cmd/Move.java	/^	private boolean dans_Le_Dessin(Dessin dessin, int [] coor){$/;"	m	class:Move	file:
+declaration	cmd/Fonctions.java	/^	private void declaration(String nom_Fonction){$/;"	m	class:Fonctions	file:
+declaration	cmd/Variables.java	/^	private void declaration(String nom_Variable){$/;"	m	class:Variables	file:
+description	commande/Open.java	/^		String description;$/;"	f	class:Open.ExtensionFileFilter
+dessin	cmd/HashTable.java	/^	public Dessin dessin = Fenetre.jPanelDessin;$/;"	f	class:HashTable
+dessine	ihm/Info.java	/^	private JLabel curseur,souris,dessine,remember,couleur;$/;"	f	class:Info	file:
+direction	history/ObjetHistory.java	/^	private int direction;$/;"	f	class:ObjetHistory	file:
+direction	objetQuiDessine/CurseurQuiDessine.java	/^	private int direction, abscisse, ordonnee;$/;"	f	class:CurseurQuiDessine	file:
+doCalcule	cmd/Commande.java	/^	public int doCalcule(String s){$/;"	m	class:Cmd
+drawCurs	ihm/Dessin.java	/^	private Polygon drawCurs() {$/;"	m	class:Dessin	file:
+drawCurs	objetQuiDessine/CurseurQuiDessine.java	/^	private boolean drawCurs = true;$/;"	f	class:CurseurQuiDessine	file:
+drawCursOmbre	ihm/Dessin.java	/^	private Polygon drawCursOmbre() {$/;"	m	class:Dessin	file:
+egaux	ihm/Dessin.java	/^	public boolean egaux(Ligne l1, Ligne l2) {$/;"	m	class:Dessin
+execute	cmd/Back.java	/^	String execute(String[] commande, Dessin dessin, HashTable table){$/;"	m	class:Back
+execute	cmd/BackgroundColor.java	/^	String execute(String[] commande, Dessin dessin, HashTable table){$/;"	m	class:BackgroundColor
+execute	cmd/Center.java	/^	String execute(String[] commande, Dessin dessin, HashTable table){$/;"	m	class:Center
+execute	cmd/Clear.java	/^	String execute(String[] commande, Dessin dessin, HashTable table){$/;"	m	class:Clear
+execute	cmd/Commande.java	/^	abstract String execute(String[] parametres, Dessin dessin, HashTable table);$/;"	m	class:Cmd
+execute	cmd/Down.java	/^	String execute(String[] commande, Dessin dessin, HashTable table){$/;"	m	class:Down
+execute	cmd/Fonctions.java	/^	String execute(String[] commande, Dessin dessin, HashTable table){$/;"	m	class:Fonctions
+execute	cmd/Go.java	/^	String execute(String[] commande, Dessin dessin, HashTable table){$/;"	m	class:Go
+execute	cmd/Left.java	/^	String execute(String[] commande, Dessin dessin, HashTable table){$/;"	m	class:Left
+execute	cmd/Move.java	/^	String execute(String[] commande, Dessin dessin, HashTable table){$/;"	m	class:Move
+execute	cmd/PenColor.java	/^	String execute(String[] commande, Dessin dessin, HashTable table){$/;"	m	class:PenColor
+execute	cmd/PenDown.java	/^	String execute(String[] commande, Dessin dessin, HashTable table){$/;"	m	class:PenDown
+execute	cmd/PenUp.java	/^	String execute(String[] commande, Dessin dessin, HashTable table){$/;"	m	class:PenUp
+execute	cmd/Right.java	/^	String execute(String[] commande, Dessin dessin, HashTable table){$/;"	m	class:Right
+execute	cmd/Turn.java	/^	String execute(String[] commande, Dessin dessin, HashTable table){$/;"	m	class:Turn
+execute	cmd/Up.java	/^	String execute(String[] commande, Dessin dessin, HashTable table){$/;"	m	class:Up
+execute	cmd/Variables.java	/^	String execute(String[] commande, Dessin dessin, HashTable table){$/;"	m	class:Variables
+execute	commande/Clear.java	/^	public void execute(String[] parametres, boolean addToHistory) {$/;"	m	class:Clear
+execute	commande/Commande.java	/^	public void execute(String[] parametres, boolean addToHistory)$/;"	m	interface:Commande
+execute	commande/Commentaire.java	/^	public void execute(String[] parametres, boolean addToHistory)$/;"	m	class:Commentaire
+execute	commande/Erase.java	/^	public void execute(String[] parametres, boolean addToHistory) {$/;"	m	class:Erase
+execute	commande/Go.java	/^	public void execute(String[] parametres, boolean addToHistory) {$/;"	m	class:Go
+execute	commande/Help.java	/^	public void execute(String[] parametres, boolean addToHistory) {$/;"	m	class:Help
+execute	commande/If.java	/^	public void execute(String[] parametres, boolean addToHistory)$/;"	m	class:If
+execute	commande/Move.java	/^	public void execute(String[] parametres, boolean addToHistory) {$/;"	m	class:Move
+execute	commande/New.java	/^	public void execute(String[] parametres, boolean addToHistory) {$/;"	m	class:New
+execute	commande/Open.java	/^	public void execute(String[] parametres, boolean addToHistory)$/;"	m	class:Open
+execute	commande/Pensize.java	/^	public void execute(String[] parametres, boolean addToHistory) {$/;"	m	class:Pensize
+execute	commande/Redo.java	/^	public void execute(String[] parametres, boolean addToHistory) {$/;"	m	class:Redo
+execute	commande/Remember.java	/^	public void execute(String[] parametres, boolean addToHistory) {$/;"	m	class:Remember
+execute	commande/Repeat.java	/^	public void execute(String[] parametres, boolean addToHistory) {$/;"	m	class:Repeat
+execute	commande/Save.java	/^	public void execute(String[] parametres, boolean addToHistory) {$/;"	m	class:Save
+execute	commande/Turn.java	/^	public void execute(String[] parametres, boolean addToHistory) {$/;"	m	class:Turn
+execute	commande/Undo.java	/^	public void execute(String[] parametres, boolean addToHistory)$/;"	m	class:Undo
+execute	commande/Variables.java	/^	public void execute(String[] parametres, boolean addToHistory)$/;"	m	class:Variables
+executerCommande	cmd/HashTable.java	/^	public String executerCommande(String commande){$/;"	m	class:HashTable
+extensions	commande/Open.java	/^		String extensions[];$/;"	f	class:Open.ExtensionFileFilter
+extraChar	commande/Autocompletion.java	/^	public static String extraChar(String word, ArrayList<String> word_find_list) {$/;"	m	class:Autocompletion
+fonction_Instructions	cmd/Fonctions.java	/^		private ArrayList<String> fonction_Instructions = new ArrayList<String>();$/;"	f	class:Fonctions.ObjetFonction	file:
+ge	ihm/Fenetre.java	/^	static GraphicsEnvironment ge = GraphicsEnvironment$/;"	f	class:Fenetre
+getAbscisse	objetQuiDessine/CurseurQuiDessine.java	/^	public int getAbscisse() {$/;"	m	class:CurseurQuiDessine
+getBackground	objetQuiDessine/CurseurQuiDessine.java	/^	public Color getBackground() {$/;"	m	class:CurseurQuiDessine
+getColor	cmd/Move.java	/^		public Color getColor() {$/;"	m	class:Move.Ligne
+getColor	commande/Move.java	/^		public Color getColor() {$/;"	m	class:Move.Ligne
+getCouleur	history/ObjetHistory.java	/^	public Color getCouleur() {$/;"	m	class:ObjetHistory
+getCouleur	ihm/Info.java	/^	public JLabel getCouleur() {$/;"	m	class:Info
+getCouleur	objetQuiDessine/CurseurQuiDessine.java	/^	public Color getCouleur() {$/;"	m	class:CurseurQuiDessine
+getCurseur	ihm/Info.java	/^	public JLabel getCurseur() {$/;"	m	class:Info
+getCurseurImg	objetQuiDessine/CurseurQuiDessine.java	/^	public Image getCurseurImg() {$/;"	m	class:CurseurQuiDessine
+getDescription	commande/Open.java	/^		public String getDescription() {$/;"	m	class:Open.ExtensionFileFilter
+getDessine	ihm/Info.java	/^	public JLabel getDessine() {$/;"	m	class:Info
+getDirection	history/ObjetHistory.java	/^	public int getDirection() {$/;"	m	class:ObjetHistory
+getDirection	objetQuiDessine/CurseurQuiDessine.java	/^	public int getDirection() {$/;"	m	class:CurseurQuiDessine
+getHisto	history/ObjetHistory.java	/^	public String getHisto() {$/;"	m	class:ObjetHistory
+getHistory	history/HistoryTortue.java	/^	public ArrayList<ObjetHistory> getHistory() {$/;"	m	class:HistoryTortue
+getI	ihm/SuperLabel.java	/^	public int getI() {$/;"	m	class:SuperLabel
+getInfo	objetQuiDessine/CurseurQuiDessine.java	/^	public jPanelParametres getInfo() {$/;"	m	class:CurseurQuiDessine
+getMoins	ihm/SuperLabel.java	/^	public JButton getMoins() {$/;"	m	class:SuperLabel
+getNom_Variable	cmd/Variables.java	/^		public String getNom_Variable() {$/;"	m	class:Variables.ObjetVariables
+getNom_Variable	commande/Variables.java	/^		public String getNom_Variable() {$/;"	m	class:Variables.ObjetVariables
+getOrdonnee	objetQuiDessine/CurseurQuiDessine.java	/^	public int getOrdonnee() {$/;"	m	class:CurseurQuiDessine
+getPendown	objetQuiDessine/CurseurQuiDessine.java	/^	public boolean getPendown() {$/;"	m	class:CurseurQuiDessine
+getPensize	objetQuiDessine/CurseurQuiDessine.java	/^	public int getPensize() {$/;"	m	class:CurseurQuiDessine
+getPlus	ihm/SuperLabel.java	/^	public JButton getPlus() {$/;"	m	class:SuperLabel
+getRemember	ihm/Info.java	/^	public JLabel getRemember() {$/;"	m	class:Info
+getRememberAbscisse	objetQuiDessine/CurseurQuiDessine.java	/^	public int getRememberAbscisse() {$/;"	m	class:CurseurQuiDessine
+getRememberDirection	objetQuiDessine/CurseurQuiDessine.java	/^	public int getRememberDirection() {$/;"	m	class:CurseurQuiDessine
+getRememberOrdonnee	objetQuiDessine/CurseurQuiDessine.java	/^	public int getRememberOrdonnee() {$/;"	m	class:CurseurQuiDessine
+getSouris	ihm/Info.java	/^	public JLabel getSouris() {$/;"	m	class:Info
+getStrockeSize	commande/Pensize.java	/^		public int getStrockeSize() {$/;"	m	class:Pensize.Size
+getStrok	commande/Move.java	/^		public Stroke getStrok() {$/;"	m	class:Move.Ligne
+getUndo	history/HistoryTortue.java	/^	public ArrayList<ObjetHistory> getUndo() {$/;"	m	class:HistoryTortue
+getValeur_Variable	cmd/Variables.java	/^		public int getValeur_Variable() {$/;"	m	class:Variables.ObjetVariables
+getValeur_Variable	commande/Variables.java	/^		public int getValeur_Variable() {$/;"	m	class:Variables.ObjetVariables
+getX	history/ObjetHistory.java	/^	public int getX() {$/;"	m	class:ObjetHistory
+getY	history/ObjetHistory.java	/^	public int getY() {$/;"	m	class:ObjetHistory
+get_Variable	cmd/Commande.java	/^	public ObjetVariables get_Variable(String nom_Variable){$/;"	m	class:Cmd
+getjButtonCouleur	ihm/Info.java	/^	public JButton getjButtonCouleur() {$/;"	m	class:Info
+getxArrivee	cmd/Move.java	/^		public int getxArrivee() {$/;"	m	class:Move.Ligne
+getxArrivee	commande/Move.java	/^		public int getxArrivee() {$/;"	m	class:Move.Ligne
+getxDepart	cmd/Move.java	/^		public int getxDepart() {$/;"	m	class:Move.Ligne
+getxDepart	commande/Move.java	/^		public int getxDepart() {$/;"	m	class:Move.Ligne
+getxSouris	ihm/Dessin.java	/^	public double getxSouris() {$/;"	m	class:Dessin
+getyArrivee	cmd/Move.java	/^		public int getyArrivee() {$/;"	m	class:Move.Ligne
+getyArrivee	commande/Move.java	/^		public int getyArrivee() {$/;"	m	class:Move.Ligne
+getyDepart	cmd/Move.java	/^		public int getyDepart() {$/;"	m	class:Move.Ligne
+getyDepart	commande/Move.java	/^		public int getyDepart() {$/;"	m	class:Move.Ligne
+getySouris	ihm/Dessin.java	/^	public double getySouris() {$/;"	m	class:Dessin
+hashCommande	cmd/HashTable.java	/^	public static Hashtable<String, Cmd> hashCommande = new Hashtable<String, Cmd>();$/;"	f	class:HashTable
+hashCommande	commande/HashTable.java	/^	public static Hashtable<String, Commande> hashCommande = new Hashtable<String, Commande>();$/;"	f	class:HashTable
+hauteur	ihm/Fenetre.java	/^	public static int hauteur = (int) bounds.getHeight()-5;$/;"	f	class:Fenetre
+help	commande/Help.java	/^	TreeMap<String, String> help = new TreeMap<String, String>();$/;"	f	class:Help
+helpAll	commande/Help.java	/^	private String helpAll(){$/;"	m	class:Help	file:
+helpCmd	commande/Help.java	/^	private String helpCmd(String s){$/;"	m	class:Help	file:
+hgj	commande/HashTable.java	/^	public static void hgj(String commande, boolean add) throws IOException {$/;"	m	class:HashTable
+histo	history/ObjetHistory.java	/^	private String histo;$/;"	f	class:ObjetHistory	file:
+history	cmd/Commande.java	/^	HistoryTortue history = new HistoryTortue();$/;"	f	class:Cmd
+history	commande/Commande.java	/^	HistoryTortue history = new HistoryTortue();$/;"	f	interface:Commande
+history	history/History.java	/^package history;$/;"	p
+history	history/HistoryTerminal.java	/^	private static ArrayList<String> history;$/;"	f	class:HistoryTerminal	file:
+history	history/HistoryTerminal.java	/^package history;$/;"	p
+history	history/HistoryTortue.java	/^	private static ArrayList<ObjetHistory> history;$/;"	f	class:HistoryTortue	file:
+history	history/HistoryTortue.java	/^package history;$/;"	p
+history	history/ObjetHistory.java	/^package history;$/;"	p
+historyTerminal	ihm/jInviteDeCommande.java	/^	public HistoryTerminal historyTerminal;$/;"	f	class:jInviteDeCommande
+i	commande/New.java	/^	public static int i;$/;"	f	class:New
+i	ihm/Dessin.java	/^	int i = 0;$/;"	f	class:Dessin
+i	ihm/SuperLabel.java	/^	int i;$/;"	f	class:SuperLabel
+ihm	ihm/ActionListen.java	/^package ihm;$/;"	p
+ihm	ihm/ActionListenColor.java	/^package ihm;$/;"	p
+ihm	ihm/Dessin.java	/^package ihm;$/;"	p
+ihm	ihm/ExitListen.java	/^package ihm;$/;"	p
+ihm	ihm/Fenetre.java	/^package ihm;$/;"	p
+ihm	ihm/Info.java	/^package ihm;$/;"	p
+ihm	ihm/PanelHistory.java	/^package ihm;$/;"	p
+ihm	ihm/SuperLabel.java	/^package ihm;$/;"	p
+ihm	ihm/jInviteDeCommande.java	/^package ihm;$/;"	p
+ihm	ihm/jLabelCurseur.java	/^package ihm;$/;"	p
+ihm	ihm/jLabelRemember.java	/^package ihm;$/;"	p
+ihm	ihm/jLabelSouris.java	/^package ihm;$/;"	p
+ihm	ihm/jPanelParametres.java	/^package ihm;$/;"	p
+ihm	ihm/jTextLabelCurseur.java	/^package ihm;$/;"	p
+ihm	ihm/jTextLabelRemember.java	/^package ihm;$/;"	p
+ihm	ihm/jTextLabelSouris.java	/^package ihm;$/;"	p
+info	objetQuiDessine/CurseurQuiDessine.java	/^	private jPanelParametres info;$/;"	f	class:CurseurQuiDessine	file:
+isDrawCurs	objetQuiDessine/CurseurQuiDessine.java	/^	public boolean isDrawCurs() {$/;"	m	class:CurseurQuiDessine
+isRepeat	commande/HashTable.java	/^	private static boolean isRepeat(String s) {$/;"	m	class:HashTable	file:
+isVariable	commande/HashTable.java	/^	public static boolean isVariable(String s) {$/;"	m	class:HashTable
+itsOK	commande/HashTable.java	/^	public static boolean itsOK(String[] parametre) {$/;"	m	class:HashTable
+jButtonCouleur	ihm/Fenetre.java	/^	public static JButton jButtonCouleur;$/;"	f	class:Fenetre
+jButtonCouleur	ihm/Info.java	/^	private JButton jButtonCouleur;$/;"	f	class:Info	file:
+jInviteDeCommande	ihm/Fenetre.java	/^	private JTextField jInviteDeCommande;$/;"	f	class:Fenetre	file:
+jInviteDeCommande	ihm/jInviteDeCommande.java	/^	public jInviteDeCommande(PanelHistory panelHistory, Dessin dessin) {$/;"	m	class:jInviteDeCommande
+jInviteDeCommande	ihm/jInviteDeCommande.java	/^public class jInviteDeCommande extends JTextField {$/;"	c
+jLabelCurseur	ihm/jLabelCurseur.java	/^	public jLabelCurseur() {$/;"	m	class:jLabelCurseur
+jLabelCurseur	ihm/jLabelCurseur.java	/^public class jLabelCurseur extends JLabel {$/;"	c
+jLabelRemember	ihm/jLabelRemember.java	/^	public jLabelRemember() {$/;"	m	class:jLabelRemember
+jLabelRemember	ihm/jLabelRemember.java	/^public class jLabelRemember extends JLabel {$/;"	c
+jLabelSouris	ihm/jLabelSouris.java	/^	public jLabelSouris() {$/;"	m	class:jLabelSouris
+jLabelSouris	ihm/jLabelSouris.java	/^public class jLabelSouris extends JLabel {$/;"	c
+jLabelTextCurseur	ihm/Fenetre.java	/^	private static JLabel jLabelTextCurseur;$/;"	f	class:Fenetre	file:
+jLabelTextDessine	ihm/Fenetre.java	/^	private static JLabel jLabelTextDessine;$/;"	f	class:Fenetre	file:
+jLabelTextPensize	ihm/Fenetre.java	/^	private static JLabel jLabelTextPensize;$/;"	f	class:Fenetre	file:
+jLabelTextRemember	ihm/Fenetre.java	/^	private static JLabel jLabelTextRemember;$/;"	f	class:Fenetre	file:
+jLabelTextSouris	ihm/Fenetre.java	/^	private static JLabel jLabelTextSouris;$/;"	f	class:Fenetre	file:
+jPanelDessin	ihm/Fenetre.java	/^	public static Dessin jPanelDessin;$/;"	f	class:Fenetre
+jPanelParametres	ihm/jPanelParametres.java	/^	public jPanelParametres() {$/;"	m	class:jPanelParametres
+jPanelParametres	ihm/jPanelParametres.java	/^public class jPanelParametres extends JPanel {$/;"	c
+jTextAreaHistory	ihm/Fenetre.java	/^	public static ihm.PanelHistory jTextAreaHistory;$/;"	f	class:Fenetre
+jTextLabelCurseur	ihm/jTextLabelCurseur.java	/^	public jTextLabelCurseur() {$/;"	m	class:jTextLabelCurseur
+jTextLabelCurseur	ihm/jTextLabelCurseur.java	/^public class jTextLabelCurseur extends JLabel {$/;"	c
+jTextLabelRemember	ihm/jTextLabelRemember.java	/^	public jTextLabelRemember() {$/;"	m	class:jTextLabelRemember
+jTextLabelRemember	ihm/jTextLabelRemember.java	/^public class jTextLabelRemember extends JLabel {$/;"	c
+jTextLabelSouris	ihm/jTextLabelSouris.java	/^	public jTextLabelSouris() {$/;"	m	class:jTextLabelSouris
+jTextLabelSouris	ihm/jTextLabelSouris.java	/^public class jTextLabelSouris extends JLabel {$/;"	c
+keyPressed	ihm/jInviteDeCommande.java	/^		public void keyPressed(KeyEvent e) {$/;"	m	class:jInviteDeCommande.KeyListenTerminal
+keyReleased	ihm/jInviteDeCommande.java	/^		public void keyReleased(KeyEvent arg0) {$/;"	m	class:jInviteDeCommande.KeyListenTerminal
+keyTyped	ihm/jInviteDeCommande.java	/^		public void keyTyped(KeyEvent arg0) {$/;"	m	class:jInviteDeCommande.KeyListenTerminal
+largeur	ihm/Fenetre.java	/^	public static int largeur = (int) bounds.getWidth()-5;$/;"	f	class:Fenetre
+last	history/HistoryTerminal.java	/^	private static  int current,last;$/;"	f	class:HistoryTerminal	file:
+lastMove	commande/Move.java	/^	static int lastMove = 0;$/;"	f	class:Move
+list	commande/Open.java	/^	ArrayList<String> list = new ArrayList<String>();$/;"	f	class:Open
+liste_Variables	cmd/Commande.java	/^	static ArrayList<ObjetVariables> liste_Variables = new ArrayList<ObjetVariables>();$/;"	f	class:Cmd
+main	Main.java	/^	public static void main(String[] args) {$/;"	m	class:Main
+main	Test.java	/^	public static void main(String[] args) {$/;"	m	class:Test
+moins	ihm/SuperLabel.java	/^	private JButton moins;$/;"	f	class:SuperLabel	file:
+mouseClicked	ihm/Dessin.java	/^	public void mouseClicked(MouseEvent e) {$/;"	m	class:Dessin
+mouseDragged	ihm/Dessin.java	/^	public void mouseDragged(MouseEvent e) {$/;"	m	class:Dessin
+mouseEntered	ihm/Dessin.java	/^	public void mouseEntered(MouseEvent e) {$/;"	m	class:Dessin
+mouseExited	ihm/Dessin.java	/^	public void mouseExited(MouseEvent e) {$/;"	m	class:Dessin
+mouseMoved	ihm/Dessin.java	/^	public void mouseMoved(MouseEvent e) {$/;"	m	class:Dessin
+mousePressed	ihm/Dessin.java	/^	public void mousePressed(MouseEvent e) {$/;"	m	class:Dessin
+mouseReleased	ihm/Dessin.java	/^	public void mouseReleased(MouseEvent e) {$/;"	m	class:Dessin
+nbP	cmd/Commande.java	/^	private int nbP(String s){$/;"	m	class:Cmd	file:
+new_Curseur	objetQuiDessine/CurseurQuiDessine.java	/^	public void new_Curseur(int x, int y) {$/;"	m	class:CurseurQuiDessine
+nom_Fonction	cmd/Fonctions.java	/^		private String nom_Fonction;$/;"	f	class:Fonctions.ObjetFonction	file:
+nom_Variable	cmd/Variables.java	/^		private String nom_Variable;$/;"	f	class:Variables.ObjetVariables	file:
+nom_Variable	commande/Variables.java	/^		private String nom_Variable;$/;"	f	class:Variables.ObjetVariables	file:
+objetQuiDessine	objetQuiDessine/CurseurQuiDessine.java	/^package objetQuiDessine;$/;"	p
+open	commande/Open.java	/^	JFileChooser open = new JFileChooser();$/;"	f	class:Open
+ordonnee	objetQuiDessine/CurseurQuiDessine.java	/^	private int direction, abscisse, ordonnee;$/;"	f	class:CurseurQuiDessine	file:
+paintComponent	ihm/Dessin.java	/^	public void paintComponent(Graphics g) {$/;"	m	class:Dessin
+parenthese	Test.java	/^	public static boolean parenthese(String s){$/;"	m	class:Test
+pendown	objetQuiDessine/CurseurQuiDessine.java	/^	private boolean pendown;$/;"	f	class:CurseurQuiDessine	file:
+pensize	objetQuiDessine/CurseurQuiDessine.java	/^	private int pensize;$/;"	f	class:CurseurQuiDessine	file:
+plus	ihm/SuperLabel.java	/^	private JButton plus;$/;"	f	class:SuperLabel	file:
+random	commande/Clear.java	/^	public int random() {$/;"	m	class:Clear
+random	commande/Commande.java	/^	public int random();$/;"	m	interface:Commande
+random	commande/Commentaire.java	/^	public int random() {$/;"	m	class:Commentaire
+random	commande/Erase.java	/^	public int random() {$/;"	m	class:Erase
+random	commande/Go.java	/^	public int random() {$/;"	m	class:Go
+random	commande/Help.java	/^	public int random() {$/;"	m	class:Help
+random	commande/If.java	/^	public int random() {$/;"	m	class:If
+random	commande/Move.java	/^	public int random() {$/;"	m	class:Move
+random	commande/New.java	/^	public int random() {$/;"	m	class:New
+random	commande/Open.java	/^	public int random() {$/;"	m	class:Open
+random	commande/Pensize.java	/^	public int random() {$/;"	m	class:Pensize
+random	commande/Redo.java	/^	public int random() {$/;"	m	class:Redo
+random	commande/Remember.java	/^	public int random() {$/;"	m	class:Remember
+random	commande/Repeat.java	/^	public int random() {$/;"	m	class:Repeat
+random	commande/Save.java	/^	public int random() {$/;"	m	class:Save
+random	commande/Turn.java	/^	public int random() {$/;"	m	class:Turn
+random	commande/Undo.java	/^	public int random() {$/;"	m	class:Undo
+random	commande/Variables.java	/^	public int random() {$/;"	m	class:Variables
+randomColor	cmd/BackgroundColor.java	/^	public Color randomColor() {$/;"	m	class:BackgroundColor
+randomColor	cmd/PenColor.java	/^	public Color randomColor() {$/;"	m	class:PenColor
+randomDistance	cmd/Go.java	/^	private int randomDistance(Dessin dessin){$/;"	m	class:Go	file:
+randomDistance	cmd/Move.java	/^	private int randomDistance(Dessin dessin){$/;"	m	class:Move	file:
+randomX	commande/Go.java	/^	private int randomX() {$/;"	m	class:Go	file:
+randomX	commande/Move.java	/^	public int randomX() {$/;"	m	class:Move
+randomY	commande/Go.java	/^	private int randomY() {$/;"	m	class:Go	file:
+randomY	commande/Move.java	/^	public int randomY() {$/;"	m	class:Move
+reader	commande/Open.java	/^	BufferedReader reader;$/;"	f	class:Open
+redo	history/HistoryTortue.java	/^	public String redo() {$/;"	m	class:HistoryTortue
+refresh	ihm/Fenetre.java	/^	public static void refresh() {$/;"	m	class:Fenetre
+remember	ihm/Info.java	/^	private JLabel curseur,souris,dessine,remember,couleur;$/;"	f	class:Info	file:
+rememberAbscisse	objetQuiDessine/CurseurQuiDessine.java	/^	private int rememberAbscisse, rememberOrdonnee, rememberDirection;$/;"	f	class:CurseurQuiDessine	file:
+rememberDirection	objetQuiDessine/CurseurQuiDessine.java	/^	private int rememberAbscisse, rememberOrdonnee, rememberDirection;$/;"	f	class:CurseurQuiDessine	file:
+rememberOrdonnee	objetQuiDessine/CurseurQuiDessine.java	/^	private int rememberAbscisse, rememberOrdonnee, rememberDirection;$/;"	f	class:CurseurQuiDessine	file:
+removeToHistory	history/History.java	/^	public void removeToHistory() throws IOException;$/;"	m	interface:History
+removeToHistory	history/HistoryTortue.java	/^	public void removeToHistory() throws IOException {$/;"	m	class:HistoryTortue
+reset	history/HistoryTerminal.java	/^	public void reset() {$/;"	m	class:HistoryTerminal
+reset	history/HistoryTortue.java	/^	public void reset() {$/;"	m	class:HistoryTortue
+resetMove	commande/Move.java	/^	public static void resetMove() {$/;"	m	class:Move
+restorXYD	objetQuiDessine/CurseurQuiDessine.java	/^	public void restorXYD(){$/;"	m	class:CurseurQuiDessine
+rightExtention	commande/Open.java	/^	public boolean rightExtention(String way) {$/;"	m	class:Open
+s1	ihm/Fenetre.java	/^	private static SuperLabel s1;$/;"	f	class:Fenetre	file:
+save	commande/Save.java	/^	JFileChooser save;$/;"	f	class:Save
+saveHistory	history/History.java	/^	public void saveHistory(String chemin) throws IOException;$/;"	m	interface:History
+saveHistory	history/HistoryTortue.java	/^	public void saveHistory(String chemin) throws IOException {$/;"	m	class:HistoryTortue
+search	commande/Autocompletion.java	/^	public static ArrayList<String> search(String word) {$/;"	m	class:Autocompletion
+sendToPanel	commande/HashTable.java	/^	public static void sendToPanel(String[] c, String commande) {$/;"	m	class:HashTable
+setAbscisse	objetQuiDessine/CurseurQuiDessine.java	/^	public void setAbscisse(int abscisse) {$/;"	m	class:CurseurQuiDessine
+setBackground	objetQuiDessine/CurseurQuiDessine.java	/^	public void setBackground(Color background) {$/;"	m	class:CurseurQuiDessine
+setColor	cmd/Move.java	/^		public void setColor(Color color) {$/;"	m	class:Move.Ligne
+setColor	commande/Move.java	/^		public void setColor(Color color) {$/;"	m	class:Move.Ligne
+setContenu	ihm/PanelHistory.java	/^	private void setContenu() {$/;"	m	class:PanelHistory	file:
+setCouleur	history/ObjetHistory.java	/^	public void setCouleur(Color couleur) {$/;"	m	class:ObjetHistory
+setCouleur	ihm/Info.java	/^	public void setCouleur(JLabel couleur) {$/;"	m	class:Info
+setCouleur	objetQuiDessine/CurseurQuiDessine.java	/^	public void setCouleur(Color couleur) {$/;"	m	class:CurseurQuiDessine
+setCurseur	ihm/Info.java	/^	public void setCurseur(int x,int y,int dir) {$/;"	m	class:Info
+setCurseurImg	objetQuiDessine/CurseurQuiDessine.java	/^	public void setCurseurImg(Image curseurImg) {$/;"	m	class:CurseurQuiDessine
+setDessine	ihm/Info.java	/^	public void setDessine(boolean dessine) {$/;"	m	class:Info
+setDirection	history/ObjetHistory.java	/^	public void setDirection(int direction) {$/;"	m	class:ObjetHistory
+setDirection	objetQuiDessine/CurseurQuiDessine.java	/^	public void setDirection(int direction) {$/;"	m	class:CurseurQuiDessine
+setDrawCurs	objetQuiDessine/CurseurQuiDessine.java	/^	public void setDrawCurs(boolean drawCurs) {$/;"	m	class:CurseurQuiDessine
+setHisto	history/ObjetHistory.java	/^	public void setHisto(String histo) {$/;"	m	class:ObjetHistory
+setHistory	history/HistoryTortue.java	/^	public void setHistory(ArrayList<ObjetHistory> history) {$/;"	m	class:HistoryTortue
+setI	ihm/SuperLabel.java	/^	public void setI(int i) {$/;"	m	class:SuperLabel
+setInfo	objetQuiDessine/CurseurQuiDessine.java	/^	public void setInfo(jPanelParametres info) {$/;"	m	class:CurseurQuiDessine
+setNom_Variable	cmd/Variables.java	/^		public void setNom_Variable(String nom_Variable) {$/;"	m	class:Variables.ObjetVariables
+setNom_Variable	commande/Variables.java	/^		public void setNom_Variable(String nom_Variable) {$/;"	m	class:Variables.ObjetVariables
+setOrdonnee	objetQuiDessine/CurseurQuiDessine.java	/^	public void setOrdonnee(int ordonnee) {$/;"	m	class:CurseurQuiDessine
+setPendown	objetQuiDessine/CurseurQuiDessine.java	/^	public void setPendown(boolean pendown) {$/;"	m	class:CurseurQuiDessine
+setPensize	objetQuiDessine/CurseurQuiDessine.java	/^	public void setPensize(int pensize) {$/;"	m	class:CurseurQuiDessine
+setRemember	ihm/Info.java	/^	public void setRemember(int x,int y,int dir) {$/;"	m	class:Info
+setRememberAbscisse	objetQuiDessine/CurseurQuiDessine.java	/^	public void setRememberAbscisse(int rememberAbscisse) {$/;"	m	class:CurseurQuiDessine
+setRememberDirection	objetQuiDessine/CurseurQuiDessine.java	/^	public void setRememberDirection(int rememberDirection) {$/;"	m	class:CurseurQuiDessine
+setRememberOrdonnee	objetQuiDessine/CurseurQuiDessine.java	/^	public void setRememberOrdonnee(int rememberOrdonnee) {$/;"	m	class:CurseurQuiDessine
+setSouris	ihm/Info.java	/^	public void setSouris(int x,int y) {$/;"	m	class:Info
+setStrok	commande/Move.java	/^		public void setStrok(Stroke strok) {$/;"	m	class:Move.Ligne
+setUndo	history/HistoryTortue.java	/^	public void setUndo(ArrayList<ObjetHistory> undo) {$/;"	m	class:HistoryTortue
+setValeur_Variable	cmd/Variables.java	/^		public void setValeur_Variable(int valeur_Variable) {$/;"	m	class:Variables.ObjetVariables
+setValeur_Variable	commande/Variables.java	/^		public void setValeur_Variable(int valeur_Variable) {$/;"	m	class:Variables.ObjetVariables
+setX	history/ObjetHistory.java	/^	public void setX(int x) {$/;"	m	class:ObjetHistory
+setXY	objetQuiDessine/CurseurQuiDessine.java	/^	public void setXY(int x, int y){$/;"	m	class:CurseurQuiDessine
+setY	history/ObjetHistory.java	/^	public void setY(int y) {$/;"	m	class:ObjetHistory
+setjButtonCouleur	ihm/Info.java	/^	public void setjButtonCouleur(JButton jButtonCouleur) {$/;"	m	class:Info
+setxArrivee	cmd/Move.java	/^		public void setxArrivee(int xArrivee) {$/;"	m	class:Move.Ligne
+setxArrivee	commande/Move.java	/^		public void setxArrivee(int xArrivee) {$/;"	m	class:Move.Ligne
+setxDepart	cmd/Move.java	/^		public void setxDepart(int xDepart) {$/;"	m	class:Move.Ligne
+setxDepart	commande/Move.java	/^		public void setxDepart(int xDepart) {$/;"	m	class:Move.Ligne
+setxSouris	ihm/Dessin.java	/^	public void setxSouris(double xSouris) {$/;"	m	class:Dessin
+setyArrivee	cmd/Move.java	/^		public void setyArrivee(int yArrivee) {$/;"	m	class:Move.Ligne
+setyArrivee	commande/Move.java	/^		public void setyArrivee(int yArrivee) {$/;"	m	class:Move.Ligne
+setyArrivee	commande/Pensize.java	/^		public void setyArrivee(int strokeSize) {$/;"	m	class:Pensize.Size
+setyDepart	cmd/Move.java	/^		public void setyDepart(int yDepart) {$/;"	m	class:Move.Ligne
+setyDepart	commande/Move.java	/^		public void setyDepart(int yDepart) {$/;"	m	class:Move.Ligne
+setySouris	ihm/Dessin.java	/^	public void setySouris(double ySouris) {$/;"	m	class:Dessin
+showDown	history/HistoryTerminal.java	/^	public String showDown() {$/;"	m	class:HistoryTerminal
+showUp	history/HistoryTerminal.java	/^	public String showUp() {$/;"	m	class:HistoryTerminal
+souris	ihm/Info.java	/^	private JLabel curseur,souris,dessine,remember,couleur;$/;"	f	class:Info	file:
+splitSpace	commande/HashTable.java	/^	public static String[] splitSpace(String commande) {$/;"	m	class:HashTable
+stringCmdToTab	cmd/HashTable.java	/^	private String [] stringCmdToTab(String commande){$/;"	m	class:HashTable	file:
+strok	commande/Move.java	/^		private Stroke strok;$/;"	f	class:Move.Ligne	file:
+strokeSize	commande/Pensize.java	/^		private int strokeSize;$/;"	f	class:Pensize.Size	file:
+subParenthese	Test.java	/^	public static String subParenthese(String s){$/;"	m	class:Test
+subParenthese	cmd/Commande.java	/^	private String subParenthese(String s){$/;"	m	class:Cmd	file:
+table	ihm/jInviteDeCommande.java	/^	public HashTable table = new HashTable();$/;"	f	class:jInviteDeCommande
+terminal	ihm/jInviteDeCommande.java	/^		public jInviteDeCommande terminal;$/;"	f	class:jInviteDeCommande.KeyListenTerminal
+text	ihm/PanelHistory.java	/^	String text = "";$/;"	f	class:PanelHistory
+toList	cmd/Commande.java	/^	private ArrayList<String> toList(String s){$/;"	m	class:Cmd	file:
+toLower	commande/Open.java	/^		private void toLower(String array[]) {$/;"	m	class:Open.ExtensionFileFilter	file:
+toString	cmd/Commande.java	/^	protected String toString(String[] tab){$/;"	m	class:Cmd
+undo	history/HistoryTortue.java	/^	private static ArrayList<ObjetHistory> undo;$/;"	f	class:HistoryTortue	file:
+valeur_Variable	cmd/Variables.java	/^		private int valeur_Variable = 0;$/;"	f	class:Variables.ObjetVariables	file:
+valeur_Variable	commande/Variables.java	/^		private int valeur_Variable;$/;"	f	class:Variables.ObjetVariables	file:
+variable	commande/Autocompletion.java	/^	static String[] variable;$/;"	f	class:Autocompletion
+variableExiste	commande/HashTable.java	/^	public static int variableExiste(String nom) {$/;"	m	class:HashTable
+variables	commande/Commande.java	/^	static ArrayList<ObjetVariables> variables = new ArrayList<Variables.ObjetVariables>();$/;"	f	interface:Commande
+x	history/ObjetHistory.java	/^	private int x;$/;"	f	class:ObjetHistory	file:
+xArrivee	cmd/Move.java	/^		private int xArrivee;$/;"	f	class:Move.Ligne	file:
+xArrivee	commande/Move.java	/^		private int xArrivee;$/;"	f	class:Move.Ligne	file:
+xDepart	cmd/Move.java	/^		private int xDepart;$/;"	f	class:Move.Ligne	file:
+xDepart	commande/Move.java	/^		private int xDepart;$/;"	f	class:Move.Ligne	file:
+xSouris	ihm/Dessin.java	/^	double ySouris,xSouris;$/;"	f	class:Dessin
+y	history/ObjetHistory.java	/^	private int y;$/;"	f	class:ObjetHistory	file:
+yArrivee	cmd/Move.java	/^		private int yArrivee;$/;"	f	class:Move.Ligne	file:
+yArrivee	commande/Move.java	/^		private int yArrivee;$/;"	f	class:Move.Ligne	file:
+yDepart	cmd/Move.java	/^		private int yDepart;$/;"	f	class:Move.Ligne	file:
+yDepart	commande/Move.java	/^		private int yDepart;$/;"	f	class:Move.Ligne	file:
+ySouris	ihm/Dessin.java	/^	double ySouris,xSouris;$/;"	f	class:Dessin

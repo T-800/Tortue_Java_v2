@@ -46,10 +46,20 @@ public class Variables extends Cmd {
 				return false;
 			}
 		}
-		else if (canDoAllCalcule(sAffectation)){
-			System.out.println("1");
-			valeur = doCalcule(sAffectation);
-			var.setValeur_Variable(valeur);
+		else if(bienP(sAffectation)){
+			boolean canContinue = true;
+			while(parenthese(sAffectation) && canContinue){
+				String ss = subParenthese(sAffectation);
+				String subS[] = ss.split(" ");
+				String cal = calculeTab(subS);
+				try{
+					int i = Integer.parseInt(cal);
+					sAffectation = sAffectation.replace("("+ss+")",""+i);
+				}catch (NumberFormatException e1){
+					canContinue = false;
+					System.out.println("Impossible de faire le calcul ("+ss+") n'est pas un nombre");
+				}			
+			}
 		}
 		else {
 			return false;

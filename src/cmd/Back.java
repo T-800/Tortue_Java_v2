@@ -8,7 +8,7 @@ public class Back extends Cmd {
 		if(commande.length>1)return "1";
 
 		dessin.curseur.restorXYD();
-
+		
 
 		return "0";
 	}

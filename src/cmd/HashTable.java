@@ -35,6 +35,7 @@ public class HashTable {
 		hashCommande.put("MOVE", new Move());
 		hashCommande.put("VAR", new Variables());
 		hashCommande.put("FONCION", new Fonctions());
+		hashCommande.put("TURN", new Turn());
 		
 		hashCommande.put("GO", new Go());
 		/*
@@ -50,7 +51,6 @@ public class HashTable {
 		hashCommande.put("REPEAT", new Repeat());
 		hashCommande.put("RIGHT", new Right());
 		hashCommande.put("SAVE", new Save());
-		hashCommande.put("TURN", new Turn());
 		hashCommande.put("UNDO", new Undo());
 		hashCommande.put("VAR", new Variables());
 		hashCommande.put("/*", new Commentaire());
