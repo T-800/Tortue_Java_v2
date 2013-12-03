@@ -44,7 +44,7 @@ public class TableCommande {
 //		table.put("REPEAT", new Repeat());
 		table.put("RIGHT", new Right(curseur));
 //		table.put("SAVE", new Save());
-//		table.put("TURN", new Turn(curseur,listeVariables));
+		table.put("TURN", new Turn(curseur,listeVariables));
 //		table.put("UNDO", new Undo());		
 		table.put("UP", new Up(curseur));
 //		table.put("VAR", new Variables(listeVariables));

@@ -71,6 +71,7 @@ public class Convert {
 	 */
 	public static String calculeTab(String tab[],ListeVariables liste_Variables){
 		int a = 0,b = 0;
+        if(tab.length == 1)return tab[0];
 		if(tab.length != 3)return "ERROR";
 
 		if(tab[0].charAt(0) == '_' ){
@@ -115,18 +116,22 @@ public class Convert {
 			case "-" :
 			 	return ""+(a-b);
 			default :
-				return "ERROR";
+				return "ERRdfsdgh;j;OR";
 
 		}
 	}
 
-	
-	/*
-	 * cette fonction prend en argument un string s et le transforme
-	 *  - si c'est un calcule (...) il fait le calcule et retourne le String du resultat ou le string erreur
-	 *  - si c'est une variable il renvoit le string de la valeur de la variable ou le string erreur
-	 *  - sinon  il renvoit le string sans changement (ex : save /home/user/test.png)
-	 */
+
+    /**
+     * Cette fonction prend en argument un string s qui représente un argument de fonction
+     * et retourne la valeur string de cette argument ou le string erreur
+     * les arguments valides sont :
+     *      - Soit une variable
+     *      - Soit un entier
+     *      - Soit un calcul
+     * @param s
+     * @return String la valeur string de cette argument ou le string erreur
+     */
 	
 	public static String convertArg(String s,ListeVariables listeVariables){
 		switch (s.charAt(0)){
@@ -135,7 +140,8 @@ public class Convert {
 					boolean canContinue = true;
 					while(Verification.parenthese(s) && canContinue){
 						String ss = subParenthese(s);
-						String subS[] = ss.split(" ");
+                        String ss_tmp = ss.trim();
+						String subS[] = ss_tmp.split(" ");
 						String cal = Convert.calculeTab(subS,listeVariables);
 						try{
 							int i = Integer.parseInt(cal);
@@ -194,6 +200,5 @@ public class Convert {
 		}
 		return list;
 	}
-	
 
 }
