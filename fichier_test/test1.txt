@@ -1,0 +1,7 @@
+move 100
+up
+move 200
+left
+move 200
+down
+move 200

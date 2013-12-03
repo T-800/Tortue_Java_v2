@@ -13,6 +13,9 @@ public class ListeHistorique {
 	public void addToList(String cmd,String error_msg){
 		this.liste.add(new Historique(cmd, error_msg));
 	}
+    public void  setLastErrorMsg(String msg){
+        liste.get(liste.size()-1).setError_msg(msg);
+    }
 	
 	public String getHtmlmsg(){
 		String msg = "";
@@ -36,7 +39,12 @@ public class ListeHistorique {
 	public class Historique {
 		
 		private String commande;
-		private String error_msg;
+
+        public void setError_msg(String error_msg) {
+            this.error_msg = error_msg;
+        }
+
+        private String error_msg;
 		
 		public Historique(String cmd, String error_msg) {
 			this.commande = cmd;

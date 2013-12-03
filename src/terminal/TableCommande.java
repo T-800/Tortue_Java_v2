@@ -34,7 +34,7 @@ public class TableCommande {
 //		table.put("IF", new If());
 		table.put("LEFT", new Left(curseur));
 		table.put("MOVE", new Move(curseur, listeVariables, listeCommande)); // tester avec les variables et refaire random random
-//		table.put("OPEN", new Open());
+		table.put("OPEN", new Open(this,listeHistorique));
 //		table.put("PENCOLOR", new PenColor());
 		table.put("PENDOWN", new PenDown(curseur));
 //		table.put("PENSIZE", new PenSize(curseur));
