@@ -31,6 +31,7 @@ public class Variables extends Cmd {
 	}
 
 	private void declaration(String nom_Variable){
+		// TODO : tester si la variable n'éxiste pas deja
 		ObjetVariables var = new ObjetVariables(nom_Variable);
 		liste_Variables.add(var);
 	}

@@ -65,6 +65,10 @@ public class Turn extends Cmd {
 				else return "4";
 				break;
 			case '_' :
+				String varNameString = commande[1].substring(1);
+				ObjetVariables var = get_Variable(varNameString);
+				if(var == null) return "La variable "+ commande[1]+" n'éxiste pas.";
+				valeur = var.getValeur_Variable();
 				break;
 
 			default :

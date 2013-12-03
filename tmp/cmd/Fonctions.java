@@ -20,6 +20,8 @@ public class Fonctions extends Cmd {
 
 	private void declaration(String nom_Fonction){
 		
+		ObjetFonction var = new ObjetFonction(nom_Variable);
+		liste_Variables.add(var);
 	}
 
 	protected class ObjetFonction {
