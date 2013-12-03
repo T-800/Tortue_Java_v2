@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d90bf06c-ccbc-4cad-9654-d75d2ad8f63b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/commande/Open.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/liste/ListeHistorique.java" afterPath="$PROJECT_DIR$/src/liste/ListeHistorique.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/interfaceGraphique/PanelTerminal.java" afterPath="$PROJECT_DIR$/src/interfaceGraphique/PanelTerminal.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dessin/Curseur.java" afterPath="$PROJECT_DIR$/src/dessin/Curseur.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/commande/Move.java" afterPath="$PROJECT_DIR$/src/commande/Move.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/interfaceGraphique/PanelInfo.java" afterPath="$PROJECT_DIR$/src/interfaceGraphique/PanelInfo.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/commande/Pensize.java" afterPath="$PROJECT_DIR$/src/commande/Pensize.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/terminal/TableCommande.java" afterPath="$PROJECT_DIR$/src/terminal/TableCommande.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Tortue_Java_v2.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -14,12 +14,16 @@
     <file path="/Convert.java" changelist="d90bf06c-ccbc-4cad-9654-d75d2ad8f63b" time="1386094707279" ignored="false" />
     <file path="/Turn.java" changelist="d90bf06c-ccbc-4cad-9654-d75d2ad8f63b" time="1386087427152" ignored="false" />
     <file path="/TODO" changelist="d90bf06c-ccbc-4cad-9654-d75d2ad8f63b" time="1386087910910" ignored="false" />
-    <file path="/PanelInfo.java" changelist="d90bf06c-ccbc-4cad-9654-d75d2ad8f63b" time="1386088058425" ignored="false" />
+    <file path="/PanelInfo.java" changelist="d90bf06c-ccbc-4cad-9654-d75d2ad8f63b" time="1386107135376" ignored="false" />
     <file path="/ListeVariables.java" changelist="d90bf06c-ccbc-4cad-9654-d75d2ad8f63b" time="1386091337474" ignored="false" />
     <file path="/Open.java" changelist="d90bf06c-ccbc-4cad-9654-d75d2ad8f63b" time="1386098649020" ignored="false" />
-    <file path="/TableCommande.java" changelist="d90bf06c-ccbc-4cad-9654-d75d2ad8f63b" time="1386097307900" ignored="false" />
+    <file path="/TableCommande.java" changelist="d90bf06c-ccbc-4cad-9654-d75d2ad8f63b" time="1386106382627" ignored="false" />
     <file path="/PanelTerminal.java" changelist="d90bf06c-ccbc-4cad-9654-d75d2ad8f63b" time="1386098529737" ignored="false" />
     <file path="/ListeHistorique.java" changelist="d90bf06c-ccbc-4cad-9654-d75d2ad8f63b" time="1386098515628" ignored="false" />
+    <file path="$PROJECT_DIR$/.idea/workspace.xml" changelist="d90bf06c-ccbc-4cad-9654-d75d2ad8f63b" time="1386109178526" ignored="false" />
+    <file path="/Pensize.java" changelist="d90bf06c-ccbc-4cad-9654-d75d2ad8f63b" time="1386106792106" ignored="false" />
+    <file path="/Curseur.java" changelist="d90bf06c-ccbc-4cad-9654-d75d2ad8f63b" time="1386107047946" ignored="false" />
+    <file path="/Move.java" changelist="d90bf06c-ccbc-4cad-9654-d75d2ad8f63b" time="1386108347555" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +87,7 @@
       <file leaf-file-name="PanelTerminal.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/interfaceGraphique/PanelTerminal.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="46" column="49" selection-start="1102" selection-end="1102" vertical-scroll-proportion="0.0">
+            <state line="45" column="0" selection-start="986" selection-end="986" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -92,25 +96,7 @@
       <file leaf-file-name="TableCommande.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/terminal/TableCommande.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="55" selection-start="1413" selection-end="1413" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ListeCommande.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/liste/ListeCommande.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="13" selection-start="77" selection-end="77" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ListeHistorique.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/liste/ListeHistorique.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="48" selection-start="390" selection-end="390" vertical-scroll-proportion="0.0">
+            <state line="39" column="0" selection-start="1506" selection-end="1506" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -131,43 +117,63 @@
       <file leaf-file-name="PanelDessin.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/interfaceGraphique/PanelDessin.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="45" column="75" selection-start="1377" selection-end="1377" vertical-scroll-proportion="0.0">
+            <state line="45" column="72" selection-start="1377" selection-end="1377" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Pensize.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/commande/Pensize.java">
+      <file leaf-file-name="ListeCommande.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/liste/ListeCommande.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="13" selection-start="32" selection-end="32" vertical-scroll-proportion="0.0">
+            <state line="104" column="58" selection-start="1584" selection-end="1584" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Move.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="PenSize.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/commande/PenSize.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="40" column="18" selection-start="1218" selection-end="1218" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PanelInfo.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/interfaceGraphique/PanelInfo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="141" column="126" selection-start="3940" selection-end="3940" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Curseur.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/dessin/Curseur.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="25" column="0" selection-start="507" selection-end="507" vertical-scroll-proportion="0.85507244">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Turn.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/commande/Turn.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="21" column="18" selection-start="482" selection-end="488" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Move.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/commande/Move.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="101" column="4" selection-start="2958" selection-end="2958" vertical-scroll-proportion="0.7289157">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Commande.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/commande/Commande.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="27" selection-start="122" selection-end="122" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Fonction.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/commande/Fonction.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="13" selection-start="0" selection-end="2839" vertical-scroll-proportion="0.0">
+            <state line="71" column="8" selection-start="1867" selection-end="1867" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -191,17 +197,20 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/commande/Move.java" />
         <option value="$PROJECT_DIR$/src/commande/Turn.java" />
         <option value="$PROJECT_DIR$/TODO" />
-        <option value="$PROJECT_DIR$/src/interfaceGraphique/PanelInfo.java" />
         <option value="$PROJECT_DIR$/src/commande/Variables.java" />
         <option value="$PROJECT_DIR$/src/algo/Convert.java" />
         <option value="$PROJECT_DIR$/src/liste/ListeVariables.java" />
-        <option value="$PROJECT_DIR$/src/terminal/TableCommande.java" />
         <option value="$PROJECT_DIR$/src/liste/ListeHistorique.java" />
         <option value="$PROJECT_DIR$/src/interfaceGraphique/PanelTerminal.java" />
         <option value="$PROJECT_DIR$/src/commande/Open.java" />
+        <option value="$PROJECT_DIR$/src/commande/Pensize.java" />
+        <option value="$PROJECT_DIR$/src/terminal/TableCommande.java" />
+        <option value="$PROJECT_DIR$/src/commande/PenSize.java" />
+        <option value="$PROJECT_DIR$/src/dessin/Curseur.java" />
+        <option value="$PROJECT_DIR$/src/interfaceGraphique/PanelInfo.java" />
+        <option value="$PROJECT_DIR$/src/commande/Move.java" />
       </list>
     </option>
   </component>
@@ -334,7 +343,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="interfaceGraphique" />
+              <option name="myItemId" value="liste" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -400,6 +409,7 @@
   <component name="PropertiesComponent">
     <property name="GoToFile.includeJavaFiles" value="false" />
     <property name="project.structure.last.edited" value="Project" />
+    <property name="OverrideImplement.combined" value="true" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="recentsLimit" value="5" />
@@ -586,11 +596,12 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32876712" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32876712" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3989726" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32876712" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32876712" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3270548" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32876712" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -600,7 +611,6 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32876712" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -670,20 +680,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/commande/Turn.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="4" selection-start="1151" selection-end="1151" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TODO">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="0" selection-start="114" selection-end="114" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/algo/Convert.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="96" column="13" selection-start="2745" selection-end="2745" vertical-scroll-proportion="0.0">
@@ -704,13 +700,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/interfaceGraphique/PanelInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="178" column="100" selection-start="5418" selection-end="5418" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/commande/Variables.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="69" column="51" selection-start="1989" selection-end="1989" vertical-scroll-proportion="0.0">
@@ -725,13 +714,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/liste/ListeCommande.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="13" selection-start="77" selection-end="77" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/commande/Commande.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="27" selection-start="122" selection-end="122" vertical-scroll-proportion="0.0">
@@ -739,23 +721,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/terminal/TableCommande.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="55" selection-start="1413" selection-end="1413" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/liste/ListeHistorique.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="16" column="48" selection-start="390" selection-end="390" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/interfaceGraphique/PanelTerminal.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="49" selection-start="1102" selection-end="1102" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -770,23 +738,67 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/interfaceGraphique/PanelDessin.java">
+    <entry file="file://$PROJECT_DIR$/src/interfaceGraphique/PanelTerminal.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="75" selection-start="1377" selection-end="1377" vertical-scroll-proportion="0.0">
+        <state line="45" column="0" selection-start="986" selection-end="986" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/commande/Pensize.java">
+    <entry file="file://$PROJECT_DIR$/src/commande/PenSize.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="13" selection-start="32" selection-end="32" vertical-scroll-proportion="0.0">
+        <state line="40" column="18" selection-start="1218" selection-end="1218" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/interfaceGraphique/PanelInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="141" column="126" selection-start="3940" selection-end="3940" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/interfaceGraphique/PanelDessin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="72" selection-start="1377" selection-end="1377" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/liste/ListeCommande.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="104" column="58" selection-start="1584" selection-end="1584" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/commande/Turn.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="18" selection-start="482" selection-end="488" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/commande/Move.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="101" column="4" selection-start="2958" selection-end="2958" vertical-scroll-proportion="0.7289157">
+        <state line="71" column="8" selection-start="1867" selection-end="1867" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/terminal/TableCommande.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="0" selection-start="1506" selection-end="1506" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dessin/Curseur.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="0" selection-start="507" selection-end="507" vertical-scroll-proportion="0.85507244">
           <folding />
         </state>
       </provider>

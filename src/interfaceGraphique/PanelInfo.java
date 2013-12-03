@@ -104,7 +104,7 @@ public class PanelInfo extends JPanel{
 		
 		
 		
-		jltaille = new JLabel("Taille : - X +", JLabel.LEFT);//Image Texte Image
+		jltaille = new JLabel("Taille : - "+curseur.getPenSize()+" +", JLabel.LEFT);//Image Texte Image
 
 		this.add(jlsouris);
 		this.add(jlcurseur);
@@ -140,6 +140,7 @@ public class PanelInfo extends JPanel{
 		this.jlsouris.setText("("+(curseur.getSourisX()-Fenetre.getCenterDessin()[0])+";"+(Fenetre.getCenterDessin()[1]-curseur.getSourisY())+")");
 		this.jlcurseur.setText("Curseur ("+(curseur.getX()-Fenetre.getCenterDessin()[0])+";"+(Fenetre.getCenterDessin()[1]-curseur.getY())+"|°"+curseur.getD()+")");
 		this.jlsaved.setText("Curseur ("+curseur.getTabRemember()[0]+";"+curseur.getTabRemember()[1]+"|°"+curseur.getTabRemember()[2]+")");
+        this.jltaille.setText("Taille : - "+curseur.getPenSize()+" +");//Image Texte Image
 		
 		//this.jldessine
 	}

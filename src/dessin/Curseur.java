@@ -23,6 +23,7 @@ public class Curseur {
 		this.couleurCurseur = Color.BLACK;
 		this.couleurBg = Color.WHITE;
 		this.penDown = true;
+        this.penSize = 1;
 	}
 	
 	public Color getCouleurBg(){

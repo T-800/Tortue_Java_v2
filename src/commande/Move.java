@@ -66,8 +66,10 @@ public class Move extends Commande {
 			}
 			coor[0] += (Fenetre.getCenterDessin()[0]);
 			coor[1] = (Fenetre.getCenterDessin()[1])-coor[1];
+
 		}
-		
+
+
 		if(!dans_Le_Dessin(coor)) return "Les coordonnées ne sont pas dans le dessin";
 		
 		listeCommande.addLigne(curseur.getX(), curseur.getY(), coor[0], coor[1], curseur.getCouleurCurseur(), curseur.getPenSize());
@@ -79,8 +81,8 @@ public class Move extends Commande {
 
 	private int [] calculeCoordArrive(int distance){
 		int coor[] = new int[2];
-		coor[0] = curseur.getX() + distance * (int)Math.cos(Math.toRadians(curseur.getD()));
-		coor[1] = curseur.getY() + distance * (int)Math.sin(Math.toRadians(180 + curseur.getD()));
+		coor[0] = (int)(curseur.getX() + distance * Math.cos(Math.toRadians(curseur.getD())));
+		coor[1] = (int)(curseur.getY() + distance * Math.sin(Math.toRadians(180 + curseur.getD())));
 		return coor;
 	}
 
