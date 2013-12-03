@@ -94,10 +94,12 @@ public class PanelInfo extends JPanel{
 		
 		jbpencolor = new JButton();
 		jbpencolor.setIcon(pencolor);
+        jbpencolor.setBackground(curseur.getCouleurCurseur());
 		jbpencolor.addActionListener(new Ecouteur());
 		
 		jbbgcolor = new JButton();
 		jbbgcolor.setIcon(bgcolor);
+        jbbgcolor.setBackground(curseur.getCouleurBg());
 		jbbgcolor.addActionListener(new Ecouteur());
 		
 		
@@ -170,9 +172,11 @@ public class PanelInfo extends JPanel{
 	    		  listeHistorique.addToList("new",tableCommande.executerCommande("new"));
 	    	  }
 	    	  else if(e.getSource()==jbpencolor){
+                  Color color = JColorChooser.showDialog(null, "Choisir la couleur du pinceau",null);
 	    		  listeHistorique.addToList("pencolor",tableCommande.executerCommande("pencolor"));
 	    	  }
 	    	  else if(e.getSource()==jbbgcolor){
+                  Color color = JColorChooser.showDialog(null, "Choisir la couleur de l'arrière plan",null);
 	    		  listeHistorique.addToList("backgroundcolor",tableCommande.executerCommande("backgroundcolor"));
 	    	  }
 	        

@@ -76,7 +76,10 @@ public class Convert {
 
 		if(tab[0].charAt(0) == '_' ){
 			ObjetVariables v = Convert.get_Variable(liste_Variables, tab[0].substring(1));
-			if(v != null) a = v.getValeur_Variable();
+			if(v != null) {
+                String s = v.getValeur_Variable();
+                a = Integer.parseInt(s);
+            }
 			else return "Impossible de faire le calcul la variable "+tab[0]+" n'éxiste pas";
 		}
 		else {
@@ -88,7 +91,10 @@ public class Convert {
 		}
 		if(tab[2].charAt(0) == '_' ){
 			ObjetVariables v = Convert.get_Variable(liste_Variables,tab[2]);
-			if(v != null) a = v.getValeur_Variable();
+			if(v != null) {
+                String s = v.getValeur_Variable();
+                a = Integer.parseInt(s);
+            }
 			else return "Impossible de faire le calcul la variable "+tab[2]+" n'éxiste pas";
 		}
 		else {

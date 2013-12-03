@@ -34,7 +34,7 @@ public class ListeVariables {
 	
 	public class ObjetVariables {
 		private String nom_Variable;
-		private int valeur_Variable = 0;
+		private String valeur_Variable = "0";
 
 		public ObjetVariables(String nom_Variable) {
 			this.nom_Variable = nom_Variable;
@@ -48,11 +48,11 @@ public class ListeVariables {
 			this.nom_Variable = nom_Variable;
 		}
 
-		public int getValeur_Variable() {
+		public String getValeur_Variable() {
 			return valeur_Variable;
 		}
 
-		public void setValeur_Variable(int valeur_Variable) {
+		public void setValeur_Variable(String valeur_Variable) {
 			this.valeur_Variable = valeur_Variable;
 		}
 	}

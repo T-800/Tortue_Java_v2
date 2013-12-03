@@ -2,17 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d90bf06c-ccbc-4cad-9654-d75d2ad8f63b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Tortue_Java_v2.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TODO" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/algo/Convert.java" afterPath="$PROJECT_DIR$/src/algo/Convert.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/liste/ListeVariables.java" afterPath="$PROJECT_DIR$/src/liste/ListeVariables.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/interfaceGraphique/PanelInfo.java" afterPath="$PROJECT_DIR$/src/interfaceGraphique/PanelInfo.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/terminal/TableCommande.java" afterPath="$PROJECT_DIR$/src/terminal/TableCommande.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/commande/Turn.java" afterPath="$PROJECT_DIR$/src/commande/Turn.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/commande/Variables.java" afterPath="$PROJECT_DIR$/src/commande/Variables.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Tortue_Java_v2.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="d90bf06c-ccbc-4cad-9654-d75d2ad8f63b" time="1386083211792" ignored="false" />
-    <file path="/Convert.java" changelist="d90bf06c-ccbc-4cad-9654-d75d2ad8f63b" time="1386086646740" ignored="false" />
-    <file path="$PROJECT_DIR$/.idea/workspace.xml" changelist="d90bf06c-ccbc-4cad-9654-d75d2ad8f63b" time="1386087528712" ignored="false" />
+    <file path="/Convert.java" changelist="d90bf06c-ccbc-4cad-9654-d75d2ad8f63b" time="1386094707279" ignored="false" />
     <file path="/Turn.java" changelist="d90bf06c-ccbc-4cad-9654-d75d2ad8f63b" time="1386087427152" ignored="false" />
+    <file path="/TODO" changelist="d90bf06c-ccbc-4cad-9654-d75d2ad8f63b" time="1386087910910" ignored="false" />
+    <file path="/PanelInfo.java" changelist="d90bf06c-ccbc-4cad-9654-d75d2ad8f63b" time="1386088058425" ignored="false" />
+    <file path="/ListeVariables.java" changelist="d90bf06c-ccbc-4cad-9654-d75d2ad8f63b" time="1386091337474" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,16 +81,16 @@
       <file leaf-file-name="Main.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="123" selection-start="175" selection-end="175" vertical-scroll-proportion="0.0">
+            <state line="12" column="0" selection-start="175" selection-end="175" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TableCommande.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="TableCommande.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/terminal/TableCommande.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="46" column="0" selection-start="1772" selection-end="1772" vertical-scroll-proportion="0.0">
+            <state line="77" column="39" selection-start="2482" selection-end="2485" vertical-scroll-proportion="0.90361446">
               <folding />
             </state>
           </provider>
@@ -94,7 +99,7 @@
       <file leaf-file-name="Convert.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/algo/Convert.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="143" column="46" selection-start="3949" selection-end="3949" vertical-scroll-proportion="0.0">
+            <state line="96" column="13" selection-start="2745" selection-end="2745" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="method#main#0;class#Convert#0" expanded="false" />
                 <element signature="method#commandeToTab#0;class#Convert#0" expanded="false" />
@@ -106,10 +111,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Turn.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Variables.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/commande/Variables.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="69" column="51" selection-start="1989" selection-end="1989" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Turn.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/commande/Turn.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="99" selection-start="702" selection-end="702" vertical-scroll-proportion="0.37431693">
+            <state line="46" column="4" selection-start="1151" selection-end="1151" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PanelInfo.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/interfaceGraphique/PanelInfo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="178" column="100" selection-start="5418" selection-end="5418" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -118,19 +141,26 @@
       <file leaf-file-name="Move.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/commande/Move.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="86" selection-start="822" selection-end="873" vertical-scroll-proportion="0.0">
+            <state line="101" column="4" selection-start="2958" selection-end="2958" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="package-info.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/algo/package-info.java">
+      <file leaf-file-name="TODO" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/TODO">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#0#54#0" expanded="true" />
-              </folding>
+            <state line="6" column="0" selection-start="114" selection-end="114" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ListeVariables.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/liste/ListeVariables.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="37" column="117" selection-start="728" selection-end="728" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -154,9 +184,13 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/src/commande/Move.java" />
+        <option value="$PROJECT_DIR$/src/commande/Turn.java" />
+        <option value="$PROJECT_DIR$/TODO" />
+        <option value="$PROJECT_DIR$/src/interfaceGraphique/PanelInfo.java" />
+        <option value="$PROJECT_DIR$/src/commande/Variables.java" />
         <option value="$PROJECT_DIR$/src/algo/Convert.java" />
         <option value="$PROJECT_DIR$/src/terminal/TableCommande.java" />
-        <option value="$PROJECT_DIR$/src/commande/Turn.java" />
+        <option value="$PROJECT_DIR$/src/liste/ListeVariables.java" />
       </list>
     </option>
   </component>
@@ -221,6 +255,38 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="tmp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tortue_Java_v2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tortue_Java_v2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tmp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cmd" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tortue_Java_v2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tortue_Java_v2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -258,6 +324,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="commande" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tortue_Java_v2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tortue_Java_v2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="algo" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -566,6 +650,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="0" selection-start="175" selection-end="175" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/algo/package-info.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -575,16 +666,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/commande/Turn.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="123" selection-start="175" selection-end="175" vertical-scroll-proportion="0.0">
+        <state line="46" column="4" selection-start="1151" selection-end="1151" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/commande/Move.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="101" column="4" selection-start="2958" selection-end="2958" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TODO">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="0" selection-start="114" selection-end="114" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/algo/Convert.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="143" column="46" selection-start="3949" selection-end="3949" vertical-scroll-proportion="0.0">
+        <state line="96" column="13" selection-start="2745" selection-end="2745" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="method#main#0;class#Convert#0" expanded="false" />
             <element signature="method#commandeToTab#0;class#Convert#0" expanded="false" />
@@ -595,23 +700,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/commande/Move.java">
+    <entry file="file://$PROJECT_DIR$/src/commande/Variables.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="86" selection-start="822" selection-end="873" vertical-scroll-proportion="0.0">
+        <state line="69" column="51" selection-start="1989" selection-end="1989" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/liste/ListeVariables.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="117" selection-start="728" selection-end="728" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/interfaceGraphique/PanelInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="178" column="100" selection-start="5418" selection-end="5418" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/terminal/TableCommande.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="0" selection-start="1772" selection-end="1772" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/commande/Turn.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="99" selection-start="702" selection-end="702" vertical-scroll-proportion="0.37431693">
+        <state line="77" column="39" selection-start="2482" selection-end="2485" vertical-scroll-proportion="0.90361446">
           <folding />
         </state>
       </provider>

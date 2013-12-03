@@ -45,7 +45,7 @@ public class Variables extends Commande {
 		if( sAffectation.charAt(0) != '('){
 			try{
 				valeur = Integer.parseInt(sAffectation);
-				var.setValeur_Variable(valeur);
+				var.setValeur_Variable(sAffectation);
 
 			}catch (NumberFormatException e1){
 				return sAffectation+"n'est pas une affectation valide";
@@ -67,7 +67,7 @@ public class Variables extends Commande {
 			}
 			try{
 				valeur = Integer.parseInt(sAffectation);
-				var.setValeur_Variable(valeur);
+				var.setValeur_Variable(sAffectation);
 
 			}catch (NumberFormatException e1){
 				return sAffectation+"n'est pas une affectation valide";
