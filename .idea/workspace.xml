@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d90bf06c-ccbc-4cad-9654-d75d2ad8f63b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/interfaceGraphique/PanelTerminal.java" afterPath="$PROJECT_DIR$/src/interfaceGraphique/PanelTerminal.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fichier_test/fonctions.txt" afterPath="$PROJECT_DIR$/fichier_test/fonctions.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fichier_test/neige.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/commande/Move.java" afterPath="$PROJECT_DIR$/src/commande/Move.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/commande/Open.java" afterPath="$PROJECT_DIR$/src/commande/Open.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="d4eb2303-2d0f-4a94-bf2e-08cffdb095ed" name="New changelist" comment="" />
     <ignored path="Tortue_Java_v2.iws" />
@@ -146,10 +148,37 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PanelTerminal.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="PanelTerminal.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/interfaceGraphique/PanelTerminal.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="46" column="12" selection-start="1065" selection-end="1196" vertical-scroll-proportion="0.67460316">
+            <state line="46" column="12" selection-start="1065" selection-end="1196" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Move.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/commande/Move.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="29" column="77" selection-start="873" selection-end="873" vertical-scroll-proportion="-3.64">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Open.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/commande/Open.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="52" column="48" selection-start="1507" selection-end="1507" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="neige.txt" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/fichier_test/neige.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="1" column="0" selection-start="11" selection-end="97" vertical-scroll-proportion="0.042016808">
               <folding />
             </state>
           </provider>
@@ -173,15 +202,12 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/interfaceGraphique/PanelInfo.java" />
-        <option value="$PROJECT_DIR$/src/commande/Open.java" />
         <option value="$PROJECT_DIR$/src/interfaceGraphique/PanelDessin.java" />
         <option value="$PROJECT_DIR$/src/commande/PenSize.java" />
         <option value="$PROJECT_DIR$/src/commande/Pensize.java" />
         <option value="$PROJECT_DIR$/src/commande/PenS.java" />
         <option value="$PROJECT_DIR$/src/terminal/TableCommande.java" />
         <option value="$PROJECT_DIR$/src/commande/Repeat.java" />
-        <option value="$PROJECT_DIR$/src/commande/Move.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/tmp/cmd/Fonctions.java" />
         <option value="$PROJECT_DIR$/src/commande/Variables.java" />
@@ -189,6 +215,9 @@
         <option value="$PROJECT_DIR$/src/interfaceGraphique/PanelSud.java" />
         <option value="$PROJECT_DIR$/fichier_test/fonctions.txt" />
         <option value="$PROJECT_DIR$/src/interfaceGraphique/PanelTerminal.java" />
+        <option value="$PROJECT_DIR$/src/commande/Move.java" />
+        <option value="$PROJECT_DIR$/src/commande/Open.java" />
+        <option value="$PROJECT_DIR$/fichier_test/neige.txt" />
       </list>
     </option>
   </component>
@@ -273,6 +302,38 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="interfaceGraphique" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tortue_Java_v2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tortue_Java_v2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="commande" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tortue_Java_v2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tortue_Java_v2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fichier_test" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -560,23 +621,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar:///usr/lib/jvm/java-7-openjdk/jre/lib/rt.jar!/java/util/ArrayList.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="168" column="0" selection-start="6107" selection-end="6107" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/commande/Move.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="86" column="8" selection-start="2433" selection-end="2433" vertical-scroll-proportion="0.04109589">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tmp/cmd/Fonctions.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="28" selection-start="251" selection-end="251" vertical-scroll-proportion="0.42016807" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="5" column="34" selection-start="127" selection-end="127" vertical-scroll-proportion="0.1984127">
@@ -661,7 +705,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/interfaceGraphique/PanelTerminal.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="12" selection-start="1065" selection-end="1196" vertical-scroll-proportion="0.67460316">
+        <state line="46" column="12" selection-start="1065" selection-end="1196" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/commande/Move.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="77" selection-start="873" selection-end="873" vertical-scroll-proportion="-3.64">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/commande/Open.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="52" column="48" selection-start="1507" selection-end="1507" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fichier_test/neige.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="0" selection-start="11" selection-end="97" vertical-scroll-proportion="0.042016808">
           <folding />
         </state>
       </provider>

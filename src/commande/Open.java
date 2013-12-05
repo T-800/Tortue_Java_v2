@@ -39,7 +39,6 @@ public class Open extends Commande {
 
         if (open.showDialog(null, "Choix du fichier") == JFileChooser.APPROVE_OPTION) {
             fichier = open.getSelectedFile();
-            System.out.println(fichier);
             if (rightExtention(fichier.getPath()) && fichier.exists()) {
                 try {
                     reader = new BufferedReader(new FileReader(fichier));

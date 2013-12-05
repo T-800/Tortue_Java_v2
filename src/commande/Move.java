@@ -28,7 +28,6 @@ public class Move extends Commande {
 		String argsString[] = new String[commande.length-1];
 		for(int i = 0; i<argsString.length; i++){
 			argsString[i] = Convert.convertArg(commande[i+1],listeVariables);
-			System.out.println(argsString[i]);
 		}
 
 		
