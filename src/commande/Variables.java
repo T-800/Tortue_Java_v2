@@ -29,7 +29,8 @@ public class Variables extends Commande {
 
 		}
 		else{ //VAR nom (Déclaration)
-			// TODO : si c'est une chaine simple (que des lettre et '-','_')
+			// TODO: syntaxe des noms de variable
+            // TODO: double déclaration des variables
 			declaration(commande[1]);
 		}
 		return "";

@@ -23,6 +23,7 @@ public class Open extends Commande {
     TableCommande tableCommande;
 
     public Open(TableCommande commande,ListeHistorique listeHistorique) {
+
         this.tableCommande = commande;
         this.listeHistorique = listeHistorique;
         FileFilter filter1 = new ExtensionFileFilter("Fichier texte",
@@ -33,6 +34,7 @@ public class Open extends Commande {
 
     @Override
     public String execute(String[] commande) {
+        if(commande.length>2)return "1";
         File fichier = new File(toString());
 
         if (open.showDialog(null, "Choix du fichier") == JFileChooser.APPROVE_OPTION) {

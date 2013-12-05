@@ -1,10 +1,8 @@
 package commande;
 
 import algo.Convert;
-import liste.ListeCommande;
 import liste.ListeFonctions;
 import liste.ListeFonctions.ObjetFonction;
-import liste.ListeHistorique;
 import liste.ListeVariables;
 import terminal.TableCommande;
 
@@ -13,15 +11,11 @@ import java.util.ArrayList;
 public class Fonction extends Commande {
 	
 	TableCommande tableCommande;
-	ListeHistorique listeHistorique;
-	ListeCommande listeCommande;
 	ListeFonctions listeFonctions;
 	ListeVariables listeVariables;
 	
-	public Fonction(TableCommande commande,ListeHistorique listeHistorique, ListeCommande listeCommande,ListeFonctions listeFonctions, ListeVariables listeVariables) {
+	public Fonction(TableCommande commande,ListeFonctions listeFonctions, ListeVariables listeVariables) {
 		this.tableCommande = commande;
-		this.listeCommande = listeCommande;
-		this.listeHistorique = listeHistorique;
 		this.listeFonctions = listeFonctions;
 		this.listeVariables = listeVariables;
 	}
@@ -41,6 +35,8 @@ public class Fonction extends Commande {
 			
 			ObjetFonction fonc = listeFonctions.getFonction(commande[0].substring(1));
 			if (fonc != null) {
+                // TODO: syntaxe des noms de fonction
+                // TODO: double declaration des fonctions ?
 				if(commande.length-1 != fonc.getNb_Agument_Fonction())return "La fonction "+commande[0]+" a besoin de "+fonc.getNb_Agument_Fonction()+" argument(s)";
 				for(String s : fonc.getListe_Fonction()){
 					String s2 = s;

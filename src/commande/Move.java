@@ -81,8 +81,13 @@ public class Move extends Commande {
 
 	private int [] calculeCoordArrive(int distance){
 		int coor[] = new int[2];
-		coor[0] = (int)(curseur.getX() + distance * Math.cos(Math.toRadians(curseur.getD())));
-		coor[1] = (int)(curseur.getY() + distance * Math.sin(Math.toRadians(180 + curseur.getD())));
+		coor[0] = (int)Math.round(curseur.getX() + distance * Math.cos(Math.toRadians(curseur.getD())));
+		coor[1] = (int)Math.round(curseur.getY() + distance * Math.sin(Math.toRadians(180 + curseur.getD())));
+
+
+
+
+
 		return coor;
 	}
 

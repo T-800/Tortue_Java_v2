@@ -31,8 +31,6 @@ public class PanelDessin extends JPanel implements MouseListener, MouseMotionLis
 	}
 	@Override
 	public void paintComponent(Graphics g) {
-		// TODO Auto-generated method stub
-
 		super.paintComponent(g);
         Graphics2D g2 = (Graphics2D) g;
         g2.setColor(Color.red);
@@ -72,23 +70,15 @@ public class PanelDessin extends JPanel implements MouseListener, MouseMotionLis
 	}
 	@Override
 	public void mouseEntered(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
 	}
 	@Override
 	public void mouseExited(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
 	}
 	@Override
 	public void mousePressed(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
 	}
 	@Override
 	public void mouseReleased(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
 	}
 
 	

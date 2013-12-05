@@ -4,11 +4,11 @@ import algo.Convert;
 import dessin.Curseur;
 import liste.ListeVariables;
 
-public class PenSize extends Commande {
+public class PenS extends Commande {
     private Curseur curseur;
     private ListeVariables listeVariables;
 
-    public PenSize(Curseur curseur, ListeVariables listeVariables){
+    public PenS(Curseur curseur, ListeVariables listeVariables){
         this.curseur = curseur;
         this.listeVariables = listeVariables;
     }
@@ -24,7 +24,7 @@ public class PenSize extends Commande {
             case '-' :
             case '*' :
             case '/' :
-                s ="("+curseur.getPenSize()+" "+commande[1].charAt(0)+" "+  commande[1].substring(1)+")";
+                s ="("+curseur.getPenSize()+" "+commande[1].charAt(0)+" "+ commande[1].substring(1)+")";
         }
         if(commande[1].toLowerCase().equals("random")){
             valeur = 0 + (int)(Math.random()*(100));

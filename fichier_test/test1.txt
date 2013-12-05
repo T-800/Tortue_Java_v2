@@ -1,7 +1,5 @@
-move 100
-up
-move 200
-left
-move 200
-down
-move 200
+Fonction carre 1 [//carre de $1*$1;repeat 4 [move $1;turn +90]] 
+var renaud 
+_renaud= 30 
+Fonction car 1 [//50 carre de $1*$1;Var tmp;_tmp= (_renaud + 0);repeat 80 [:carre _tmp;turn +10;_tmp= (_tmp + 2)] ] 
+:car _renaud 

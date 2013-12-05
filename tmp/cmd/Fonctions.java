@@ -10,7 +10,7 @@ public class Fonctions extends Cmd {
 		if (commande[0].charAt(0) == ':') { //affectation
 			
 		}
-		else{ //VAR nom (Déclaration)
+		else{ //fonction nom (Déclaration)
 			// TODO : si c'est une chaine simple (que des lettre et '-','_')
 			declaration(commande[1]);
 		}

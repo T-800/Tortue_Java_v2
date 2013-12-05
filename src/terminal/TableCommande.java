@@ -28,7 +28,7 @@ public class TableCommande {
 		table.put("CLEAR", new Clear(this,listeHistorique,listeCommande,listeFonctions,listeVariables));
 		table.put("DOWN", new Down(curseur));
 //		table.put("ERASE", new Erase());
-		table.put("FONCTION", new Fonction(this,listeHistorique,listeCommande,listeFonctions,listeVariables));// tester avec instruction composée
+		table.put("FONCTION", new Fonction(this,listeFonctions,listeVariables));// tester avec instruction composée
 //		table.put("GO", new Go());
 //		table.put("HELP", new Help());
 //		table.put("IF", new If());
@@ -37,11 +37,11 @@ public class TableCommande {
 		table.put("OPEN", new Open(this,listeHistorique));
 //		table.put("PENCOLOR", new PenColor());
 		table.put("PENDOWN", new PenDown(curseur));
-		table.put("PENSIZE", new PenSize(curseur,listeVariables));
+		table.put("PENSIZE", new PenS(curseur,listeVariables));
 		table.put("PENUP", new PenUp(curseur));
 //		table.put("REDO", new Redo());
 //		table.put("REMEMBER", new Remember());
-//		table.put("REPEAT", new Repeat());
+		table.put("REPEAT", new Repeat(this,listeFonctions,listeVariables));
 		table.put("RIGHT", new Right(curseur));
 //		table.put("SAVE", new Save());
 		table.put("TURN", new Turn(curseur,listeVariables));
