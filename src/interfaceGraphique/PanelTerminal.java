@@ -44,7 +44,12 @@ public class PanelTerminal extends JTextField implements KeyListener{
 
 			listeHistorique.addToList(keyboard,"");
             String error = table.executerCommande(this.getText());
-            listeHistorique.setLastErrorMsg(error);
+            try {
+                listeHistorique.setLastErrorMsg(error);
+            }catch(ArrayIndexOutOfBoundsException e1){
+
+            }
+
 			PanelOnglet.repaintOnglet();
 			Fenetre.getPanelDessin().repaint();
 			Fenetre.getPanelInfo().repaint();

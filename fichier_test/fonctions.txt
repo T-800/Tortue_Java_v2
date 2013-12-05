@@ -1,2 +1,2 @@
 Fonction carre 1 [//carre de $1*$1;repeat 4 [move $1;turn +90]]
-Fonction car 1 [//36 carre de $1*$1;repeat 36 [:carre $1;turn +10]]
+Fonction car 2 [//$1 carre de $2*$2;repeat $1 [:carre $2;turn +10]]
