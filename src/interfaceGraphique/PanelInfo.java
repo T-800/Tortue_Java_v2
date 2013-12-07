@@ -1,5 +1,6 @@
 package interfaceGraphique;
 
+import com.intellij.ui.Gray;
 import dessin.Curseur;
 import liste.ListeHistorique;
 import terminal.TableCommande;
@@ -10,15 +11,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class PanelInfo extends JPanel{
-	
-	ImageIcon dessine;
-	ImageIcon open;
-	ImageIcon save;
-	ImageIcon pencolor;
-	ImageIcon bgcolor;
-	ImageIcon undo;
-	ImageIcon redo;
-	ImageIcon nnew;
 	
 	private JLabel jlsouris;
 	private JLabel jlcurseur;
@@ -34,24 +26,17 @@ public class PanelInfo extends JPanel{
 	private JButton jbbgcolor;
 	private ListeHistorique listeHistorique;
 	private TableCommande tableCommande;
-
 	private Curseur curseur;
+
 	public PanelInfo(Curseur curseur,ListeHistorique listeHistorique,TableCommande tableCommande) {
-		this.setBackground(new Color(239, 239, 239));
-		this.setForeground(Color.white);
+		this.setBackground(Gray._239);
 		this.listeHistorique = listeHistorique;
 		this.tableCommande = tableCommande;
 		GridLayout gl = new GridLayout();
-		gl.setColumns(6);
+		gl.setColumns(7);
 		gl.setRows(2);
-		dessine = new ImageIcon("./Images/dessine.png");
-		open = new ImageIcon("./Images/open.png");
-		save = new ImageIcon("./Images/save.png");
-		pencolor = new ImageIcon("./Images/pencolor.gif");
-		bgcolor = new ImageIcon("./Images/bgcolor.gif");
-		undo = new ImageIcon("./Images/undo.png");
-		redo = new ImageIcon("./Images/redo.png");
-		nnew = new ImageIcon("./Images/new.png");
+
+
 		gl.setHgap(0);
 		gl.setVgap(0);
 		this.setLayout(gl);
@@ -66,58 +51,58 @@ public class PanelInfo extends JPanel{
 		jlsaved = new JLabel("Save (X;Y|°D)", JLabel.LEFT);
 		
 		jbopen = new JButton();
-		jbopen.setIcon(open);
+		jbopen.setIcon(new ImageIcon("./Images/open.png"));
 		
 		jbopen.addActionListener(new Ecouteur());
 		
 		jbdessine = new JButton();
-		jbdessine.setIcon(dessine);
+		jbdessine.setIcon(new ImageIcon("./Images/dessine.png"));
 		jbdessine.addActionListener(new Ecouteur());
 
 		jbsave = new JButton();
-		jbsave.setIcon(save);
+		jbsave.setIcon(new ImageIcon("./Images/save.png"));
 		jbsave.addActionListener(new Ecouteur());
 
 		jbnew = new JButton();
-		jbnew.setIcon(nnew);
+		jbnew.setIcon(new ImageIcon("./Images/new.png"));
 		jbnew.addActionListener(new Ecouteur());
 
 
 		jbundo = new JButton();
-		jbundo.setIcon(undo);
+		jbundo.setIcon(new ImageIcon("./Images/undo.png"));
 		jbundo.addActionListener(new Ecouteur());
 		
 
 		jbredo = new JButton();
-		jbredo.setIcon(redo);
+		jbredo.setIcon(new ImageIcon("./Images/redo.png"));
 		jbredo.addActionListener(new Ecouteur());
 		
 		jbpencolor = new JButton();
-		jbpencolor.setIcon(pencolor);
+		jbpencolor.setIcon(new ImageIcon("./Images/pencolor.gif"));
         jbpencolor.setBackground(curseur.getCouleurCurseur());
 		jbpencolor.addActionListener(new Ecouteur());
 		
 		jbbgcolor = new JButton();
-		jbbgcolor.setIcon(bgcolor);
+		jbbgcolor.setIcon(new ImageIcon("./Images/bgcolor.gif"));
         jbbgcolor.setBackground(curseur.getCouleurBg());
 		jbbgcolor.addActionListener(new Ecouteur());
 		
 		
 		
 		jltaille = new JLabel("Taille : - "+curseur.getPenSize()+" +", JLabel.LEFT);//Image Texte Image
-
-		this.add(jlsouris);
+        this.add(jbnew);
+        this.add(jbopen);
+        this.add(jbsave);
+        this.add(jbpencolor);
 		this.add(jlcurseur);
-		this.add(jlsaved);
+        this.add(jlsaved);
 		this.add(jbdessine);
-		this.add(jbopen);
-		this.add(jbsave);
-		this.add(jbnew);	
-		this.add(jltaille);
-		this.add(jbundo);
-		this.add(jbredo);
-		this.add(jbpencolor);
-		this.add(jbbgcolor);	
+        this.add(jbundo);
+        this.add(jbredo);
+		this.add(jbbgcolor);
+        this.add(jltaille);
+        this.add(jlsouris);
+
 		jbopen.setPreferredSize(new Dimension(10, 10)); 
 		
 	}
@@ -139,7 +124,7 @@ public class PanelInfo extends JPanel{
 	public void setCurseur(){
 		this.jlsouris.setText("("+(curseur.getSourisX()-Fenetre.getCenterDessin()[0])+";"+(Fenetre.getCenterDessin()[1]-curseur.getSourisY())+")");
 		this.jlcurseur.setText("Curseur ("+(curseur.getX()-Fenetre.getCenterDessin()[0])+";"+(Fenetre.getCenterDessin()[1]-curseur.getY())+"|°"+curseur.getD()+")");
-		this.jlsaved.setText("Curseur ("+curseur.getTabRemember()[0]+";"+curseur.getTabRemember()[1]+"|°"+curseur.getTabRemember()[2]+")");
+		this.jlsaved.setText("Save ("+curseur.getTabRemember()[0]+";"+curseur.getTabRemember()[1]+"|°"+curseur.getTabRemember()[2]+")");
         this.jltaille.setText("Taille : - "+curseur.getPenSize()+" +");//Image Texte Image
 		
 		//this.jldessine
@@ -173,11 +158,11 @@ public class PanelInfo extends JPanel{
 	    		  listeHistorique.addToList("new",tableCommande.executerCommande("new"));
 	    	  }
 	    	  else if(e.getSource()==jbpencolor){
-                  Color color = JColorChooser.showDialog(null, "Choisir la couleur du pinceau",null);
+                  //Color color = JColorChooser.showDialog(null, "Choisir la couleur du pinceau",null);
 	    		  listeHistorique.addToList("pencolor",tableCommande.executerCommande("pencolor"));
 	    	  }
 	    	  else if(e.getSource()==jbbgcolor){
-                  Color color = JColorChooser.showDialog(null, "Choisir la couleur de l'arrière plan",null);
+                  //Color color = JColorChooser.showDialog(null, "Choisir la couleur de l'arrière plan",null);
 	    		  listeHistorique.addToList("backgroundcolor",tableCommande.executerCommande("backgroundcolor"));
 	    	  }
 	        

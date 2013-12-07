@@ -9,14 +9,14 @@ import java.awt.*;
 
 public class PanelOnglet extends JTabbedPane{
 	
-	private static PanelHistorique historyPan;
-	private static PanelFoctions fonctionPan;
-	private static PanelVariables variablePan;
+	private static OngletHistorique historyPan;
+	private static OngletFoctions fonctionPan;
+	private static OngletVariables variablePan;
 	
 	public PanelOnglet(ListeHistorique listeHistorique,ListeFonctions listeFonctions,ListeVariables listeVariables) {
-		historyPan = new PanelHistorique(listeHistorique);
-		fonctionPan = new PanelFoctions(listeFonctions);
-		variablePan = new PanelVariables(listeVariables);
+		historyPan = new OngletHistorique(listeHistorique);
+		fonctionPan = new OngletFoctions(listeFonctions);
+		variablePan = new OngletVariables(listeVariables);
 		JScrollPane historiyScroll = new JScrollPane(historyPan,JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 		JScrollPane fonctionsScroll = new JScrollPane(fonctionPan,JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 		JScrollPane variableScroll = new JScrollPane(variablePan,JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);

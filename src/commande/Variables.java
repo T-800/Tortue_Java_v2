@@ -15,9 +15,9 @@ public class Variables extends Commande {
 	
 	@Override
 	public String execute(String[] commande){
-		System.out.print(toString(commande));
 		if (commande[0].charAt(0) == '_') { //affectation
-			String cmd = commande[0]+" "+commande[1];
+            String cmd="";
+            for (String s : commande) cmd+=s;
 			String tabArg[] = cmd.split("=");
 			if (tabArg.length!=2) {
 				return "1";

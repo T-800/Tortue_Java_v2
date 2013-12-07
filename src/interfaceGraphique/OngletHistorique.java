@@ -4,11 +4,11 @@ import liste.ListeHistorique;
 
 import javax.swing.*;
 
-public class PanelHistorique extends JTextPane{
+public class OngletHistorique extends JTextPane{
 	
 	private ListeHistorique liste;
 	
-	PanelHistorique(ListeHistorique liste){
+	OngletHistorique(ListeHistorique liste){
 		this.liste = liste;
 		this.setEditable(false);
 		

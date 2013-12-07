@@ -12,9 +12,9 @@ public class Convert {
 		
 		String s ="Move renaud (1(1)) (2)   (3)   [4 (4 ) ] [5    ((5)5)[5]5]";
 		String[] ss = commandeToTab(s);
-		for (int i =0 ; i<ss.length ;i++ ) {
-			System.out.println(ss[i]);
-		}
+        for (String s1 : ss) {
+            System.out.println(s1);
+        }
 		
 		String s2 = " Fonction carre 1 [//carre de $1*$1;move $1;turn +90]";
 		System.out.println("Avant : "+s2);
@@ -22,9 +22,9 @@ public class Convert {
 		s2 = s2.substring(1, s2.length()-1);
 		s2 = s2.replace("$"+1, "5");
 		System.out.println("Apres : "+s2);
-		for (int i =0 ; i<ss.length ;i++ ) {
-			System.out.println(ss[i]);
-		}
+        for (String s1 : ss) {
+            System.out.println(s1);
+        }
 	}
 	
 	public static String[] commandeToTab(String commande){
@@ -144,7 +144,7 @@ public class Convert {
 			case '(': 
 				if(Verification.bienP(s)){
 					boolean canContinue = true;
-					while(Verification.parenthese(s) && canContinue){
+					while(canContinue && Verification.parenthese(s)){
 						String ss = subParenthese(s);
                         String ss_tmp = ss.trim();
 						String subS[] = ss_tmp.split(" ");
@@ -189,7 +189,7 @@ public class Convert {
 		
 		s = s.substring(1, s.length()-1);//on retire les crochets de debut et de fin
 		int crochets = 0, begin = 0;
-		ArrayList<String> list = new ArrayList<String>();
+		ArrayList<String> list = new ArrayList<>();
 		
 		
 		for (int i =0 ; i<s.length() ;i++ ) {

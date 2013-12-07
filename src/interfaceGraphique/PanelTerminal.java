@@ -57,10 +57,10 @@ public class PanelTerminal extends JTextField implements KeyListener{
 			
 		}
 		else if (e.getKeyCode() == KeyEvent.VK_UP) {
-			//this.setText(historyTerminal.getPrev());
+			this.setText(listeHistorique.getPrev());
 		} 
 		else if (e.getKeyCode() == KeyEvent.VK_DOWN) {
-			//this.setText(historyTerminal.getNext());
+			this.setText(listeHistorique.getNext());
 		}
 	}
 
