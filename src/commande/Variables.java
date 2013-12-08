@@ -5,7 +5,11 @@ import algo.Verification;
 import liste.ListeVariables;
 import liste.ListeVariables.ObjetVariables;
 
+import javax.swing.*;
+
 public class Variables extends Commande {
+
+    //TODO: Aojuter la suppression des variables
 	
 	private ListeVariables listeVariables;
 	
@@ -30,8 +34,19 @@ public class Variables extends Commande {
 		}
 		else{ //VAR nom (Déclaration)
 			// TODO: syntaxe des noms de variable
-            // TODO: double déclaration des variables
-			declaration(commande[1]);
+            ObjetVariables var = listeVariables.getVar(commande[1]);
+            if (var != null)    {
+                int option = JOptionPane.showConfirmDialog(null,
+                        "La variable "+commande[1]+" éxiste déjà. Voulez-vous la remplacer?", "Tortue",
+                        JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+
+                if (option == JOptionPane.YES_OPTION) affectation(var,"0");
+                else return "";
+            }
+            else{
+                declaration(commande[1]);
+            }
+
 		}
 		return "";
 

@@ -7,9 +7,11 @@ import javax.swing.*;
 public class OngletHistorique extends JTextPane{
 	
 	private ListeHistorique liste;
+
 	
 	OngletHistorique(ListeHistorique liste){
 		this.liste = liste;
+
 		this.setEditable(false);
 		
 		this.setContentType("text/html");

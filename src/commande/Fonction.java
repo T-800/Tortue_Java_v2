@@ -6,11 +6,15 @@ import liste.ListeFonctions.ObjetFonction;
 import liste.ListeVariables;
 import terminal.TableCommande;
 
+import javax.swing.*;
 import java.util.ArrayList;
 
 public class Fonction extends Commande {
-	
-	TableCommande tableCommande;
+
+    //TODO: Aojuter la suppression des fonctions
+
+
+    TableCommande tableCommande;
 	ListeFonctions listeFonctions;
 	ListeVariables listeVariables;
 	
@@ -69,7 +73,7 @@ public class Fonction extends Commande {
 			
 			String nom_Fonction = commande[1];
 			int nb_Arg;
-			ArrayList<String> instructions = new ArrayList<String>();
+			ArrayList<String> instructions;
 			try {
 				nb_Arg = Integer.parseInt(commande[2]);
 			} catch (NumberFormatException e) {
@@ -77,7 +81,21 @@ public class Fonction extends Commande {
 			}
 			if(!(commande[3].startsWith("[") && commande[3].endsWith("]")) || commande[3].length() < 3)return commande[3]+" n'est pas un cops de fonction correct";
 			instructions = Convert.complexArgToTab(commande[3]);
-			listeFonctions.addFonction(nom_Fonction, nb_Arg, instructions);
+            ObjetFonction fonc = listeFonctions.getFonction(commande[1]);
+            if (fonc != null) {
+                int option = JOptionPane.showConfirmDialog(null,
+                        "La fonction " + commande[1] + " éxiste déjà. Voulez-vous la remplacer?", "Tortue",
+                        JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+
+                if (option == JOptionPane.YES_OPTION){
+                    listeFonctions.reaffectFoction(fonc,nb_Arg,instructions);
+                }
+                else return "";
+            }
+            else{
+                listeFonctions.addFonction(nom_Fonction, nb_Arg, instructions);
+            }
+
 			
 		}
 		return "";

@@ -9,7 +9,7 @@ public class ListeHistorique {
     private int size, index;
 	
 	public ListeHistorique() {
-		liste = new ArrayList<Historique>();
+		liste = new ArrayList<>();
 
         this.size = 0;
         this.index = 0;
@@ -32,7 +32,7 @@ public class ListeHistorique {
 			}
 			else{
 				msg = msg+ h.getCommande()+"<br>";
-				if(h.getError_msg() != "") msg+="<font color=#FF0000> "+h.getError_msg()+"</font><br>";
+				if(!h.getError_msg().equals("")) msg+="<font color=#FF0000> "+h.getError_msg()+"</font><br>";
 			}
 			
 		}
@@ -49,7 +49,7 @@ public class ListeHistorique {
 
 	
 	public void reset(){
-		this.liste = new ArrayList<Historique>();
+		this.liste = new ArrayList<>();
         this.size = 0;
         this.index = 0;
 	}

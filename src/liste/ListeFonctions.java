@@ -13,7 +13,11 @@ public class ListeFonctions {
 	public void addFonction(String nom_Fonction,int nb_Arg,ArrayList<String> cmdList){
 		this.liste.add(new ObjetFonction(nom_Fonction,nb_Arg,cmdList));
 	}
-	
+
+    public void reaffectFoction(ObjetFonction fonc,int nb_Arg,ArrayList<String> cmdList){
+        fonc.setNb_Armument(nb_Arg);
+        fonc.setCmdsFonction(cmdList);
+    }
 	public ObjetFonction getFonction(String name){
 		for(ObjetFonction f : liste){
 			if(f.getNom_Fonction().equals(name))return f;
@@ -50,7 +54,9 @@ public class ListeFonctions {
 		private int nb_Armument;
 		private ArrayList<String> cmdsFonction;
 
-		public ObjetFonction(String nom_Fonction,int nb_Args,ArrayList<String> cmdList) {
+
+
+        public ObjetFonction(String nom_Fonction,int nb_Args,ArrayList<String> cmdList) {
 			this.nom_Fonction = nom_Fonction;
 			this.cmdsFonction = cmdList;
 			this.nb_Armument = nb_Args;
@@ -65,6 +71,14 @@ public class ListeFonctions {
 		public ArrayList<String> getListe_Fonction() {
 			return cmdsFonction;
 		}
+        public void setNb_Armument(int nb_Armument) {
+            this.nb_Armument = nb_Armument;
+        }
+
+        public void setCmdsFonction(ArrayList<String> cmdsFonction) {
+            this.cmdsFonction = cmdsFonction;
+        }
+
 	}
 	
 	

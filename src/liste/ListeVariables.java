@@ -7,7 +7,7 @@ public class ListeVariables {
 	private  ArrayList<ObjetVariables> cmd;
 
 	public ListeVariables() {
-		cmd = new ArrayList<ObjetVariables>();
+		cmd = new ArrayList<>();
 	}
 	
 	public ArrayList<ObjetVariables> getliste() {
@@ -18,7 +18,12 @@ public class ListeVariables {
 		cmd.add(new ObjetVariables(nom));
 	}
 	
-	
+	public ObjetVariables getVar(String name)  {
+        for(ObjetVariables h : this.cmd){
+            if (h.getNom_Variable().equalsIgnoreCase(name))return h;
+        }
+        return null;
+    }
 	public String getHtmlmsg(){
 		String msg = "";
 		for(ObjetVariables h : this.cmd){
@@ -29,8 +34,9 @@ public class ListeVariables {
 	}
 	
 	public void reset(){
-		this.cmd = new ArrayList<ObjetVariables>();
+		this.cmd = new ArrayList<>();
 	}
+
 	
 	public class ObjetVariables {
 		private String nom_Variable;
@@ -42,10 +48,6 @@ public class ListeVariables {
 
 		public String getNom_Variable() {
 			return nom_Variable;
-		}
-
-		public void setNom_Variable(String nom_Variable) {
-			this.nom_Variable = nom_Variable;
 		}
 
 		public String getValeur_Variable() {
