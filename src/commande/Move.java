@@ -50,9 +50,9 @@ public class Move extends Commande {
 			for(int i = 0; i<argsString.length; i++){
 				if(argsString[i].toLowerCase().equals("random")){
 					if(i==0)
-						coor[i] = 0 + (int)(Math.random()*(Fenetre.getMaxDessin()[0]));
+						coor[i] = (int) (Math.random() * (Fenetre.getMaxDessin()[0]));
 					else 
-						coor[i] = 0 + (int)(Math.random()*(Fenetre.getMaxDessin()[1]));
+						coor[i] = (int)(Math.random()*(Fenetre.getMaxDessin()[1]));
 				}
 				else {
 					try{
@@ -91,16 +91,14 @@ public class Move extends Commande {
 	}
 
 	private boolean dans_Le_Dessin( int [] coor){
-		if(coor[0] > Fenetre.getMaxDessin()[0] || coor[0] < 0)return false;
-		if(coor[1] > Fenetre.getMaxDessin()[1] || coor[1] < 0)return false;
-		return true;
-	}
+        return !(coor[0] > Fenetre.getMaxDessin()[0] || coor[0] < 0) && !(coor[1] > Fenetre.getMaxDessin()[1] || coor[1] < 0);
+    }
 
 	private int randomDistance(){
 		int max,dist, coor[];
 		do{
 			max = (int)Math.sqrt((Fenetre.getMaxDessin()[0]*Fenetre.getMaxDessin()[0])+(Fenetre.getMaxDessin()[1]*Fenetre.getMaxDessin()[1]));
-			dist =  0 + (int)(Math.random()*max);
+			dist =  (int)(Math.random()*max);
 			coor = calculeCoordArrive(dist);
 		}while(! dans_Le_Dessin(coor));
 		return dist;

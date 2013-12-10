@@ -33,7 +33,7 @@ public class PanelInfo extends JPanel{
 		this.listeHistorique = listeHistorique;
 		this.tableCommande = tableCommande;
 		GridLayout gl = new GridLayout();
-		gl.setColumns(7);
+		gl.setColumns(14);
 		gl.setRows(2);
 
 

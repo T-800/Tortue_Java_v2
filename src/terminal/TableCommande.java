@@ -37,7 +37,7 @@ public class TableCommande {
 		table.put("OPEN", new Open(this,listeHistorique));
 //		table.put("PENCOLOR", new PenColor());
 		table.put("PENDOWN", new PenDown(curseur));
-		table.put("PENSIZE", new PenS(curseur,listeVariables));
+		table.put("PENSIZE", new PenSize(curseur,listeVariables));
 		table.put("PENUP", new PenUp(curseur));
 //		table.put("REDO", new Redo());
 //		table.put("REMEMBER", new Remember());

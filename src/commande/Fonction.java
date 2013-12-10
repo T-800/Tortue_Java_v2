@@ -51,7 +51,7 @@ public class Fonction extends Commande {
 					}
 					String error = "";
 					error = tableCommande.ErrorToString(error, tableCommande.executerCommande(s2));
-					if(error != ""){
+					if(!"".equals(error)){
 						return error;
 					}
 				}

@@ -1,10 +1,7 @@
 package commande;
 
 
-import liste.ListeCommande;
-import liste.ListeFonctions;
 import liste.ListeHistorique;
-import liste.ListeVariables;
 import terminal.TableCommande;
 
 import javax.swing.*;
@@ -17,7 +14,7 @@ public class Open extends Commande {
 
     JFileChooser open = new JFileChooser();
     BufferedReader reader;
-    ArrayList<String> listOpenCmd = new ArrayList<String>();
+    ArrayList<String> listOpenCmd = new ArrayList<>();
 
     ListeHistorique listeHistorique;
     TableCommande tableCommande;
@@ -42,7 +39,7 @@ public class Open extends Commande {
             if (rightExtention(fichier.getPath()) && fichier.exists()) {
                 try {
                     reader = new BufferedReader(new FileReader(fichier));
-                } catch (FileNotFoundException e) {
+                } catch (FileNotFoundException ignored) {
 
                 }
             }
@@ -95,10 +92,6 @@ public class Open extends Commande {
 
         String extensions[];
 
-        public ExtensionFileFilter(String description, String extension) {
-            this(description, new String[] { extension });
-        }
-
         public ExtensionFileFilter(String description, String extensions[]) {
             if (description == null) {
                 this.description = extensions[0];
@@ -126,8 +119,7 @@ public class Open extends Commande {
                 return true;
             } else {
                 String path = file.getAbsolutePath().toLowerCase();
-                for (int i = 0, n = extensions.length; i < n; i++) {
-                    String extension = extensions[i];
+                for (String extension : extensions) {
                     if ((path.endsWith(extension) && (path.charAt(path.length()
                             - extension.length() - 1)) == '.')) {
                         return true;

@@ -46,7 +46,7 @@ public class PanelTerminal extends JTextField implements KeyListener{
             String error = table.executerCommande(this.getText());
             try {
                 listeHistorique.setLastErrorMsg(error);
-            }catch(ArrayIndexOutOfBoundsException e1){
+            }catch(ArrayIndexOutOfBoundsException ignored){
 
             }
 

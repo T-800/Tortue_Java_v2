@@ -4,11 +4,11 @@ import algo.Convert;
 import dessin.Curseur;
 import liste.ListeVariables;
 
-public class PenS extends Commande {
+public class PenSize extends Commande {
     private Curseur curseur;
     private ListeVariables listeVariables;
 
-    public PenS(Curseur curseur, ListeVariables listeVariables){
+    public PenSize(Curseur curseur, ListeVariables listeVariables){
         this.curseur = curseur;
         this.listeVariables = listeVariables;
     }
