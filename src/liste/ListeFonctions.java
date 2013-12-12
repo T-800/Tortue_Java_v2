@@ -22,6 +22,10 @@ public class ListeFonctions {
         fonc.setNb_Armument(nb_Arg);
         fonc.setCmdsFonction(cmdList);
     }
+    public void removeFonction(ObjetFonction objetFonction){
+        this.liste.remove(objetFonction);
+    }
+
 	public ObjetFonction getFonction(String name){
 		for(ObjetFonction f : liste){
 			if(f.getNom_Fonction().equals(name))return f;
@@ -83,7 +87,9 @@ public class ListeFonctions {
             this.cmdsFonction = cmdsFonction;
         }
 
-	}
+
+
+    }
 	
 	
 	

@@ -20,21 +20,28 @@ public class AutoCompletion {
         this.variableListe=variableListe;
     }
 
-    public String getLastWord(int currentposition,String phrase){
+    private String getLastWord(int currentposition,String phrase){
         String word = "";
+        System.out.println(phrase+" : "+currentposition);
         for (int i = 0; i<currentposition;i++){
+            System.out.println(i);
             if(phrase.charAt(i) == ' ') word = "";
             else {
                 word += phrase.charAt(i);
             }
         }
-        System.out.print("Word = "+word);
+        System.out.println(word);
         return word;
+    }
+    public int sizeWord(int currentposition,String phrase){
+        String word = getLastWord(currentposition,phrase);
+        return word.length();
     }
 
     public ArrayList<String> findMatch(int currentposition,String phrase){
         String word = getLastWord(currentposition,phrase);
         ArrayList<String> list = new ArrayList<>();
+        if(word.equals(""))return null;
         switch (word.charAt(0)){
             case ':' :
                 for (ListeFonctions.ObjetFonction o : fonctionsListe.getliste()){
@@ -47,7 +54,6 @@ public class AutoCompletion {
 
                     }
                     if(sub.equalsIgnoreCase(word.substring(1))){
-                        System.out.println("ADD : "+sub);
                         list.add(s);
                     }
                 }
@@ -59,13 +65,8 @@ public class AutoCompletion {
                     try{
                         sub = s.substring(0,word.length()-1);
                     }
-                    catch (IndexOutOfBoundsException e){
-
-                    }
-                    if(sub.equalsIgnoreCase(word.substring(1))){
-                        System.out.println("ADD : "+sub);
-                        list.add(s);
-                    }
+                    catch (IndexOutOfBoundsException ignored){}
+                    if(sub.equalsIgnoreCase(word.substring(1)))  list.add(s);
                 }
                 break;
             default:
@@ -78,11 +79,11 @@ public class AutoCompletion {
 
                     }
                     if(sub.equalsIgnoreCase(word)){
-                        System.out.println("ADD : "+sub);
                         list.add(s);
                     }
                 }
         }
+        if(list.size()==0)return null;
         return list;
     }
 

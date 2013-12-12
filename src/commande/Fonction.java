@@ -41,6 +41,9 @@ public class Fonction extends Commande {
 			if (fonc != null) {
                 // TODO: syntaxe des noms de fonction
                 // TODO: double declaration des fonctions ?
+                if( commande[1].equalsIgnoreCase("remove")) {
+                    listeFonctions.removeFonction(fonc);
+                }
 				if(commande.length-1 != fonc.getNb_Agument_Fonction())return "La fonction "+commande[0]+" a besoin de "+fonc.getNb_Agument_Fonction()+" argument(s)";
 				for(String s : fonc.getListe_Fonction()){
 					String s2 = s;

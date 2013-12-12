@@ -8,7 +8,6 @@ import terminal.TableCommande;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.ArrayList;
@@ -17,10 +16,7 @@ public class PanelTerminal extends JTextField implements KeyListener{
 	private ListeHistorique listeHistorique;
 	private TableCommande table;
     private AutoCompletion autoCompletion;
-    private ListeFonctions listeFonctions;
-    private ListeVariables listeVariables;
-    private String keyboard = "";
-    private int pos = 0;
+    private int compterTabulation = 0;
 
 	public PanelTerminal(TableCommande table,ListeHistorique listeHistorique, ListeFonctions listeFonctions, ListeVariables listeVariables) {
 		this.setBackground(Color.black);
@@ -30,8 +26,6 @@ public class PanelTerminal extends JTextField implements KeyListener{
 		setFont(police);
 		this.addKeyListener(this);
         this.setFocusTraversalKeysEnabled(false);
-		this.listeFonctions = listeFonctions;
-        this.listeVariables = listeVariables;
 		this.listeHistorique = listeHistorique;
         this.autoCompletion = new AutoCompletion(listeFonctions,listeVariables);
 		this.table = table;
@@ -47,8 +41,8 @@ public class PanelTerminal extends JTextField implements KeyListener{
 	public void keyPressed(KeyEvent e) {
 
 		if (e.getKeyCode() == KeyEvent.VK_ENTER) {
-
-            keyboard = this.getText();
+            compterTabulation = 0;
+            String keyboard = this.getText();
             keyboard = keyboard.trim();
 
 			if (keyboard.equals("")) {
@@ -62,7 +56,7 @@ public class PanelTerminal extends JTextField implements KeyListener{
             }catch(ArrayIndexOutOfBoundsException ignored){
 
             }
-			
+			this.setText("");
 		}
 		else if (e.getKeyCode() == KeyEvent.VK_UP) {
 			this.setText(listeHistorique.getPrev());
@@ -70,18 +64,31 @@ public class PanelTerminal extends JTextField implements KeyListener{
 		else if (e.getKeyCode() == KeyEvent.VK_DOWN) {
 			this.setText(listeHistorique.getNext());
 		}
-        else if ((e.getKeyCode() == KeyEvent.VK_TAB)
-                && ((e.getModifiers() & InputEvent.CTRL_MASK) != 0)) {
-            keyboard = this.getText();
-            keyboard = keyboard.trim();
-            System.out.println("keyB : "+keyboard+" keyL : "+this.getCaretPosition());
-            //System.out.print("resultat = "+this.getCaretPosition()+"*"+this.getText());
-            //String s = autoCompletion.getLastWord(this.getCaretPosition(),this.getText());
-            ArrayList<String> list = autoCompletion.findMatch(this.getCaretPosition(),keyboard);
-            for (String s : list){
-                listeHistorique.addToList(s,"",false);
-            }
+        else if ((e.getKeyCode() == KeyEvent.VK_TAB)) {
+            this.replaceSelection("");
+            String keyboard = this.getText();
+            if(keyboard.equals(""))return;
+            /*
+            * On génere la liste pour l'autocompletion*/
+            ArrayList<String> list = autoCompletion.findMatch(this.getCaretPosition(), keyboard);
 
+            /*
+            * on decoupe l'entrée clavier en deux au niveau du cuseur*/
+            String sub1= keyboard.substring(0, this.getCaretPosition());
+            String sub2= keyboard.substring(this.getCaretPosition());
+            /*
+            * On récupere la compation du mot en foction du compteur et de la liste */
+            if(list==null)return;
+             String complete = list.get(compterTabulation).substring(autoCompletion.sizeWord(getCaretPosition(), keyboard));
+            /*
+            * on affiche dans le JtextField le texte de depart avec la completion qui est surligné*/
+            this.setText(sub1+complete+sub2);
+            this.select(sub1.length(),sub1.length()+complete.length());
+
+            /*
+            * on incrémente le compteur avec comme modulo le la taille de la liste*/
+            compterTabulation++;
+            compterTabulation %=list.size();
 
         }
         PanelOnglet.repaintOnglet();

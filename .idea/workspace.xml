@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d90bf06c-ccbc-4cad-9654-d75d2ad8f63b" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/terminal/HistoryTerminal.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/terminal/AutoCompletion.java" afterPath="$PROJECT_DIR$/src/terminal/AutoCompletion.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/interfaceGraphique/Fenetre.java" afterPath="$PROJECT_DIR$/src/interfaceGraphique/Fenetre.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/commande/Fonction.java" afterPath="$PROJECT_DIR$/src/commande/Fonction.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/liste/ListeFonctions.java" afterPath="$PROJECT_DIR$/src/liste/ListeFonctions.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/liste/ListeHistorique.java" afterPath="$PROJECT_DIR$/src/liste/ListeHistorique.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/interfaceGraphique/PanelTerminal.java" afterPath="$PROJECT_DIR$/src/interfaceGraphique/PanelTerminal.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -78,10 +76,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="AutoCompletion.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="AutoCompletion.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/terminal/AutoCompletion.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="59" selection-start="1567" selection-end="1567" vertical-scroll-proportion="0.34472933" vertical-offset="599" max-vertical-offset="1926">
+            <state line="85" column="25" selection-start="3054" selection-end="3054" vertical-scroll-proportion="0.0" vertical-offset="1530" max-vertical-offset="1998">
               <folding />
             </state>
           </provider>
@@ -90,25 +88,16 @@
       <file leaf-file-name="ListeFonctions.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/liste/ListeFonctions.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="34" selection-start="227" selection-end="227" vertical-scroll-proportion="0.0" vertical-offset="54" max-vertical-offset="1566">
+            <state line="25" column="19" selection-start="678" selection-end="678" vertical-scroll-proportion="0.0" vertical-offset="324" max-vertical-offset="1674">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ListeVariables.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/liste/ListeVariables.java">
+      <file leaf-file-name="Fonction.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/commande/Fonction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="7" selection-start="178" selection-end="240" vertical-scroll-proportion="0.0" vertical-offset="72" max-vertical-offset="1098">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PanelTerminal.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/interfaceGraphique/PanelTerminal.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="79" column="85" selection-start="2577" selection-end="2577" vertical-scroll-proportion="0.0" vertical-offset="1224" max-vertical-offset="1908">
+            <state line="43" column="19" selection-start="1252" selection-end="1252" vertical-scroll-proportion="0.64444447" vertical-offset="542" max-vertical-offset="2106">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -116,10 +105,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OngletHistorique.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/interfaceGraphique/OngletHistorique.java">
+      <file leaf-file-name="PanelTerminal.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/interfaceGraphique/PanelTerminal.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="27" selection-start="143" selection-end="158" vertical-scroll-proportion="0.0" vertical-offset="144" max-vertical-offset="540">
+            <state line="93" column="33" selection-start="3141" selection-end="3154" vertical-scroll-proportion="0.0" vertical-offset="1386" max-vertical-offset="1854">
               <folding />
             </state>
           </provider>
@@ -173,14 +162,14 @@
         <option value="$PROJECT_DIR$/src/commande/Variables.java" />
         <option value="$PROJECT_DIR$/src/interfaceGraphique/PanelInfo.java" />
         <option value="$PROJECT_DIR$/src/commande/Commande.java" />
-        <option value="$PROJECT_DIR$/src/commande/Fonction.java" />
         <option value="$PROJECT_DIR$/src/commande/Move.java" />
         <option value="$PROJECT_DIR$/src/commande/Open.java" />
         <option value="$PROJECT_DIR$/src/liste/ListeHistorique.java" />
         <option value="$PROJECT_DIR$/src/interfaceGraphique/Fenetre.java" />
+        <option value="$PROJECT_DIR$/src/terminal/AutoCompletion.java" />
         <option value="$PROJECT_DIR$/src/interfaceGraphique/PanelTerminal.java" />
         <option value="$PROJECT_DIR$/src/liste/ListeFonctions.java" />
-        <option value="$PROJECT_DIR$/src/terminal/AutoCompletion.java" />
+        <option value="$PROJECT_DIR$/src/commande/Fonction.java" />
       </list>
     </option>
   </component>
@@ -239,7 +228,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -326,8 +314,27 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tortue_Java_v2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tortue_Java_v2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="commande" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -592,7 +599,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="28" width="1368" height="745" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32750398" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -611,7 +618,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25302115" sideWeight="0.6749585" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33665007" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33665007" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -757,7 +764,9 @@
     <entry file="file://$PROJECT_DIR$/src/commande/Fonction.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="90" column="75" selection-start="3129" selection-end="3129" vertical-scroll-proportion="0.0" vertical-offset="1620" max-vertical-offset="2052">
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -771,9 +780,7 @@
     <entry file="file://$PROJECT_DIR$/src/interfaceGraphique/PanelTerminal.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="10" column="45" selection-start="235" selection-end="245" vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="1350">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -847,21 +854,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/commande/Back.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="47" selection-start="161" selection-end="161" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="486" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/commande/Center.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="5" column="13" selection-start="91" selection-end="91" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="468" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/commande/Fonction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="12" selection-start="1564" selection-end="1564" vertical-scroll-proportion="0.43007916" vertical-offset="629" max-vertical-offset="1926">
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/commande/Left.java">
@@ -926,15 +921,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/interfaceGraphique/PanelTerminal.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="79" column="85" selection-start="2577" selection-end="2577" vertical-scroll-proportion="0.0" vertical-offset="1224" max-vertical-offset="1908">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/liste/ListeVariables.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="14" column="7" selection-start="178" selection-end="240" vertical-scroll-proportion="0.0" vertical-offset="72" max-vertical-offset="1098">
@@ -942,17 +928,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/liste/ListeFonctions.java">
+    <entry file="file://$PROJECT_DIR$/src/terminal/AutoCompletion.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="34" selection-start="227" selection-end="227" vertical-scroll-proportion="0.0" vertical-offset="54" max-vertical-offset="1566">
+        <state line="85" column="25" selection-start="3054" selection-end="3054" vertical-scroll-proportion="0.0" vertical-offset="1359" max-vertical-offset="1944">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/terminal/AutoCompletion.java">
+    <entry file="file://$PROJECT_DIR$/src/commande/Back.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="59" selection-start="1567" selection-end="1567" vertical-scroll-proportion="0.34472933" vertical-offset="599" max-vertical-offset="1926">
+        <state line="4" column="13" selection-start="56" selection-end="56" vertical-scroll-proportion="0.20512821" vertical-offset="0" max-vertical-offset="486">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/interfaceGraphique/PanelTerminal.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="93" column="33" selection-start="3141" selection-end="3154" vertical-scroll-proportion="0.0" vertical-offset="1386" max-vertical-offset="1854">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/liste/ListeFonctions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="19" selection-start="678" selection-end="678" vertical-scroll-proportion="0.0" vertical-offset="324" max-vertical-offset="1674">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/commande/Fonction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="43" column="19" selection-start="1252" selection-end="1252" vertical-scroll-proportion="0.64444447" vertical-offset="542" max-vertical-offset="2106">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
