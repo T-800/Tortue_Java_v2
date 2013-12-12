@@ -9,6 +9,10 @@ public class ListeFonctions {
 	public ListeFonctions() {
 		liste = new ArrayList<ObjetFonction>();
 	}
+
+    public ArrayList<ObjetFonction> getliste() {
+        return liste;
+    }
 	
 	public void addFonction(String nom_Fonction,int nb_Arg,ArrayList<String> cmdList){
 		this.liste.add(new ObjetFonction(nom_Fonction,nb_Arg,cmdList));

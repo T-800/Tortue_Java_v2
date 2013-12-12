@@ -20,6 +20,11 @@ public class ListeHistorique {
         size++;
         index = size;
 	}
+    public void addToList(String cmd,String error_msg,boolean save){
+        this.liste.add(new Historique(cmd, error_msg,save));
+        size++;
+        index = size;
+    }
     public void  setLastErrorMsg(String msg){
         liste.get(liste.size()-1).setError_msg(msg);
     }
@@ -81,6 +86,7 @@ public class ListeHistorique {
 		
 		private String commande;
         private String error_msg;
+        private boolean save = true;
 
 
 
@@ -89,7 +95,14 @@ public class ListeHistorique {
 		public Historique(String cmd, String error_msg) {
 			this.commande = cmd;
 			this.error_msg = error_msg;
+
 		}
+        public Historique(String cmd, String error_msg,boolean save) {
+            this.commande = cmd;
+            this.error_msg = error_msg;
+            this.save = false;
+
+        }
 
         public void setError_msg(String error_msg) {
             this.error_msg = error_msg;

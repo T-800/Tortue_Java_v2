@@ -58,7 +58,7 @@ public class Fenetre extends JFrame{
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 				
 		jDessin =new PanelDessin(curseur,commandeListe,table);
-		jTerminal = new PanelTerminal(table,historiqueListe);
+		jTerminal = new PanelTerminal(table,historiqueListe,fonctionsListe,variableListe);
 		jOnglet = new PanelOnglet(historiqueListe,fonctionsListe,variableListe);
 		jInfos = new PanelInfo(curseur,historiqueListe,table);
 		jInfos.setBorder(new javax.swing.border.BevelBorder(BevelBorder.RAISED));
