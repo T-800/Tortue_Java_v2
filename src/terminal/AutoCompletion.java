@@ -9,7 +9,7 @@ public class AutoCompletion {
 
     private ListeFonctions fonctionsListe;
     private ListeVariables variableListe;
-    private final String[] commande = { "BACK", "BACKGROUNDCOLOR", "CENTER",
+    private final String[] commande = { "BACK", "BACKGROUNDCOLOR","BGCOLOR", "CENTER",
             "CLEAR", "DOWN", "ERASE","FONCTION" ,"HELP", "LEFT", "MOVE", "NEW",
             "OPEN", "PENCOLOR", "PENDOWN", "PENSIZE", "PENUP", "REDO",
             "REMEMBER", "REPEAT", "RIGHT", "SAVE", "TURN", "UNDO", "UP", "VAR","RANDOM" };

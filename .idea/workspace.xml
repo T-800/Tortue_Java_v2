@@ -2,11 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d90bf06c-ccbc-4cad-9654-d75d2ad8f63b" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/commande/BackgroundColor.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/terminal/AutoCompletion.java" afterPath="$PROJECT_DIR$/src/terminal/AutoCompletion.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/interfaceGraphique/PanelDessin.java" afterPath="$PROJECT_DIR$/src/interfaceGraphique/PanelDessin.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/interfaceGraphique/PanelInfo.java" afterPath="$PROJECT_DIR$/src/interfaceGraphique/PanelInfo.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/interfaceGraphique/PanelTerminal.java" afterPath="$PROJECT_DIR$/src/interfaceGraphique/PanelTerminal.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/commande/PenColor.java" afterPath="$PROJECT_DIR$/src/commande/PenColor.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/terminal/TableCommande.java" afterPath="$PROJECT_DIR$/src/terminal/TableCommande.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="d4eb2303-2d0f-4a94-bf2e-08cffdb095ed" name="New changelist" comment="" />
     <ignored path="Tortue_Java_v2.iws" />
@@ -76,6 +79,17 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="AutoCompletion.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/terminal/AutoCompletion.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="11" column="74" selection-start="297" selection-end="297" vertical-scroll-proportion="0.2934473" vertical-offset="95" max-vertical-offset="1980">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="TableCommande.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/terminal/TableCommande.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -96,10 +110,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PenColor.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="PenColor.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/commande/PenColor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="47" column="104" selection-start="1551" selection-end="1551" vertical-scroll-proportion="0.23076923" vertical-offset="765" max-vertical-offset="1458">
+            <state line="47" column="104" selection-start="1551" selection-end="1551" vertical-scroll-proportion="0.0" vertical-offset="765" max-vertical-offset="1458">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -144,15 +158,6 @@
                 <element signature="e#566#567#0" expanded="true" />
                 <element signature="e#594#595#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Move.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/commande/Move.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="61" column="30" selection-start="1652" selection-end="1652" vertical-scroll-proportion="0.0" vertical-offset="992" max-vertical-offset="1926">
-              <folding />
             </state>
           </provider>
         </entry>
@@ -209,13 +214,13 @@
         <option value="$PROJECT_DIR$/src/interfaceGraphique/Fenetre.java" />
         <option value="$PROJECT_DIR$/src/liste/ListeFonctions.java" />
         <option value="$PROJECT_DIR$/src/commande/Fonction.java" />
-        <option value="$PROJECT_DIR$/src/terminal/AutoCompletion.java" />
         <option value="$PROJECT_DIR$/src/terminal/TableCommande.java" />
         <option value="$PROJECT_DIR$/src/interfaceGraphique/PanelTerminal.java" />
         <option value="$PROJECT_DIR$/src/interfaceGraphique/PanelInfo.java" />
         <option value="$PROJECT_DIR$/src/interfaceGraphique/PanelDessin.java" />
         <option value="$PROJECT_DIR$/src/commande/BackgroundColor.java" />
         <option value="$PROJECT_DIR$/src/commande/PenColor.java" />
+        <option value="$PROJECT_DIR$/src/terminal/AutoCompletion.java" />
       </list>
     </option>
   </component>
@@ -937,15 +942,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/terminal/AutoCompletion.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="67" column="40" selection-start="2473" selection-end="2473" vertical-scroll-proportion="0.0" vertical-offset="959" max-vertical-offset="1980">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/commande/Clear.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="13" selection-start="180" selection-end="180" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="702">
@@ -1041,7 +1037,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/commande/PenColor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="104" selection-start="1551" selection-end="1551" vertical-scroll-proportion="0.23076923" vertical-offset="765" max-vertical-offset="1458">
+        <state line="47" column="104" selection-start="1551" selection-end="1551" vertical-scroll-proportion="0.0" vertical-offset="765" max-vertical-offset="1458">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/terminal/AutoCompletion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="74" selection-start="297" selection-end="297" vertical-scroll-proportion="0.2934473" vertical-offset="95" max-vertical-offset="1980">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
