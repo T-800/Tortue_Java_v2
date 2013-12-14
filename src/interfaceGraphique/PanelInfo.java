@@ -118,6 +118,8 @@ public class PanelInfo extends JPanel{
     	else {
     		jbdessine.setIcon(new ImageIcon("./Images/dessinepas.png"));
     	}
+        jbbgcolor.setBackground(curseur.getCouleurBg());
+        jbpencolor.setBackground(curseur.getCouleurCurseur());
 		
 	}
 	
@@ -158,12 +160,14 @@ public class PanelInfo extends JPanel{
 	    		  listeHistorique.addToList("new",tableCommande.executerCommande("new"));
 	    	  }
 	    	  else if(e.getSource()==jbpencolor){
-                  //Color color = JColorChooser.showDialog(null, "Choisir la couleur du pinceau",null);
-	    		  listeHistorique.addToList("pencolor",tableCommande.executerCommande("pencolor"));
+                  Color color = JColorChooser.showDialog(null, "Choisir la couleur du pinceau",null);
+	    		  listeHistorique.addToList("pencolor "+color.getRed()+" "+color.getGreen()+" "+color.getBlue()
+                          ,tableCommande.executerCommande("pencolor "+color.getRed()+" "+color.getGreen()+" "+color.getBlue()));
 	    	  }
 	    	  else if(e.getSource()==jbbgcolor){
-                  //Color color = JColorChooser.showDialog(null, "Choisir la couleur de l'arrière plan",null);
-	    		  listeHistorique.addToList("backgroundcolor",tableCommande.executerCommande("backgroundcolor"));
+                  Color color = JColorChooser.showDialog(null, "Choisir la couleur de l'arrière plan",null);
+                  listeHistorique.addToList("backgroundcolor "+color.getRed()+" "+color.getGreen()+" "+color.getBlue()
+                          ,tableCommande.executerCommande("backgroundcolor "+color.getRed()+" "+color.getGreen()+" "+color.getBlue()));
 	    	  }
 	        
 	    	  PanelOnglet.repaintOnglet();

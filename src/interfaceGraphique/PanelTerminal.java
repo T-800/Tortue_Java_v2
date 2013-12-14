@@ -91,6 +91,9 @@ public class PanelTerminal extends JTextField implements KeyListener{
             compterTabulation %=list.size();
 
         }
+        else {
+            if(!(e.getKeyCode() == KeyEvent.VK_TAB)) compterTabulation = 0;
+        }
         PanelOnglet.repaintOnglet();
         Fenetre.getPanelDessin().repaint();
         Fenetre.getPanelInfo().repaint();
@@ -102,6 +105,7 @@ public class PanelTerminal extends JTextField implements KeyListener{
 
 	@Override
 	public void keyTyped(KeyEvent e) {
+
 	}
 
 }

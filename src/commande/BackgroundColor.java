@@ -3,17 +3,16 @@ package commande;
 
 import algo.Convert;
 import dessin.Curseur;
-import interfaceGraphique.Fenetre;
 import liste.ListeVariables;
 
 import java.awt.*;
 import java.util.Random;
 
-public class PenColor extends Commande{
+public class BackgroundColor extends Commande{
     Curseur curseur;
     private ListeVariables listeVariables;
 
-    public PenColor(Curseur curseur,ListeVariables listeVariables) {
+    public BackgroundColor(Curseur curseur,ListeVariables listeVariables) {
         this.curseur = curseur;
         this.listeVariables = listeVariables;
     }
@@ -24,7 +23,7 @@ public class PenColor extends Commande{
         Color couleur;
         int rgb[] = new int[3];
         if(commande.length==2 && commande[1].equalsIgnoreCase("random")){
-            curseur.setCouleurCurseur(randomColors()) ;
+            curseur.setCouleurBg(randomColors()); ;
         }
         else {
             String argsString[] = new String[commande.length-1];
@@ -45,7 +44,7 @@ public class PenColor extends Commande{
                     }
                 }
             }
-            curseur.setCouleurCurseur(new Color((float)rgb[0]/255,(float)rgb[1]/255,(float)rgb[2]/255));
+            curseur.setCouleurBg(new Color((float)rgb[0]/255,(float)rgb[1]/255,(float)rgb[2]/255));
         }
 
 

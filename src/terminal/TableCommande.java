@@ -22,8 +22,8 @@ public class TableCommande {
 		
 
 		table.put("BACK", new Back(curseur));
-//		table.put("BACKGROUNDCOLOR", new BackgroundColor());
-//		table.put("BGCOLOR", new BackgroundColor());
+		table.put("BACKGROUNDCOLOR", new BackgroundColor(curseur,listeVariables));
+		table.put("BGCOLOR", new BackgroundColor(curseur,listeVariables));
 		table.put("CENTER", new Center(curseur));
 		table.put("CLEAR", new Clear(this,listeHistorique,listeCommande,listeFonctions,listeVariables));
 		table.put("DOWN", new Down(curseur));
@@ -35,7 +35,7 @@ public class TableCommande {
 		table.put("LEFT", new Left(curseur));
 		table.put("MOVE", new Move(curseur, listeVariables, listeCommande)); // tester avec les variables et refaire random random
 		table.put("OPEN", new Open(this,listeHistorique));
-//		table.put("PENCOLOR", new PenColor());
+		table.put("PENCOLOR", new PenColor(curseur,listeVariables));
 		table.put("PENDOWN", new PenDown(curseur));
 		table.put("PENSIZE", new PenSize(curseur,listeVariables));
 		table.put("PENUP", new PenUp(curseur));
