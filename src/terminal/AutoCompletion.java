@@ -22,15 +22,12 @@ public class AutoCompletion {
 
     private String getLastWord(int currentposition,String phrase){
         String word = "";
-        System.out.println(phrase+" : "+currentposition);
         for (int i = 0; i<currentposition;i++){
-            System.out.println(i);
             if(phrase.charAt(i) == ' ') word = "";
             else {
                 word += phrase.charAt(i);
             }
         }
-        System.out.println(word);
         return word;
     }
     public int sizeWord(int currentposition,String phrase){
@@ -50,11 +47,11 @@ public class AutoCompletion {
                     try{
                         sub = s.substring(0,word.length()-1);
                     }
-                    catch (IndexOutOfBoundsException e){
+                    catch (IndexOutOfBoundsException ignored){
 
                     }
                     if(sub.equalsIgnoreCase(word.substring(1))){
-                        list.add(s);
+                        list.add(" "+s);
                     }
                 }
                 break;
@@ -66,7 +63,10 @@ public class AutoCompletion {
                         sub = s.substring(0,word.length()-1);
                     }
                     catch (IndexOutOfBoundsException ignored){}
-                    if(sub.equalsIgnoreCase(word.substring(1)))  list.add(s);
+                    if(sub.equalsIgnoreCase(word.substring(1))){
+
+                        list.add(" "+s);
+                    }
                 }
                 break;
             default:
@@ -75,10 +75,9 @@ public class AutoCompletion {
                     try{
                         sub = s.substring(0,word.length());
                     }
-                    catch (IndexOutOfBoundsException e){
-
-                    }
+                    catch (IndexOutOfBoundsException ignored){}
                     if(sub.equalsIgnoreCase(word)){
+                        if (!Character.isUpperCase(word.charAt(word.length()-1))) s = s.toLowerCase();
                         list.add(s);
                     }
                 }
