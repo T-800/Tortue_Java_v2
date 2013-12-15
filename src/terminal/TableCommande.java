@@ -29,7 +29,7 @@ public class TableCommande {
 		table.put("DOWN", new Down(curseur));
 //		table.put("ERASE", new Erase());
 		table.put("FONCTION", new Fonction(this,listeFonctions,listeVariables));// tester avec instruction composée
-//		table.put("GO", new Go());
+		table.put("GO", new Go(curseur,listeVariables));
 //		table.put("HELP", new Help());
 //		table.put("IF", new If());
 		table.put("LEFT", new Left(curseur));

@@ -3,6 +3,7 @@ package interfaceGraphique;
 import dessin.Curseur;
 import liste.ListeCommande;
 import liste.ListeCommande.Ligne;
+import liste.ListeHistorique;
 import terminal.TableCommande;
 
 import javax.swing.*;
@@ -15,15 +16,20 @@ public class PanelDessin extends JPanel implements MouseListener, MouseMotionLis
 	
 	private Curseur curseur;
 	private ListeCommande listeCommande;
+    private  ListeHistorique listeHistorique;
+    private TableCommande tableCommande;
 
-    public PanelDessin(Curseur curseur, ListeCommande listeCommande,TableCommande tableCommande) {
+    public PanelDessin(Curseur curseur, ListeCommande listeCommande, ListeHistorique listeHistorique,TableCommande tableCommande) {
 		this.curseur = curseur;
 		this.listeCommande = listeCommande;
+        this.listeHistorique = listeHistorique;
+        this.tableCommande = tableCommande;
 		int t[] = {this.getSize().width,this.getSize().height,55};
 		curseur.setPos(t);
 		this.setSize(new Dimension(200, 200));
 		
 		addMouseMotionListener(this);
+        addMouseListener(this);
 		setBackground(curseur.getCouleurBg());
 		
 	}
@@ -63,7 +69,25 @@ public class PanelDessin extends JPanel implements MouseListener, MouseMotionLis
 	public void mouseDragged(MouseEvent arg0) {}
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		
+        System.out.println("MOUSE");
+
+        int x = e.getX(), y = e.getY();
+        if (x > this.getWidth() / 2) {
+            x -= this.getWidth() / 2;
+        } else {
+            x = -this.getWidth() / 2 + x;
+        }
+        if (y < this.getHeight() / 2) {
+            y = this.getHeight() / 2 - y;
+        } else {
+            y = -(y - this.getHeight() / 2);
+        }
+
+        listeHistorique.addToList("GO "+x+" "+y
+                ,tableCommande.executerCommande("GO "+x+" "+y));
+        PanelOnglet.repaintOnglet();
+        Fenetre.getPanelDessin().repaint();
+        Fenetre.getPanelInfo().repaint();
 		
 	}
 	@Override
