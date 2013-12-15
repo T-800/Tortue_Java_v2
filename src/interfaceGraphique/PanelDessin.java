@@ -50,10 +50,68 @@ public class PanelDessin extends JPanel implements MouseListener, MouseMotionLis
 						l.getyArrivee());
 
 		}
+        if (curseur.DrawCurs()) {
+            g2.setColor(Color.DARK_GRAY);
+            g2.fillPolygon(this.drawCursOmbre());
+            g2.setColor(curseur.getCouleurCurseur());
+            g2.fillPolygon(this.drawCurs());
+        }
         this.setBackground(curseur.getCouleurBg());
 	}
-	
 
+    private Polygon drawCurs() {
+
+        int Ax, Ay, Bx, By, Cx, Cy;
+
+        Ax = (int) Math.round(curseur.getX() + 15
+                * Math.cos(Math.toRadians(curseur.getD())));
+        Ay = (int) Math.round(curseur.getY() + 15
+                * Math.sin(Math.toRadians(180 + curseur.getD())));
+
+        Bx = (int) Math.round(curseur.getX() + 5
+                * Math.cos(Math.toRadians(curseur.getD() + 90)));
+        By = (int) Math.round(curseur.getY() + 5
+                * Math.sin(Math.toRadians(180 + curseur.getD() + 90)));
+
+        Cx = (int) Math.round(curseur.getX() + 5
+                * Math.cos(Math.toRadians(curseur.getD() - 90)));
+        ;
+        Cy = (int) Math.round(curseur.getY() + 5
+                * Math.sin(Math.toRadians(180 + curseur.getD() - 90)));
+
+        int[] xPoints = { Ax, Bx, Cx };
+        int[] yPoints = { Ay, By, Cy };
+        Polygon curs = new Polygon(xPoints, yPoints, 3);
+
+        return curs;
+    }
+
+    private Polygon drawCursOmbre() {
+
+        int Ax, Ay, Bx, By, Cx, Cy;
+
+        Ax = (int) Math.round(curseur.getX() + 15
+                * Math.cos(Math.toRadians(curseur.getD())));
+        Ay = (int) Math.round(curseur.getY() + 15
+                * Math.sin(Math.toRadians(180 + curseur.getD())));
+
+        Bx = (int) Math.round(curseur.getX() + 5
+                * Math.cos(Math.toRadians(curseur.getD() + 90)));
+        By = (int) Math.round(curseur.getY() + 5
+                * Math.sin(Math.toRadians(180 + curseur.getD() + 90)));
+
+        Cx = (int) Math.round(curseur.getX() + 5
+                * Math.cos(Math.toRadians(curseur.getD() - 90)));
+        ;
+        Cy = (int) Math.round(curseur.getY() + 5
+                * Math.sin(Math.toRadians(180 + curseur.getD() - 90)));
+
+        int[] xPoints = { Ax + 1, Bx + 1, Cx + 1 };
+        int[] yPoints = { Ay + 1, By + 1, Cy + 1 };
+        Polygon curs = new Polygon(xPoints, yPoints, 3);
+
+        return curs;
+    }
 	
 
 	

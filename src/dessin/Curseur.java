@@ -12,6 +12,8 @@ public class Curseur {
 	private int[] tabRemember;
 	private int penSize;
 	private boolean penDown;
+
+    private boolean drawCurs;
 	
 	public Curseur(int x, int y) {
 		this.pos = new int[3];
@@ -24,6 +26,7 @@ public class Curseur {
 		this.couleurBg = Color.WHITE;
 		this.penDown = true;
         this.penSize = 1;
+        this.drawCurs = true;
 	}
 	
 	public Color getCouleurBg(){
@@ -112,8 +115,16 @@ public class Curseur {
 	public void setSourisY(int y){
 		this.souris[1] = y;
 	}
-	
-	
-	
+
+    public boolean DrawCurs() {
+        return drawCurs;
+    }
+
+    public void setDrawCurs(boolean drawCurs) {
+        this.drawCurs = drawCurs;
+    }
+
+
+
 
 }

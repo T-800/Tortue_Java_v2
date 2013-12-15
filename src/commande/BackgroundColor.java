@@ -19,7 +19,8 @@ public class BackgroundColor extends Commande{
 
     @Override
     public String execute(String[] commande){
-        if(commande.length>4)return "1";
+
+        if(commande.length>4 || commande.length<2)return "1";
         Color couleur;
         int rgb[] = new int[3];
         if(commande.length==2 && commande[1].equalsIgnoreCase("random")){
