@@ -1,7 +1,11 @@
+#####TORTUE GENIAL IK3#####
+
+
+
+
 Fonction carre 1 [//carre de $1*$1;repeat 4 [move $1;turn +90]]
 Fonction car 2 [//$1 carre de $2*$2;repeat $1 [:carre $2;turn +10]]
 Fonction spiral 2 [var tmp; _tmp=5;repeat $1 [move _tmp;turn +$2;_tmp=(_tmp + 2)]]
-
 Fonction f 1 [repeat $1 [move 50;turn +150;move 60;turn +100;move 30;turn +90]]
 
 

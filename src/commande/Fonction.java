@@ -11,8 +11,6 @@ import java.util.ArrayList;
 
 public class Fonction extends Commande {
 
-    //TODO: Aojuter la suppression des fonctions
-
 
     TableCommande tableCommande;
 	ListeFonctions listeFonctions;
@@ -40,7 +38,6 @@ public class Fonction extends Commande {
 			ObjetFonction fonc = listeFonctions.getFonction(commande[0].substring(1));
 			if (fonc != null) {
                 // TODO: syntaxe des noms de fonction
-                // TODO: double declaration des fonctions ?
                 if( commande[1].equalsIgnoreCase("remove")) {
                     listeFonctions.removeFonction(fonc);
                 }

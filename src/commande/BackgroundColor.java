@@ -21,10 +21,10 @@ public class BackgroundColor extends Commande{
     public String execute(String[] commande){
 
         if(commande.length>4 || commande.length<2)return "1";
-        Color couleur;
+
         int rgb[] = new int[3];
         if(commande.length==2 && commande[1].equalsIgnoreCase("random")){
-            curseur.setCouleurBg(randomColors()); ;
+            curseur.setCouleurBg(randomColors());
         }
         else {
             String argsString[] = new String[commande.length-1];
@@ -39,7 +39,7 @@ public class BackgroundColor extends Commande{
                 else {
                     try{
                         rgb[i] = Integer.parseInt(argsString[i]);
-
+                        rgb[i] %=255;
                     }catch(NumberFormatException e1){
                         return "Erreur "+argsString[0]+" n'est pas un nombre";
                     }

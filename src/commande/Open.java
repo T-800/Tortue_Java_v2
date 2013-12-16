@@ -1,135 +1,93 @@
 package commande;
 
-
 import liste.ListeHistorique;
 import terminal.TableCommande;
 
-import javax.swing.*;
-import javax.swing.filechooser.FileFilter;
-import java.io.*;
-import java.util.ArrayList;
+
+import javax.swing.JFileChooser;
+import javax.swing.filechooser.FileNameExtensionFilter;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 
 public class Open extends Commande {
 
-
-    JFileChooser open = new JFileChooser();
+    private JFileChooser open;
+    private TableCommande tableCommande;
     BufferedReader reader;
-    ArrayList<String> listOpenCmd = new ArrayList<>();
+    private ListeHistorique listeHistorique;
 
-    ListeHistorique listeHistorique;
-    TableCommande tableCommande;
-
-    public Open(TableCommande commande,ListeHistorique listeHistorique) {
-
-        this.tableCommande = commande;
-        this.listeHistorique = listeHistorique;
-        FileFilter filter1 = new ExtensionFileFilter("Fichier texte",
-                new String[] { "txt" });
-        open.setFileFilter(filter1);
-        open.setApproveButtonText("Choix du fichier"); // intitulé du bouton
+    public Open(TableCommande tableCommande, ListeHistorique listeHistorique) {
+        open = new JFileChooser();
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("TEXT FILES", "txt", "text");
+        open.setFileFilter(filter);
+        this.tableCommande = tableCommande;
+        this.listeHistorique =  listeHistorique;
     }
 
     @Override
     public String execute(String[] commande) {
+
         if(commande.length>2)return "1";
-        File fichier = new File(toString());
+        File fichier;
 
-        if (open.showDialog(null, "Choix du fichier") == JFileChooser.APPROVE_OPTION) {
-            fichier = open.getSelectedFile();
-            if (rightExtention(fichier.getPath()) && fichier.exists()) {
-                try {
-                    reader = new BufferedReader(new FileReader(fichier));
-                } catch (FileNotFoundException ignored) {
+        if (commande.length == 1){ // open
+            if (open.showDialog(null, "Choix du fichier") == JFileChooser.APPROVE_OPTION) {
+                fichier = open.getSelectedFile();
+            }
+            else return "Annulé";
+        }
+        else{ // open path
+            fichier = new File(commande[1]);
+        }
+        System.out.print(fichier.toString());
+        if(!fichier.isFile())return "le fichier "+commande[1]+" n'éxiste pas!";
+        int i = fichier.getAbsolutePath().lastIndexOf('.');
+        String extension = "";
+        if (i > 0) {
+            extension = fichier.getAbsolutePath().substring(i+1);
+        }
+        if (extension.equalsIgnoreCase("txt")) {
+            try {
+                reader = new BufferedReader(new FileReader(fichier));
+            } catch (FileNotFoundException ignored) {
 
-                }
             }
         }
+        String ligne = "";
+        try {
+            ligne = reader.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        if(!ligne.equalsIgnoreCase("#####TORTUE GENIAL IK3#####"))return "Fichier incorrecte";
 
-
-        String ligne = null;
         try {
             ligne = reader.readLine();
         } catch (IOException e) {
             e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
         }
-
-        while (ligne != null) {
-			/*
-			 * pour toutes les ligne du fichier
-			 */
+        int nbligne = 2;
+        while (ligne != null){
             ligne = ligne.trim();
 			/*
 			 * si la ligne n'est pas vide on l'joute a une arrayliste
 			 */
             if (!ligne.equals("")) {
-                listOpenCmd.add(ligne);
+                String error = tableCommande.executerCommande(ligne);
+                if(!error.equals("")) return "Une erreur est survenue lors de l'ouverture du fichier : "+fichier.getName()+"   Ligne :"+nbligne+"<br>"+error;
+                listeHistorique.addToList(ligne, "");
             }
             try {
                 ligne = reader.readLine();
+                nbligne++;
             } catch (IOException e) {
                 e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
             }
-
-        }
-        for (String l : this.listOpenCmd) {
-			/*
-			 * on execute toute les commande presente dans le fichier
-			 */
-            String error = tableCommande.executerCommande(l);
-            listeHistorique.addToList(l, error);
-            if(!error.equals("")) return "Une erreur est survenue lors de l'ouverture du fichier : "+fichier.getName()+"<br>"+error;
-
         }
         return "";
     }
-
-    public boolean rightExtention(String way) {
-        String sub = way.substring(way.length() - 3, way.length());
-        return sub.equals("txt");
-    }
-    class ExtensionFileFilter extends FileFilter {
-        String description;
-
-        String extensions[];
-
-        public ExtensionFileFilter(String description, String extensions[]) {
-            if (description == null) {
-                this.description = extensions[0];
-            } else {
-                this.description = description;
-            }
-            this.extensions = extensions.clone();
-            toLower(this.extensions);
-        }
-
-        private void toLower(String array[]) {
-            for (int i = 0, n = array.length; i < n; i++) {
-                array[i] = array[i].toLowerCase();
-            }
-        }
-
-        @Override
-        public String getDescription() {
-            return description;
-        }
-
-        @Override
-        public boolean accept(File file) {
-            if (file.isDirectory()) {
-                return true;
-            } else {
-                String path = file.getAbsolutePath().toLowerCase();
-                for (String extension : extensions) {
-                    if ((path.endsWith(extension) && (path.charAt(path.length()
-                            - extension.length() - 1)) == '.')) {
-                        return true;
-                    }
-                }
-            }
-            return false;
-        }
-    }
-
-
 
 }

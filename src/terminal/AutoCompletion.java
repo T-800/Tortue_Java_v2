@@ -23,7 +23,7 @@ public class AutoCompletion {
     private String getLastWord(int currentposition,String phrase){
         String word = "";
         for (int i = 0; i<currentposition;i++){
-            if(phrase.charAt(i) == ' ') word = "";
+            if(phrase.charAt(i) == ' '|| phrase.charAt(i) == ';' || phrase.charAt(i) == '[') word = "";
             else {
                 word += phrase.charAt(i);
             }

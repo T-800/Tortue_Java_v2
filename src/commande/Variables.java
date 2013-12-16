@@ -23,6 +23,9 @@ public class Variables extends Commande {
             String cmd="";
             for (String s : commande) cmd+=s;
 			String tabArg[] = cmd.split("=");
+            /*if( commande[1].equalsIgnoreCase("remove")) {
+                listeFonctions.removeFonction(fonc);
+            }*/
 			if (tabArg.length!=2) {
 				return "1";
 			}

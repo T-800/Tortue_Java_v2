@@ -19,7 +19,7 @@ public class TableCommande {
 	 * déclaration de la table de hashage
 	 */
 	public TableCommande(Curseur curseur, ListeCommande listeCommande, ListeFonctions listeFonctions,ListeVariables listeVariables,ListeHistorique listeHistorique) {
-		
+
 
 		table.put("BACK", new Back(curseur));
 		table.put("BACKGROUNDCOLOR", new BackgroundColor(curseur,listeVariables));
@@ -34,6 +34,7 @@ public class TableCommande {
 //		table.put("IF", new If());
 		table.put("LEFT", new Left(curseur));
 		table.put("MOVE", new Move(curseur, listeVariables, listeCommande)); // tester avec les variables et refaire random random
+        table.put("NEW", new New(this,listeCommande,curseur,listeHistorique,listeVariables,listeFonctions));
 		table.put("OPEN", new Open(this,listeHistorique));
 		table.put("PENCOLOR", new PenColor(curseur,listeVariables));
 		table.put("PENDOWN", new PenDown(curseur));
@@ -43,9 +44,9 @@ public class TableCommande {
 //		table.put("REMEMBER", new Remember());
 		table.put("REPEAT", new Repeat(this,listeFonctions,listeVariables));
 		table.put("RIGHT", new Right(curseur));
-//		table.put("SAVE", new Save());
+		table.put("SAVE", new Save(listeHistorique,curseur));
 		table.put("TURN", new Turn(curseur,listeVariables));
-//		table.put("UNDO", new Undo());		
+//		table.put("UNDO", new Undo());
 		table.put("UP", new Up(curseur));
 		table.put("VAR", new Variables(listeVariables));
 //		table.put("WHILE", new While());

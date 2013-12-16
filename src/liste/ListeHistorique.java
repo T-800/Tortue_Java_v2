@@ -1,5 +1,9 @@
 package liste;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class ListeHistorique {
@@ -80,6 +84,31 @@ public class ListeHistorique {
             return "";
         }
         return this.getListeI(index);
+    }
+
+    public void saveHistory(String chemin) throws IOException {
+		/*
+		 * Si le chmin a déjà une extension on la retire et on la stock Et on la
+		 * rajoute a la fin ;
+		 */
+        File destination = new File(chemin + ".txt");
+
+        BufferedWriter output;
+        output = new BufferedWriter(new FileWriter(destination));
+
+        int ligne = 0;
+        while (ligne < liste.size()) {
+            try {
+
+                output.write(liste.get(ligne).getCommande() + "\r\n");
+                output.flush();
+
+            } catch (IOException ioe) {
+                System.out.println("erreur : " + ioe);
+            }
+            ligne++;
+        }
+        output.close();
     }
 	
 	public class Historique {

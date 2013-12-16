@@ -10,6 +10,9 @@ import terminal.TableCommande;
 import javax.swing.*;
 import javax.swing.border.BevelBorder;
 import java.awt.*;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.io.IOException;
 
 /**
  * Fenetre Principal
@@ -55,7 +58,7 @@ public class Fenetre extends JFrame{
 		this.setIconImage(logo.getImage());
 		setSize(940,600); 
 		setLocationRelativeTo(null);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		//setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 				
 		jDessin =new PanelDessin(curseur,commandeListe,historiqueListe,table);
 		jTerminal = new PanelTerminal(table,historiqueListe,fonctionsListe,variableListe);
@@ -74,8 +77,18 @@ public class Fenetre extends JFrame{
 		this.setContentPane(content);
 		setVisible(true);
 		jTerminal.requestFocus(); // Donne le focus au terminal
-		int t[] = {Fenetre.getPanelDessin().getSize().width/2,Fenetre.getPanelDessin().getSize().height/2,0};
-		curseur.setPos(t);
+		curseur.setPos(getCenterDessin());
+        /*this.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent we) {
+                String error = table.executerCommande("NEW");
+                System.out.print("efgrh");
+                if (!error.equalsIgnoreCase("cancel")) {
+                    System.exit(0);
+                }
+
+            }
+        });  */
 	}
 	
 	public static int[] getCenterDessin(){
@@ -83,7 +96,7 @@ public class Fenetre extends JFrame{
 		return t;
 	}
 	public static int[] getMaxDessin(){
-		int t[] = {Fenetre.getPanelDessin().getSize().width,Fenetre.getPanelDessin().getSize().height,0};
+		int t[] = {Fenetre.getPanelDessin().getSize().width,Fenetre.getPanelDessin().getSize().height};
 		return t;
 	}
 	
