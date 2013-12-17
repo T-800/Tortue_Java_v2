@@ -41,7 +41,6 @@ public class PanelTerminal extends JTextField implements KeyListener{
 	public void keyPressed(KeyEvent e) {
 
 		if (e.getKeyCode() == KeyEvent.VK_ENTER) {
-            compterTabulation = 0;
             String keyboard = this.getText();
             keyboard = keyboard.trim();
 
@@ -50,13 +49,17 @@ public class PanelTerminal extends JTextField implements KeyListener{
 			}
 
 			listeHistorique.addToList(keyboard,"");
-            String error = table.executerCommande(this.getText());
+            String error = table.executerCommande(keyboard);
             try {
                 listeHistorique.setLastErrorMsg(error);
             }catch(ArrayIndexOutOfBoundsException ignored){
 
             }
+
 			this.setText("");
+            for(ListeHistorique.Historique s : listeHistorique.getliste()){
+                System.out.println(s.getCommande()+" "+s.getError_msg());
+            }
 		}
 		else if (e.getKeyCode() == KeyEvent.VK_UP) {
 			this.setText(listeHistorique.getPrev());

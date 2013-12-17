@@ -8,7 +8,9 @@ import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 
 
@@ -21,167 +23,160 @@ public class Save extends Commande {
     public Save(ListeHistorique listeHistorique,Curseur curseur){
         this.listeHistorique = listeHistorique;
         this.curseur = curseur;
-        save = new JFileChooser() {
-
-            @Override
-            public void approveSelection() {
-                File f = getSelectedFile();
-                if (f.exists() && getDialogType() == SAVE_DIALOG) {
-                    int result = JOptionPane.showConfirmDialog(this,
-                            "Le fichier éxiste déjà Voulez-vous l'écraser?",
-                            "Ecrasement", JOptionPane.YES_NO_CANCEL_OPTION);
-                    switch (result) {
-                        case JOptionPane.YES_OPTION:
-                            super.approveSelection();
-                            return;
-                        case JOptionPane.CANCEL_OPTION:
-                            cancelSelection();
-                            return;
-                        default:
-                            return;
-                    }
-                }
-                super.approveSelection();
-            }
-        };
-        save.setApproveButtonText("Choix du fichier"); // intitulé du bouton
+        save = new JFileChooser();
     }
     @Override
-    public String execute(String[] parametres) {
+    public String execute(String[] commande) {
+        if(commande.length>3 || commande.length == 2)return "1";
+        File fichier;
         curseur.setDrawCurs(false);
-
-        if (parametres.length == 1) {
-            if (save.showSaveDialog(null) == JFileChooser.APPROVE_OPTION) {
-                System.out.println(save.getSelectedFile().getAbsolutePath());
-                String s = "";
-                try {
-                    s = save.getSelectedFile()
-                            .getAbsolutePath()
-                            .substring(
-                                    0,
-                                    save.getSelectedFile().getAbsolutePath()
-                                            .lastIndexOf("."));
-                } catch (StringIndexOutOfBoundsException e) {
-
-                }
-                File fichier;
-                if (!s.equals("")) {
-                    fichier = new File(s);
-                } else {
-                    fichier = new File(save.getSelectedFile().getAbsolutePath());
-                }
-
-                BufferedImage bi = new BufferedImage(
-                        Fenetre.getPanelDessin().getSize().width,
-                        Fenetre.getPanelDessin().getSize().height,
-                        BufferedImage.TYPE_INT_ARGB);
-                Graphics g = bi.createGraphics();
-                Fenetre.getPanelDessin().paint(g); // this == JComponent
-                g.dispose();
-                try {
-                    ImageIO.write(bi, "png", new File(fichier.getAbsolutePath()
-                            + ".png"));
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-                try {
-                    listeHistorique.saveHistory(fichier.getAbsolutePath());
-                } catch (IOException e) {
-                    // TODO Auto-generated catch block
-                    e.printStackTrace();
-                }
+        listeHistorique.getliste().remove(listeHistorique.getliste().size()-1);
+        if (commande.length == 1){ // save txt et jpg avec filechooser
+            if (save.showDialog(null, "Choix du fichier") == JFileChooser.APPROVE_OPTION) {
+                fichier = save.getSelectedFile();
             }
-        } else if (parametres.length == 2) {
-
-            String s = "";
-            try {
-                s = parametres[1].substring(0, parametres[1].lastIndexOf("."));
-            } catch (StringIndexOutOfBoundsException e) {
-
+            else{
+                listeHistorique.addToList(commande[0],"");
+                return "Annulé";
             }
-            File fichier;
-            if (!s.equals("")) {
-                fichier = new File(s);
-            } else {
-                fichier = new File(parametres[1]);
-            }
-			/*
-			 * Si le chmin a déjà une extension on la retire et on la stock Et
-			 * on la rajoute a la fin ;
-			 */
-
-            if (fichier.exists()) {
-                BufferedImage bi = new BufferedImage(
-                        Fenetre.getPanelDessin().getSize().width,
-                        Fenetre.getPanelDessin().getSize().height,
-                        BufferedImage.TYPE_INT_ARGB);
-                Graphics g = bi.createGraphics();
-                Fenetre.getPanelDessin().paint(g); // this == JComponent
-                g.dispose();
-                try {
-                    ImageIO.write(bi, "png", new File(fichier.getAbsolutePath()
-                            + ".png"));
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-                try {
-                    listeHistorique.saveHistory(fichier.getAbsolutePath());
-                } catch (IOException e) {
-                    // TODO Auto-generated catch block
-                    e.printStackTrace();
-                }
-            } else {
-				/*
-				 * séparer fichier et pathName
-				 */
-				/*
-				 * The prefix concept is used to handle root directories on UNIX
-				 * platforms, and drive specifiers, root directories and UNC
-				 * pathnames on Microsoft Windows platforms, as follows:
-				 *
-				 * For UNIX platforms, the prefix of an absolute pathname is
-				 * always "/". Relative pathnames have no prefix. The abstract
-				 * pathname denoting the root directory has the prefix "/" and
-				 * an empty name sequence.
-				 *
-				 *
-				 * For Microsoft Windows platforms, the prefix of a pathname
-				 * that contains a drive specifier consists of the drive letter
-				 * followed by ":" and possibly followed by "\\" if the pathname
-				 * is absolute. The prefix of a UNC pathname is "\\\\"; the
-				 * hostname and the share name are the first two names in the
-				 * name sequence. A relative pathname that does not specify a
-				 * drive has no prefix.
-				 */
-                File gg = fichier.getParentFile();
-
-                gg.mkdirs();
-
-                BufferedImage bi = new BufferedImage(
-                        Fenetre.getPanelDessin().getSize().width,
-                        Fenetre.getPanelDessin().getSize().height,
-                        BufferedImage.TYPE_INT_ARGB);
-                Graphics g = bi.createGraphics();
-                Fenetre.getPanelDessin().paint(g); // this == JComponent
-                g.dispose();
-                try {
-                    ImageIO.write(bi, "png", new File(fichier.getAbsolutePath()
-                            + ".png"));
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-                try {
-                    listeHistorique.saveHistory(fichier.getAbsolutePath());
-                } catch (IOException e) {
-                    // TODO Auto-generated catch block
-                    e.printStackTrace();
-                }
-
-            }
-        } else {
-            // erreur
         }
+        else {
+            String name;
+            String fileString = "";
+            String error;
+            switch (commande[1]){
+                case "a":
+                case "all":
+                    try {
+                        fileString = commande[2].substring(0, commande[2].lastIndexOf("."));
+                    } catch (StringIndexOutOfBoundsException e) {
+
+                    }
+                    if (!fileString.equals("")) {
+                        fichier = new File(fileString);
+                    } else {
+                        fichier = new File(commande[2]);
+                    }
+                    error = saveJpg(fichier.getAbsolutePath());
+                    if(!error.equalsIgnoreCase("")){
+                        listeHistorique.addToList(commande[0],"");
+                        return error;
+                    }
+                    error = saveTxt(fichier.getAbsolutePath());
+                    if(!error.equalsIgnoreCase("")){
+                        listeHistorique.addToList(commande[0],"");
+                        return error;
+                    }
+
+                    break;
+                case "t":
+                case "txt":
+
+                    try {
+                        fileString = commande[2].substring(0, commande[2].lastIndexOf("."));
+                    } catch (StringIndexOutOfBoundsException e) {
+
+                    }
+                    if (!fileString.equals("")) {
+                        fichier = new File(fileString);
+                    } else {
+                        fichier = new File(commande[2]);
+                    }
+                    error = saveTxt(fichier.getAbsolutePath());
+                    if(!error.equalsIgnoreCase("")){
+                        listeHistorique.addToList(commande[0],"");
+                        return error;
+                    }
+
+                    break;
+                case "d":
+                case "jpg":
+                    try {
+                        fileString = commande[2].substring(0, commande[2].lastIndexOf("."));
+                    } catch (StringIndexOutOfBoundsException e) {
+
+                    }
+                    if (!fileString.equals("")) {
+                        fichier = new File(fileString);
+                    } else {
+                        fichier = new File(commande[2]);
+                    }
+                    error = saveJpg(fichier.getAbsolutePath());
+                    if(!error.equalsIgnoreCase("")){
+                        listeHistorique.addToList(commande[0],"");
+                        return error;
+                    }
+                    break;
+            }
+
+        }
+
+
         curseur.setDrawCurs(true);
         return "";
+    }
+
+
+    public String saveTxt(String filePath){
+        /*
+		 * Si le chmin a déjà une extension on la retire et on la stock Et on la
+		 * rajoute a la fin ;
+		 */
+        File destination = new File(filePath + ".txt");
+
+        BufferedWriter output = null;
+        try {
+            output = new BufferedWriter(new FileWriter(destination));
+        } catch (IOException e) {
+            return "erreur ouverture fichier";
+        }
+        try {
+            output.write("#####TORTUE GENIAL IK3#####"+ "\r\n" );
+            output.flush();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        int ligne = 0;
+        while (ligne < listeHistorique.getliste().size()) {
+            try {
+                if(listeHistorique.getliste().get(ligne).getError_msg().equalsIgnoreCase("")){
+                    output.write(listeHistorique.getliste().get(ligne).getCommande() + "\r\n");
+                    output.flush();
+                }
+
+            } catch (IOException ioe) {
+                System.out.println("erreur : " + ioe);
+                return "erreur ouverture fichier2";
+
+            }
+            ligne++;
+        }
+        try {
+            output.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return "";
+    }
+
+
+    public String saveJpg(String filePath){
+        File destination = new File(filePath);
+        BufferedImage bi = new BufferedImage(
+                Fenetre.getPanelDessin().getSize().width,
+                Fenetre.getPanelDessin().getSize().height,
+                BufferedImage.TYPE_INT_ARGB);
+        Graphics g = bi.createGraphics();
+        Fenetre.getPanelDessin().paint(g); // this == JComponent
+        g.dispose();
+        try {
+            ImageIO.write(bi, "png", new File(destination.getAbsolutePath()
+                    + ".png"));
+        } catch (Exception e) {
+            return "error save img";
+        }
+
+      return "";
     }
 }

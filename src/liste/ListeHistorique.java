@@ -1,9 +1,5 @@
 package liste;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.util.ArrayList;
 
 public class ListeHistorique {
@@ -48,7 +44,7 @@ public class ListeHistorique {
 		return msg;
 	}
 
-    public String getListeI(int i){
+    public String getListeICmd(int i){
         return this.liste.get(i).getCommande();
     }
 
@@ -69,10 +65,10 @@ public class ListeHistorique {
             if (this.size==0) {
                 return "";
             } else
-                return this.getListeI(0);
+                return this.getListeICmd(0);
         }
         this.index--;
-        return this.getListeI(index);
+        return this.getListeICmd(index);
     }
     public String getNext(){
         if (this.isEmpty()) {
@@ -83,32 +79,11 @@ public class ListeHistorique {
             this.index = size - 1;
             return "";
         }
-        return this.getListeI(index);
+        return this.getListeICmd(index);
     }
 
-    public void saveHistory(String chemin) throws IOException {
-		/*
-		 * Si le chmin a déjà une extension on la retire et on la stock Et on la
-		 * rajoute a la fin ;
-		 */
-        File destination = new File(chemin + ".txt");
-
-        BufferedWriter output;
-        output = new BufferedWriter(new FileWriter(destination));
-
-        int ligne = 0;
-        while (ligne < liste.size()) {
-            try {
-
-                output.write(liste.get(ligne).getCommande() + "\r\n");
-                output.flush();
-
-            } catch (IOException ioe) {
-                System.out.println("erreur : " + ioe);
-            }
-            ligne++;
-        }
-        output.close();
+    public ArrayList<Historique> getliste() {
+        return liste;
     }
 	
 	public class Historique {
@@ -129,7 +104,7 @@ public class ListeHistorique {
         public Historique(String cmd, String error_msg,boolean save) {
             this.commande = cmd;
             this.error_msg = error_msg;
-            this.save = false;
+            this.save = save;
 
         }
 

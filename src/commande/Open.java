@@ -32,18 +32,23 @@ public class Open extends Commande {
 
         if(commande.length>2)return "1";
         File fichier;
-
+        listeHistorique.getliste().remove(listeHistorique.getliste().size()-1);
         if (commande.length == 1){ // open
             if (open.showDialog(null, "Choix du fichier") == JFileChooser.APPROVE_OPTION) {
                 fichier = open.getSelectedFile();
             }
-            else return "Annulé";
+            else{
+                listeHistorique.addToList(commande[0],"");
+                return "Annulé";
+            }
         }
         else{ // open path
             fichier = new File(commande[1]);
         }
-        System.out.print(fichier.toString());
-        if(!fichier.isFile())return "le fichier "+commande[1]+" n'éxiste pas!";
+        if(!fichier.isFile()){
+            listeHistorique.addToList(commande[0]+" "+commande[1],"");
+            return "le fichier "+commande[1]+" n'éxiste pas!";
+        }
         int i = fichier.getAbsolutePath().lastIndexOf('.');
         String extension = "";
         if (i > 0) {
@@ -73,11 +78,14 @@ public class Open extends Commande {
         while (ligne != null){
             ligne = ligne.trim();
 			/*
-			 * si la ligne n'est pas vide on l'joute a une arrayliste
+			 * si la ligne n'est pas vide on l'ajout a une arraylist
 			 */
             if (!ligne.equals("")) {
                 String error = tableCommande.executerCommande(ligne);
-                if(!error.equals("")) return "Une erreur est survenue lors de l'ouverture du fichier : "+fichier.getName()+"   Ligne :"+nbligne+"<br>"+error;
+                if(!error.equals("")){
+                    listeHistorique.addToList(commande[0],"");
+                    return "Une erreur est survenue lors de l'ouverture du fichier : "+fichier.getName()+"   Ligne :"+nbligne+"<br>"+error;
+                }
                 listeHistorique.addToList(ligne, "");
             }
             try {
@@ -87,6 +95,7 @@ public class Open extends Commande {
                 e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
             }
         }
+
         return "";
     }
 

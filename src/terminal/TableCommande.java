@@ -99,6 +99,8 @@ public class TableCommande {
 
 	public String ErrorToString(String code, String nomCmd){
 		switch(code){
+            case "-2" :
+                return "-2";
 			case "" :
 				return "";
 			case "-1":
