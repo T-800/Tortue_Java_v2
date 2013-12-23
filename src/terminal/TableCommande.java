@@ -15,23 +15,24 @@ import java.util.Hashtable;
 public class TableCommande {
 
 	public static Hashtable<String, Commande> table = new Hashtable<String, Commande>();
+    private ListeVariables listeVariables ;
 	/**
 	 * déclaration de la table de hashage
 	 */
 	public TableCommande(Curseur curseur, ListeCommande listeCommande, ListeFonctions listeFonctions,ListeVariables listeVariables,ListeHistorique listeHistorique) {
-
+        this.listeVariables = listeVariables;
 
 		table.put("BACK", new Back(curseur));
 		table.put("BACKGROUNDCOLOR", new BackgroundColor(curseur,listeVariables));
 		table.put("BGCOLOR", new BackgroundColor(curseur,listeVariables));
 		table.put("CENTER", new Center(curseur));
-		table.put("CLEAR", new Clear(this,listeHistorique,listeCommande,listeFonctions,listeVariables));
+		table.put("CLEAR", new Clear(curseur,this,listeHistorique,listeCommande,listeFonctions,listeVariables));
 		table.put("DOWN", new Down(curseur));
 //		table.put("ERASE", new Erase());
 		table.put("FONCTION", new Fonction(this,listeFonctions,listeVariables));// tester avec instruction composée
 		table.put("GO", new Go(curseur,listeVariables));
 //		table.put("HELP", new Help());
-//		table.put("IF", new If());
+		table.put("IF", new If(curseur,listeVariables,this));
 		table.put("LEFT", new Left(curseur));
 		table.put("MOVE", new Move(curseur, listeVariables, listeCommande)); // tester avec les variables et refaire random random
         table.put("NEW", new New(this,listeCommande,curseur,listeHistorique,listeVariables,listeFonctions));
@@ -48,7 +49,7 @@ public class TableCommande {
 		table.put("TURN", new Turn(curseur,listeVariables));
 //		table.put("UNDO", new Undo());
 		table.put("UP", new Up(curseur));
-		table.put("VAR", new Variables(listeVariables));
+		table.put("VAR", new Variables());
 //		table.put("WHILE", new While());
 		
 		
@@ -56,7 +57,7 @@ public class TableCommande {
 	}
 
 
-	public String executerCommande(String commande){
+	public String executerCommande(String commande, ListeVariables listeVariables){
 
 		/*
 		 * On retirre tout les espaces du string
@@ -73,10 +74,10 @@ public class TableCommande {
 		
 		String codeErreur = "-1";
 		if (commande.charAt(0) == ':'){
-			codeErreur = table.get("FONCTION").execute(commandeTab);
+			codeErreur = table.get("FONCTION").execute(commandeTab,listeVariables);
 		}
 		else if(commande.charAt(0) == '_'){
-			codeErreur = table.get("VAR").execute(commandeTab);
+			codeErreur = table.get("VAR").execute(commandeTab,listeVariables);
 		}
 		else if(commande.startsWith("//")){
 			codeErreur = "";
@@ -87,7 +88,7 @@ public class TableCommande {
 				 * 	- si oui on execute la commande en plui envoyant le tableau
 				 * on renvoie le code erreur de la commande
 				 */
-				codeErreur = table.get(commandeTab[0]).execute(commandeTab);
+				codeErreur = table.get(commandeTab[0]).execute(commandeTab,listeVariables);
 			}
 		}
 		
@@ -99,8 +100,6 @@ public class TableCommande {
 
 	public String ErrorToString(String code, String nomCmd){
 		switch(code){
-            case "-2" :
-                return "-2";
 			case "" :
 				return "";
 			case "-1":

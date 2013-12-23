@@ -20,7 +20,7 @@ public class Move extends Commande {
 	}
 	
 	@Override
-	public String execute(String[] commande){
+	public String execute(String[] commande,ListeVariables listeVariables){
 		if(commande.length < 2 || commande.length > 3)return "1";
 		if(!curseur.isPenDown())return "Votre crayon est levé!!";
 		
@@ -49,6 +49,7 @@ public class Move extends Commande {
             else {
                 try{
                     distance = Integer.parseInt(argsString[0]);
+                    System.out.println("move : "+argsString[0]);
                 }catch(NumberFormatException e1){
                     return "Erreur "+argsString[0]+" n'est pas un nombre";
                 }

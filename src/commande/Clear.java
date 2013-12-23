@@ -1,5 +1,7 @@
 package commande;
 
+import dessin.Curseur;
+import interfaceGraphique.Fenetre;
 import liste.ListeCommande;
 import liste.ListeFonctions;
 import liste.ListeHistorique;
@@ -13,25 +15,30 @@ public class Clear extends Commande {
 	ListeCommande listeCommande;
 	ListeFonctions listeFonctions;
 	ListeVariables listeVariables;
+    Curseur curseur;
+
 	
-	public Clear(TableCommande commande,ListeHistorique listeHistorique, ListeCommande listeCommande,ListeFonctions listeFonctions, ListeVariables listeVariables) {
+	public Clear(Curseur curseur,TableCommande commande,ListeHistorique listeHistorique, ListeCommande listeCommande,ListeFonctions listeFonctions, ListeVariables listeVariables) {
 		
 		this.tableCommande = commande;
 		this.listeCommande = listeCommande;
 		this.listeHistorique = listeHistorique;
 		this.listeFonctions = listeFonctions;
 		this.listeVariables = listeVariables;
+        this.curseur = curseur;
 		
 	}
 	
 	@Override
-	public String execute(String[] commande){
+	public String execute(String[] commande,ListeVariables listeVariables){
 		if(commande.length>1)return "1";
 
-		tableCommande.executerCommande("Center");
+		tableCommande.executerCommande("Center",null);
+
 		listeCommande.reset();
 		listeHistorique.reset();
 		listeVariables.reset();
+        curseur.reset(Fenetre.getCenterDessin()[0],Fenetre.getCenterDessin()[1]);
 
 		return "";
 	}

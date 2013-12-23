@@ -1,6 +1,7 @@
 package commande;
 
 import dessin.Curseur;
+import liste.ListeVariables;
 
 public class Left extends Commande {
 	
@@ -12,7 +13,7 @@ public class Left extends Commande {
 
 
 	@Override
-	public String execute(String[] commande) {
+	public String execute(String[] commande, ListeVariables listeVariables) {
 		if(commande.length>1)return "1";
 		curseur.setD(180);
 		return "";

@@ -31,8 +31,10 @@ public class Curseur {
         this.drawCurs = true;
 	}
 
-    public void reset(){
+    public void reset(int x, int y){
         this.pos = new int[3];
+        this.pos[0] = x;
+        this.pos[1] = y;
         this.pos[2] = 0;
         this.souris=new int[2];
         this.tabRemember = new int[3];

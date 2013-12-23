@@ -11,19 +11,19 @@ import java.util.ArrayList;
 
 public class Fonction extends Commande {
 
-
     TableCommande tableCommande;
 	ListeFonctions listeFonctions;
 	ListeVariables listeVariables;
 	
 	public Fonction(TableCommande commande,ListeFonctions listeFonctions, ListeVariables listeVariables) {
-		this.tableCommande = commande;
+		super();
+        this.tableCommande = commande;
 		this.listeFonctions = listeFonctions;
 		this.listeVariables = listeVariables;
 	}
 
 	@Override
-	public String execute(String[] commande) {
+	public String execute(String[] commande,ListeVariables listeVariables) {
 		if(commande[0].charAt(0) == ':'){//appel de fonction
 			/* [0] :nom_fonction
 			 * [1:] arg
@@ -41,16 +41,23 @@ public class Fonction extends Commande {
                 if( commande[1].equalsIgnoreCase("remove")) {
                     listeFonctions.removeFonction(fonc);
                 }
+
 				if(commande.length-1 != fonc.getNb_Agument_Fonction())return "La fonction "+commande[0]+" a besoin de "+fonc.getNb_Agument_Fonction()+" argument(s)";
-				for(String s : fonc.getListe_Fonction()){
+                ListeVariables blocLocal = new ListeVariables(listeVariables.getliste());
+                for(String s : fonc.getListe_Fonction()){
 					String s2 = s;
+
+                    for(int i = 1; i<commande.length;i++){
+
+                        //System.out.println(commande[i]);
+                    }
 					for(int i = 1; i<commande.length;i++){
-						
-						
+
 						s2 = s2.replace("$"+i, commande[i]);
 					}
+                    //System.out.println("inst : " + s2);
 					String error = "";
-					error = tableCommande.ErrorToString(error, tableCommande.executerCommande(s2));
+					error = tableCommande.ErrorToString(error, tableCommande.executerCommande(s2,blocLocal));
 					if(!"".equals(error)){
 						return error;
 					}

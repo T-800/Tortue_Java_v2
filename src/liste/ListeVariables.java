@@ -9,6 +9,9 @@ public class ListeVariables {
 	public ListeVariables() {
 		cmd = new ArrayList<>();
 	}
+    public ListeVariables(ArrayList <ObjetVariables> e) {
+        cmd = new ArrayList<>(e);
+    }
 	
 	public ArrayList<ObjetVariables> getliste() {
 		return cmd;

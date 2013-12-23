@@ -137,33 +137,33 @@ public class PanelInfo extends JPanel{
 		 
 	      public void actionPerformed(ActionEvent e) {
 	    	  if(e.getSource()==jbopen){
-	    		  listeHistorique.addToList("open",tableCommande.executerCommande("open"));
+	    		  listeHistorique.addToList("open",tableCommande.executerCommande("open",null));
 	    	  }
 	    	  else if(e.getSource()==jbsave){
-	    		  listeHistorique.addToList("save",tableCommande.executerCommande("save"));
+	    		  listeHistorique.addToList("save",tableCommande.executerCommande("save",null));
 	    	  }
 	    	  else if(e.getSource()==jbdessine){
 	    		  if (curseur.isPenDown()){
-	    			  listeHistorique.addToList("penup",tableCommande.executerCommande("penup"));
+	    			  listeHistorique.addToList("penup",tableCommande.executerCommande("penup",null));
 	    		  }
 	    		  else {
-	    			  listeHistorique.addToList("pendown",tableCommande.executerCommande("pendown"));
+	    			  listeHistorique.addToList("pendown",tableCommande.executerCommande("pendown",null));
 	    		  }
 	    	  }
 	    	  else if(e.getSource()==jbundo){
-	    		  listeHistorique.addToList("undo",tableCommande.executerCommande("undo"));
+	    		  listeHistorique.addToList("undo",tableCommande.executerCommande("undo",null));
 	    	  }
 	    	  else if(e.getSource()==jbredo){
-	    		  listeHistorique.addToList("redo",tableCommande.executerCommande("redo"));
+	    		  listeHistorique.addToList("redo",tableCommande.executerCommande("redo",null));
 	    	  }
 	    	  else if(e.getSource()==jbnew){
-	    		  listeHistorique.addToList("new",tableCommande.executerCommande("new"));
+	    		  listeHistorique.addToList("new",tableCommande.executerCommande("new",null));
 	    	  }
 	    	  else if(e.getSource()==jbpencolor){
                   Color color = JColorChooser.showDialog(null, "Choisir la couleur du pinceau",null);
                   if(color != null){
                       listeHistorique.addToList("pencolor "+color.getRed()+" "+color.getGreen()+" "+color.getBlue()
-                              ,tableCommande.executerCommande("pencolor "+color.getRed()+" "+color.getGreen()+" "+color.getBlue()));
+                              ,tableCommande.executerCommande("pencolor "+color.getRed()+" "+color.getGreen()+" "+color.getBlue(),null));
                   }
 
 	    	  }
@@ -171,7 +171,7 @@ public class PanelInfo extends JPanel{
                   Color color = JColorChooser.showDialog(null, "Choisir la couleur de l'arrière plan",null);
                   if(color != null){
                       listeHistorique.addToList("backgroundcolor "+color.getRed()+" "+color.getGreen()+" "+color.getBlue()
-                              ,tableCommande.executerCommande("backgroundcolor "+color.getRed()+" "+color.getGreen()+" "+color.getBlue()));
+                              ,tableCommande.executerCommande("backgroundcolor "+color.getRed()+" "+color.getGreen()+" "+color.getBlue(),null));
                   }
 
 

@@ -6,19 +6,22 @@ import liste.ListeVariables;
 import liste.ListeVariables.ObjetVariables;
 
 import javax.swing.*;
+import java.util.ArrayList;
 
 public class Variables extends Commande {
 
     //TODO: Aojuter la suppression des variables
+
 	
-	private ListeVariables listeVariables;
-	
-	public Variables(ListeVariables listeVariables) {
-		this.listeVariables = listeVariables;
+	public Variables() {
+        super();
 	}
 	
 	@Override
-	public String execute(String[] commande){
+	public String execute(String[] commande,ListeVariables listeVariables){
+        for (ObjetVariables o : listeVariables.getliste()){
+            System.out.println("var : "+o.getNom_Variable()+" = "+o.getValeur_Variable());
+        }
 		if (commande[0].charAt(0) == '_') { //affectation
             String cmd="";
             for (String s : commande) cmd+=s;
@@ -29,25 +32,29 @@ public class Variables extends Commande {
 			if (tabArg.length!=2) {
 				return "1";
 			}
-			ObjetVariables var = Convert.get_Variable(listeVariables,tabArg[0].substring(1).trim());
+            ObjetVariables var;
+
+            var  = Convert.get_Variable(listeVariables, tabArg[0].substring(1).trim());
 			if (var != null) {
-				return affectation(var,tabArg[1].trim());
+				return affectation(var,tabArg[1].trim(),listeVariables);
 			}
 
 		}
 		else{ //VAR nom (Déclaration)
 			// TODO: syntaxe des noms de variable
-            ObjetVariables var = listeVariables.getVar(commande[1]);
+            ObjetVariables var;
+            var = listeVariables.getVar(commande[1]);
+
             if (var != null)    {
                 int option = JOptionPane.showConfirmDialog(null,
                         "La variable "+commande[1]+" éxiste déjà. Voulez-vous la remplacer?", "Tortue",
                         JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
 
-                if (option == JOptionPane.YES_OPTION) affectation(var,"0");
+                if (option == JOptionPane.YES_OPTION) affectation(var,"0",listeVariables);
                 else return "";
             }
             else{
-                declaration(commande[1]);
+                declaration(commande[1],listeVariables);
             }
 
 		}
@@ -55,11 +62,12 @@ public class Variables extends Commande {
 
 	}
 
-	private void declaration(String nom_Variable){
-		this.listeVariables.add(nom_Variable);
+	private void declaration(String nom_Variable,ListeVariables listeVariables){
+
+		listeVariables.add(nom_Variable);
 	}
 
-	private String affectation(ObjetVariables var, String sAffectation){
+	private String affectation(ObjetVariables var, String sAffectation,ListeVariables listeVariables){
 		int valeur = 0;
 		if( sAffectation.charAt(0) != '('){
 			try{
@@ -86,6 +94,7 @@ public class Variables extends Commande {
 			}
 			try{
 				valeur = Integer.parseInt(sAffectation);
+                System.out.println("var : "+var.getNom_Variable()+" = "+valeur);
 				var.setValeur_Variable(sAffectation);
 
 			}catch (NumberFormatException e1){

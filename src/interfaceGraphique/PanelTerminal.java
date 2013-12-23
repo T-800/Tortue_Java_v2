@@ -12,11 +12,12 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.ArrayList;
 
-public class PanelTerminal extends JTextField implements KeyListener{
+public class PanelTerminal extends JTextArea implements KeyListener{
 	private ListeHistorique listeHistorique;
 	private TableCommande table;
     private AutoCompletion autoCompletion;
     private int compterTabulation = 0;
+    private ListeVariables listeVariables;
 
 	public PanelTerminal(TableCommande table,ListeHistorique listeHistorique, ListeFonctions listeFonctions, ListeVariables listeVariables) {
 		this.setBackground(Color.black);
@@ -29,6 +30,7 @@ public class PanelTerminal extends JTextField implements KeyListener{
 		this.listeHistorique = listeHistorique;
         this.autoCompletion = new AutoCompletion(listeFonctions,listeVariables);
 		this.table = table;
+        this.listeVariables = listeVariables;
 	}
 	
 	
@@ -49,7 +51,7 @@ public class PanelTerminal extends JTextField implements KeyListener{
 			}
 
 			listeHistorique.addToList(keyboard,"");
-            String error = table.executerCommande(keyboard);
+            String error = table.executerCommande(keyboard,listeVariables);
             try {
                 listeHistorique.setLastErrorMsg(error);
             }catch(ArrayIndexOutOfBoundsException ignored){
@@ -57,9 +59,9 @@ public class PanelTerminal extends JTextField implements KeyListener{
             }
 
 			this.setText("");
-            for(ListeHistorique.Historique s : listeHistorique.getliste()){
+            /*for(ListeHistorique.Historique s : listeHistorique.getliste()){
                 System.out.println(s.getCommande()+" "+s.getError_msg());
-            }
+            }*/
 		}
 		else if (e.getKeyCode() == KeyEvent.VK_UP) {
 			this.setText(listeHistorique.getPrev());

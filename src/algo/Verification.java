@@ -14,6 +14,7 @@ public class Verification {
 			else if (s.charAt(i)== ')') tmp--;
 			if (tmp < 0) return false;
 		}
+        //System.out.println(tmp);
 		return (tmp==0);
 	}
 	

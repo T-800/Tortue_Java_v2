@@ -3,6 +3,7 @@ package commande;
 import dessin.Curseur;
 import interfaceGraphique.Fenetre;
 import liste.ListeHistorique;
+import liste.ListeVariables;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -26,7 +27,7 @@ public class Save extends Commande {
         save = new JFileChooser();
     }
     @Override
-    public String execute(String[] commande) {
+    public String execute(String[] commande, ListeVariables listeVariables) {
         if(commande.length>3 || commande.length == 2)return "1";
         File fichier;
         curseur.setDrawCurs(false);

@@ -7,35 +7,15 @@ import java.util.ArrayList;
 
 public class Convert {
 	
-	
-	public static void main(String args[]){
-		
-		String s ="Move renaud (1(1)) (2)   (3)   [4 (4 ) ] [5    ((5)5)[5]5]";
-		String[] ss = commandeToTab(s);
-        for (String s1 : ss) {
-            System.out.println(s1);
-        }
-		
-		String s2 = " Fonction carre 1 [//carre de $1*$1;move $1;turn +90]";
-		System.out.println("Avant : "+s2);
-		//ss = complexArgToTab(s2);
-		s2 = s2.substring(1, s2.length()-1);
-		s2 = s2.replace("$"+1, "5");
-		System.out.println("Apres : "+s2);
-        for (String s1 : ss) {
-            System.out.println(s1);
-        }
-	}
-	
 	public static String[] commandeToTab(String commande){
 		/*
-		 * Supprime tout les espace en trop
+		 * Surprime tout les espace en trop
 		 */
 		commande = commande.replaceAll("\\s+", " ");
 		
 		int tmp =0;
 		int begin = 0;
-		ArrayList<String> list = new ArrayList<String>();
+		ArrayList<String> list = new ArrayList<>();
 		
 		
 		for (int i =0 ; i<commande.length() ;i++ ) {
@@ -49,12 +29,7 @@ public class Convert {
 		list.add(commande.substring(begin));
 		return list.toArray(new String[list.size()]);
 	}
-	
-	/**Cette fonction retourne l'ObjetVariable de la varible Passer en argument depuis la listeVariable  
-	 * @param liste_Variables
-	 * @param nom_Variable
-	 * @return ObjetVariable
-	 */
+
 	public static  ObjetVariables get_Variable(ListeVariables liste_Variables,String nom_Variable){
 		for (ObjetVariables var : liste_Variables.getliste()) {
 				if(var.getNom_Variable().equals(nom_Variable)) {
@@ -63,12 +38,7 @@ public class Convert {
 		}
 		return null;
 	}
-	
-	/**
-	 * @param tab
-	 * @param liste_Variables
-	 * @return
-	 */
+
 	public static String calculeTab(String tab[],ListeVariables liste_Variables){
 		int a = 0,b = 0;
         if(tab.length == 1)return tab[0];
@@ -135,7 +105,7 @@ public class Convert {
      *      - Soit une variable
      *      - Soit un entier
      *      - Soit un calcul
-     * @param s
+     * @param s   f
      * @return String la valeur string de cette argument ou le string erreur
      */
 	
@@ -173,8 +143,8 @@ public class Convert {
 	}
  
 	/**
-	 * @param s
-	 * @return
+	 * @param s   g
+	 * @return    g
 	 */
 	public static String subParenthese(String s){
 		int begin = 0;

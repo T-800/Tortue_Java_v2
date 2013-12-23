@@ -1,6 +1,7 @@
 package commande;
 
 import liste.ListeHistorique;
+import liste.ListeVariables;
 import terminal.TableCommande;
 
 
@@ -28,7 +29,7 @@ public class Open extends Commande {
     }
 
     @Override
-    public String execute(String[] commande) {
+    public String execute(String[] commande, ListeVariables listeVariables) {
 
         if(commande.length>2)return "1";
         File fichier;
@@ -81,7 +82,7 @@ public class Open extends Commande {
 			 * si la ligne n'est pas vide on l'ajout a une arraylist
 			 */
             if (!ligne.equals("")) {
-                String error = tableCommande.executerCommande(ligne);
+                String error = tableCommande.executerCommande(ligne,listeVariables);
                 if(!error.equals("")){
                     listeHistorique.addToList(commande[0],"");
                     return "Une erreur est survenue lors de l'ouverture du fichier : "+fichier.getName()+"   Ligne :"+nbligne+"<br>"+error;

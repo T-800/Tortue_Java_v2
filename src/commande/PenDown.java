@@ -2,6 +2,7 @@ package commande;
 
 import dessin.Curseur;
 import interfaceGraphique.Fenetre;
+import liste.ListeVariables;
 
 public class PenDown extends Commande {
 	
@@ -11,7 +12,7 @@ public class PenDown extends Commande {
 	}
 	
 	@Override
-	public String execute(String[] commande){
+	public String execute(String[] commande, ListeVariables listeVariables){
 		if(commande.length>1)return "1";
 		curseur.setPenDown(true);
 		Fenetre.getPanelInfo().repaint();

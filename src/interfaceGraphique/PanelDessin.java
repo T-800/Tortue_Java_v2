@@ -51,9 +51,19 @@ public class PanelDessin extends JPanel implements MouseListener, MouseMotionLis
 
 		}
         if (curseur.DrawCurs()) {
-            g2.setColor(Color.DARK_GRAY);
+            if(curseur.isPenDown()){
+                g2.setColor(Color.DARK_GRAY);
+            }
+            else {
+                g2.setColor(curseur.getCouleurCurseur());
+            }
             g2.fillPolygon(this.drawCursOmbre());
-            g2.setColor(curseur.getCouleurCurseur());
+            if(!curseur.isPenDown()){
+                g2.setColor(Color.DARK_GRAY);
+            }
+            else {
+                g2.setColor(curseur.getCouleurCurseur());
+            }
             g2.fillPolygon(this.drawCurs());
         }
         this.setBackground(curseur.getCouleurBg());
@@ -127,7 +137,7 @@ public class PanelDessin extends JPanel implements MouseListener, MouseMotionLis
 	public void mouseDragged(MouseEvent arg0) {}
 	@Override
 	public void mouseClicked(MouseEvent e) {
-        System.out.println("MOUSE");
+        //System.out.println("MOUSE");
 
         int x = e.getX(), y = e.getY();
         if (x > this.getWidth() / 2) {
@@ -142,7 +152,7 @@ public class PanelDessin extends JPanel implements MouseListener, MouseMotionLis
         }
 
         listeHistorique.addToList("GO "+x+" "+y
-                ,tableCommande.executerCommande("GO "+x+" "+y));
+                ,tableCommande.executerCommande("GO "+x+" "+y,null));
         PanelOnglet.repaintOnglet();
         Fenetre.getPanelDessin().repaint();
         Fenetre.getPanelInfo().repaint();

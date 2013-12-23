@@ -17,7 +17,7 @@ public class Turn extends Commande {
 	}
 
 	@Override
-	public String execute(String[] commande ){
+	public String execute(String[] commande,ListeVariables listeVariables ){
 		if(commande.length!=2)return "1";
 		int valeur = 0;
         String s = commande[1];

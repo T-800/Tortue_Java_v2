@@ -1,8 +1,45 @@
 TODO :
 changer la taille des boutons
 Ajouter les boutons pour augmenter et diminuer la taille du pinceau
+organiser les commande bloc comme des piles avec variable local
+
+commande :
+
+BACK                    
+BACKGROUNDCOLOR         OK
+BGCOLOR                 OK
+CENTER                  OK
+CLEAR                   OK
+DOWN                    OK
+ERASE                   
+FONCTION                  
+GO                      OK
+HELP                    
+IF                    
+LEFT                    OK
+MOVE                    OK
+NEW                     OK
+OPEN                    OK
+PENCOLOR                OK     
+PENDOWN                 OK  
+PENSIZE                 OK
+PENUP                   OK
+REDO                    
+REMEMBER                    
+REPEAT                  OK
+RIGHT                   
+SAVE                    
+TURN                    OK
+UNDO                    
+UP                      OK
+VAR                   
+WHILE                   
 
 
 DONE :
 
 Ajouter la couleur actuel dans les bouton pen color et bgcolor
+
+
+
+Fonction f 2 [_r= $1; _t= $2;if (_t > 0) [repeat 4 [move _r;turn +90; :f (_r / 4) (_t - 1); _r= $1; _t= $2]]]

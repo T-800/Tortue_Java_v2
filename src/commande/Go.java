@@ -17,7 +17,7 @@ public class Go extends Commande {
     }
 
     @Override
-    public String execute(String[] commande){
+    public String execute(String[] commande,ListeVariables listeVariables){
         System.out.println("GO");
         if(commande.length < 2 || commande.length > 3)return "1";
 
