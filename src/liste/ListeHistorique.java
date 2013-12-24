@@ -44,14 +44,6 @@ public class ListeHistorique {
 		return msg;
 	}
 
-    public String getListeICmd(int i){
-        return this.liste.get(i).getCommande();
-    }
-
-    public boolean isEmpty(){
-        return (this.liste.size() == 0);
-    }
-
 	
 	public void reset(){
 		this.liste = new ArrayList<>();
@@ -59,28 +51,7 @@ public class ListeHistorique {
         this.index = 0;
 	}
 
-    public String getPrev(){
-        if (index <= 0) {
-            this.index = 0;
-            if (this.size==0) {
-                return "";
-            } else
-                return this.getListeICmd(0);
-        }
-        this.index--;
-        return this.getListeICmd(index);
-    }
-    public String getNext(){
-        if (this.isEmpty()) {
-            return "";
-        }
-        this.index++;
-        if (index >= size) {
-            this.index = size - 1;
-            return "";
-        }
-        return this.getListeICmd(index);
-    }
+
 
     public ArrayList<Historique> getliste() {
         return liste;

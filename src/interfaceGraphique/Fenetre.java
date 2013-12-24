@@ -1,5 +1,6 @@
 package interfaceGraphique;
 
+import com.intellij.ui.components.JBScrollPane;
 import dessin.Curseur;
 import liste.ListeCommande;
 import liste.ListeFonctions;
@@ -10,9 +11,6 @@ import terminal.TableCommande;
 import javax.swing.*;
 import javax.swing.border.BevelBorder;
 import java.awt.*;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
-import java.io.IOException;
 
 /**
  * Fenetre Principal
@@ -22,9 +20,7 @@ import java.io.IOException;
 public class Fenetre extends JFrame{
 	
 	private static PanelDessin jDessin;
-	private PanelTerminal jTerminal;
-	private static PanelOnglet jOnglet;
-	private static PanelInfo jInfos;
+    private static PanelInfo jInfos;
 	
 	private TableCommande table;
 	private Curseur curseur;
@@ -61,22 +57,26 @@ public class Fenetre extends JFrame{
 		//setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 				
 		jDessin =new PanelDessin(curseur,commandeListe,historiqueListe,table);
-		jTerminal = new PanelTerminal(table,historiqueListe,fonctionsListe,variableListe);
-		jOnglet = new PanelOnglet(historiqueListe,fonctionsListe,variableListe);
+        PanelTerminal jTerminal = new PanelTerminal(table,historiqueListe, fonctionsListe, variableListe);
+        PanelOnglet jOnglet = new PanelOnglet(historiqueListe, fonctionsListe, variableListe);
 		jInfos = new PanelInfo(curseur,historiqueListe,table);
 		jInfos.setBorder(new javax.swing.border.BevelBorder(BevelBorder.RAISED));
 		jDessin.setBorder(BorderFactory.createLineBorder(Color.BLACK));
 		
 		JPanel content = new JPanel();
 		content.setLayout(new BorderLayout());
+        JScrollPane scrollPane = new JBScrollPane(jTerminal.jEditorPane,ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED,
+                ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 		content.add(jDessin, BorderLayout.CENTER);
-		content.add(jTerminal, BorderLayout.SOUTH);
+        scrollPane.setPreferredSize(new Dimension(300, 70));
+
+        content.add(scrollPane, BorderLayout.SOUTH);
 		content.add(jOnglet, BorderLayout.EAST);
 		content.add(jInfos, BorderLayout.NORTH);
 		
 		this.setContentPane(content);
 		setVisible(true);
-		jTerminal.requestFocus(); // Donne le focus au terminal
+		jTerminal.jEditorPane.requestFocus(); // Donne le focus au terminal
 		curseur.setPos(getCenterDessin());
         /*this.addWindowListener(new WindowAdapter() {
             @Override
@@ -90,14 +90,12 @@ public class Fenetre extends JFrame{
             }
         });  */
 	}
-	
-	public static int[] getCenterDessin(){
-		int t[] = {Fenetre.getPanelDessin().getSize().width/2,Fenetre.getPanelDessin().getSize().height/2};
-		return t;
+
+    public static int[] getCenterDessin(){
+        return new int[]{getPanelDessin().getSize().width/2, getPanelDessin().getSize().height/2};
 	}
 	public static int[] getMaxDessin(){
-		int t[] = {Fenetre.getPanelDessin().getSize().width,Fenetre.getPanelDessin().getSize().height};
-		return t;
+        return new int[]{getPanelDessin().getSize().width, getPanelDessin().getSize().height};
 	}
 	
 	public static PanelInfo getPanelInfo(){
@@ -106,9 +104,5 @@ public class Fenetre extends JFrame{
 	
 	public static PanelDessin getPanelDessin(){
 		return jDessin;
-	}
-	
-	public static PanelOnglet getPanelOnglet(){
-		return jOnglet;
 	}
 }
