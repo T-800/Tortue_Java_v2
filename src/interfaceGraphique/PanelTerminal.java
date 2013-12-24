@@ -22,7 +22,7 @@ public class PanelTerminal extends JTextArea implements KeyListener{
 	public PanelTerminal(TableCommande table,ListeHistorique listeHistorique, ListeFonctions listeFonctions, ListeVariables listeVariables) {
 		this.setBackground(Color.black);
 		this.setForeground(Color.GREEN);
-		this.setPreferredSize(new Dimension(0, 30));
+		this.setPreferredSize(new Dimension(0, 50));
 		Font police = new Font("Arial", Font.BOLD, 14);
 		setFont(police);
 		this.addKeyListener(this);
