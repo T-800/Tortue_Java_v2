@@ -19,7 +19,7 @@ public abstract class Commande {
     private static ListeFonctions listeFonctions;
     private static TableCommande tableCommande;
 
-	public abstract void execute(String parametres, ListeVariables listeVariables);
+	public abstract boolean execute(String parametres, ListeVariables listeVariables);
 
 
     public static Curseur getCurseur() {
@@ -67,7 +67,7 @@ public abstract class Commande {
     }
 
     public static void setListe_Local_Variables(ListeVariables liste_Local_Variables) {
-        Commande.liste_Local_Variables = liste_Local_Variables;
+        Commande.liste_Local_Variables = new ListeVariables(liste_Local_Variables.getliste());
     }
 
     public String ErrorToString(String code, String nomCmd){

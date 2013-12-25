@@ -33,7 +33,7 @@ public class TableCommande {
 		table.put("CLEAR", new Clear());
 		table.put("DOWN", new Down());
 //		table.put("ERASE", new Erase());
-//		table.put("FONCTION", new Fonction(this,listeFonctions,listeVariables));// tester avec instruction composée
+		table.put("FONCTION", new Fonctions());// tester avec instruction composée
 //		table.put("GO", new Go(curseur,listeVariables));
 //		table.put("HELP", new Help());
 //		table.put("IF", new If(curseur,listeVariables,this));
@@ -61,7 +61,7 @@ public class TableCommande {
 	}
 
 
-	public void executerCommande(String commande, ListeVariables listeVariables){
+	public boolean executerCommande(String commande, ListeVariables listeVariables){
 
 		/*
 		 * On retirre tout les espaces du string
@@ -71,12 +71,12 @@ public class TableCommande {
         commande = commande.replaceAll("\\s+", " ");
 		String[] commandeTab = commande.split(" ", 2);
 
-
+        boolean ok = true;
 		if (commande.charAt(0) == ':'){
-			table.get("FONCTION").execute(commande,listeVariables);
+			ok = table.get("FONCTION").execute(commande,listeVariables);
 		}
 		else if(commande.charAt(0) == '_'){
-			table.get("VAR").execute(commande,listeVariables);
+            ok = table.get("VAR").execute(commande,listeVariables);
 		}
 		else{
             commandeTab[0] = commandeTab[0].toUpperCase();
@@ -85,11 +85,12 @@ public class TableCommande {
 				 * 	- si oui on execute la commande en plui envoyant le tableau
 				 * on renvoie le code erreur de la commande
 				 */
-				table.get(commandeTab[0]).execute(commande,listeVariables);
+                ok = table.get(commandeTab[0]).execute(commande,listeVariables);
 			}
 		}
 		
 		Fenetre.getPanelDessin().repaint();
+        return ok;
 	}
 	
 	

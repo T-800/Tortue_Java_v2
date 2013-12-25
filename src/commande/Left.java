@@ -9,12 +9,13 @@ public class Left extends Commande {
 
 
     @Override
-    public void execute(String commande, ListeVariables listeVariables) {
+    public boolean execute(String commande, ListeVariables listeVariables) {
         if(!commande.equalsIgnoreCase("left")){
             getListeHistorique().addToList(commande,this.ErrorToString("1",commande.split(" ",2)[0]));
-            return;
+            return false;
         }
         getCurseur().setD(180);
         getListeHistorique().addToList(commande,"");
+        return true;
     }
 }

@@ -20,7 +20,7 @@ public class Variables extends Commande {
         return tab;
     }
     @Override
-    public void execute(String commande, ListeVariables listeVariables){
+    public boolean execute(String commande, ListeVariables listeVariables){
         String[] param = getCmdParam(commande);
         Convert.printParam(param);
 
@@ -37,7 +37,7 @@ public class Variables extends Commande {
             variable = Convert.get_Variable(list,param[0].substring(1));
             if(variable == null) {
                 getListeHistorique().addToList(commande,"La variable "+param[0].substring(1)+"");
-                return;
+                return false;
             }
             param = getTaAffection(commande);
             String valeur = Convert.valeurIntArgument(param[1],list);
@@ -53,7 +53,7 @@ public class Variables extends Commande {
         else {
             if(!param[0].equalsIgnoreCase("var")){
                 getListeHistorique().addToList(commande,this.ErrorToString("1",param[0]));
-                return;
+                return false;
             }
 
             //list.printVar("local");
@@ -66,7 +66,7 @@ public class Variables extends Commande {
                 if (option == JOptionPane.YES_OPTION)variable.setValeur_Variable("0");
                 else {
                     getListeHistorique().addToList(commande,"déclaration annulée");
-                    return;
+                    return false;
                 }
             }
             if(param.length == 3){
@@ -85,6 +85,7 @@ public class Variables extends Commande {
         }
         list.printVar("var");
         getListeHistorique().addToList(commande,"");
+        return true;
     }
 
     private void declaration(String nom_Variable,ListeVariables listeVariables){
