@@ -5,30 +5,24 @@ import java.util.ArrayList;
 public class ListeHistorique {
 	
 	private ArrayList<Historique> liste;
-
-    private int size, index;
 	
 	public ListeHistorique() {
 		liste = new ArrayList<>();
 
-        this.size = 0;
-        this.index = 0;
 	}
 	
 	public void addToList(String cmd,String error_msg){
 		this.liste.add(new Historique(cmd, error_msg));
-        size++;
-        index = size;
 	}
-    public void addToList(String cmd,String error_msg,boolean save){
-        this.liste.add(new Historique(cmd, error_msg,save));
-        size++;
-        index = size;
+
+    public void printHist(){
+        System.out.println("Hist  :");
+        for(Historique h : this.liste){
+            System.out.println("\tnom : "+h.getCommande()+" = "+h.getError_msg()+"|");
+        }
+        System.out.println("Hist  Fin");
     }
-    public void  setLastErrorMsg(String msg){
-        liste.get(liste.size()-1).setError_msg(msg);
-    }
-	
+
 	public String getHtmlmsg(){
 		String msg = "";
 		for(Historique h : this.liste){
@@ -47,8 +41,6 @@ public class ListeHistorique {
 	
 	public void reset(){
 		this.liste = new ArrayList<>();
-        this.size = 0;
-        this.index = 0;
 	}
 
 
@@ -61,7 +53,6 @@ public class ListeHistorique {
 		
 		private String commande;
         private String error_msg;
-        private boolean save = true;
 
 
 
@@ -72,16 +63,6 @@ public class ListeHistorique {
 			this.error_msg = error_msg;
 
 		}
-        public Historique(String cmd, String error_msg,boolean save) {
-            this.commande = cmd;
-            this.error_msg = error_msg;
-            this.save = save;
-
-        }
-
-        public void setError_msg(String error_msg) {
-            this.error_msg = error_msg;
-        }
 
 		public String getCommande() {
 			return commande;

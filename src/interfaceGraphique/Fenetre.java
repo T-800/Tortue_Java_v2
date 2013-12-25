@@ -44,7 +44,7 @@ public class Fenetre extends JFrame{
 		this.variableListe = new ListeVariables();
 		this.curseur = new Curseur(0, 0);
 		this.historiqueListe = new ListeHistorique();
-		this.table = new TableCommande(curseur,commandeListe,fonctionsListe,variableListe,historiqueListe);
+		this.table = new TableCommande(curseur,commandeListe,fonctionsListe,historiqueListe);
 	}
 	
 	

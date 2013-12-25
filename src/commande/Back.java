@@ -1,23 +1,18 @@
 package commande;
 
-import dessin.Curseur;
 import liste.ListeVariables;
 
 public class Back extends Commande {
 
-	Curseur curseur;
-	
-	public Back(Curseur curseur) {
-		this.curseur = curseur;
-	}
-	
-	@Override
-	public String execute(String[] commande, ListeVariables listeVariables){
-		if(commande.length>1)return "1";
 
-		curseur.getBAckRemember();
-		
+    @Override
+    public void execute(String commande, ListeVariables listeVariables){
+        if(!commande.equalsIgnoreCase("back")){
+            getListeHistorique().addToList(commande,this.ErrorToString("1",commande.split(" ",2)[0]));
+            return;
+        }
 
-		return "";
-	}
+        getCurseur().setCurseur(getCurseur().getCursRemember());
+        getListeHistorique().addToList(commande,"");
+    }
 }

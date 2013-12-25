@@ -126,7 +126,7 @@ public class PanelInfo extends JPanel{
 	public void setCurseur(){
 		this.jlsouris.setText("("+(curseur.getSourisX()-Fenetre.getCenterDessin()[0])+";"+(Fenetre.getCenterDessin()[1]-curseur.getSourisY())+")");
 		this.jlcurseur.setText("Curseur ("+(curseur.getX()-Fenetre.getCenterDessin()[0])+";"+(Fenetre.getCenterDessin()[1]-curseur.getY())+"|°"+curseur.getD()+")");
-		this.jlsaved.setText("Save ("+curseur.getTabRemember()[0]+";"+curseur.getTabRemember()[1]+"|°"+curseur.getTabRemember()[2]+")");
+//		this.jlsaved.setText("Save ("+curseur.getCursRemember().getPos()[0]+";"+curseur.getCursRemember().getPos()[1]+"|°"+curseur.getCursRemember().getD()+")");
         this.jltaille.setText("Taille : - "+curseur.getPenSize()+" +");//Image Texte Image
 		
 		//this.jldessine
@@ -136,7 +136,7 @@ public class PanelInfo extends JPanel{
 		 
 		 
 	      public void actionPerformed(ActionEvent e) {
-	    	  if(e.getSource()==jbopen){
+	    	 /* if(e.getSource()==jbopen){
 	    		  listeHistorique.addToList("open",tableCommande.executerCommande("open",null));
 	    	  }
 	    	  else if(e.getSource()==jbsave){
@@ -176,7 +176,7 @@ public class PanelInfo extends JPanel{
 
 
 	    	  }
-	        
+	          */
 	    	  PanelOnglet.repaintOnglet();
 	    	  Fenetre.getPanelDessin().repaint();
 	    	  Fenetre.getPanelInfo().repaint();

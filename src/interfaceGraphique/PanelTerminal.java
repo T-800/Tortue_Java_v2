@@ -130,19 +130,14 @@ public class PanelTerminal implements KeyListener{
                         keyboard = keyboard.trim();
                         keyboard = keyboard.replace("\n","");
                         keyboard = keyboard.replace("\t","");
-                        listeHistorique.addToList(keyboard,"");
-                        String error = tableCommande.executerCommande(keyboard,listeVariables);
-                        try {
-                            listeHistorique.setLastErrorMsg(error);
-                        }catch(ArrayIndexOutOfBoundsException ignored){
+                        tableCommande.executerCommande(keyboard,listeVariables);
 
-                        }
                         PanelOnglet.repaintOnglet();
                         Fenetre.getPanelDessin().repaint();
                         Fenetre.getPanelInfo().repaint();
                         up = true;
                         rem = "";
-
+                        listeHistorique.printHist();
                         h.addToList(keyboard);
                         jEditorPane.setText("");
                         jEditorPane.setCaretPosition(0);

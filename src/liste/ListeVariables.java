@@ -20,6 +20,14 @@ public class ListeVariables {
 	public void add(String nom){
 		cmd.add(new ObjetVariables(nom));
 	}
+
+    public void printVar(String s){
+        System.out.println("Var "+s+" :");
+        for(ObjetVariables h : this.cmd){
+            System.out.println("\tnom : "+h.getNom_Variable()+" = "+h.getValeur_Variable());
+        }
+        System.out.println("Var "+s+" Fin");
+    }
 	
 	public ObjetVariables getVar(String name)  {
         for(ObjetVariables h : this.cmd){
