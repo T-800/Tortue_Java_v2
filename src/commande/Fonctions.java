@@ -88,7 +88,6 @@ public class Fonctions extends Commande {
                 }
                 else{
                     getListeHistorique().addToList(commande,"déclaration annulée");
-
                     return false;
                 }
             }
@@ -96,6 +95,7 @@ public class Fonctions extends Commande {
                 getListeFonctions().addFonction(nom_Fonction, nb_Arg, instructions);
             }
         }
+        setListe_Local_Variables(listeVariables);
         getListeHistorique().addToList(commande,"");
         return true;
     }
