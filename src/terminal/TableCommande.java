@@ -50,7 +50,7 @@ public class TableCommande {
 //		table.put("REPEAT", new Repeat(this,listeFonctions,listeVariables));
 		table.put("RIGHT", new Right());
 //		table.put("SAVE", new Save(listeHistorique,curseur));
-//		table.put("TURN", new Turn(curseur,listeVariables));
+		table.put("TURN", new Turn());
 //		table.put("UNDO", new Undo());
 		table.put("UP", new Up());
 		table.put("VAR", new Variables());
