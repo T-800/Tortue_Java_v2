@@ -11,9 +11,10 @@ public class Fonctions extends Commande {
 
     @Override
     public boolean execute(String commande,ListeVariables listeVariables) {
+        //System.out.println ("FONCTIONNNNNNNNNNNNNN");
         String[] param = getCmdParam(commande);
-        Convert.printParam(param);
-        setListe_Local_Variables(listeVariables);
+        //Convert.printParam(param);
+        setListe_Local_Variables(new ListeVariables());
         ListeVariables list =getListe_Local_Variables();
 
         if(param[0].charAt(0) == ':'){//appel de fonction
@@ -39,6 +40,7 @@ public class Fonctions extends Commande {
                     }
                     //System.out.println("inst : " + s2);
                     error = getTableCommande().executerCommande(s2,list);
+                    //System.out.println (error);
                     if(!error)return false;
                 }
             }

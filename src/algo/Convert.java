@@ -79,15 +79,15 @@ public class Convert {
 		return null;
 	}
 
-    public static void printParam(String[] commande){
+    /*public static void printParam(String[] commande){
         System.out.println("Param Cmd :");
         for (String aCommande : commande) {
             System.out.println("\t" + aCommande);
         }
         System.out.println("Param Cmd Fin");
-    }
+    } */
 
-	private static String calculeTab(String tab[],ListeVariables liste_Variables){
+	protected static String calculeTab(String tab[],ListeVariables liste_Variables){
 		int a,b;
         if(tab.length == 1)return tab[0];
 		if(tab.length != 3)return "Pas bien parenthésé";
@@ -140,7 +140,7 @@ public class Convert {
 			case "-" :
 			 	return ""+(a-b);
 			default :
-				return "ERRdfsdgh;j;OR";
+				return "E";
 
 		}
 	}

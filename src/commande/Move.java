@@ -11,7 +11,7 @@ public class Move extends Commande {
     @Override
     public boolean execute(String commande,ListeVariables listeVariables){
         String[] param = getCmdParam(commande);
-        Convert.printParam(param);
+       // Convert.printParam(param);
         if(param.length < 2 || param.length > 3){
             getListeHistorique().addToList(commande,ErrorToString("1",commande));
             return false;
@@ -47,7 +47,7 @@ public class Move extends Commande {
             else {
                 try{
                     distance = Integer.parseInt(argsString[0]);
-                    System.out.println("move : "+argsString[0]+"|");
+                    //System.out.println("move : "+argsString[0]+"|");
                 }catch(NumberFormatException e1){
                     getListeHistorique().addToList(commande,"Erreur "+argsString[0]+" n'est pas un nombre");
                     return false;
@@ -62,6 +62,7 @@ public class Move extends Commande {
         getCurseur().setX(coor[0]);
         getCurseur().setY(coor[1]);
         getListeHistorique().addToList(commande,"");
+        Fenetre.getPanelDessin().repaint();
         return true;
     }
 

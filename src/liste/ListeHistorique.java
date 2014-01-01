@@ -15,13 +15,13 @@ public class ListeHistorique {
 		this.liste.add(new Historique(cmd, error_msg));
 	}
 
-    public void printHist(){
+    /*public void printHist(){
         System.out.println("Hist  :");
         for(Historique h : this.liste){
             System.out.println("\tnom : "+h.getCommande()+" = "+h.getError_msg()+"|");
         }
         System.out.println("Hist  Fin");
-    }
+    }*/
 
 	public String getHtmlmsg(){
 		String msg = "";

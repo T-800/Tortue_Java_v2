@@ -36,7 +36,7 @@ public class TableCommande {
 		table.put("FONCTION", new Fonctions());// tester avec instruction composée
 //		table.put("GO", new Go(curseur,listeVariables));
 //		table.put("HELP", new Help());
-//		table.put("IF", new If(curseur,listeVariables,this));
+		table.put("IF", new If());
 		table.put("LEFT", new Left());
 		table.put("MOVE", new Move()); // tester avec les variables et refaire random random
 //      table.put("NEW", new New(this,listeCommande,curseur,listeHistorique,listeVariables,listeFonctions));
@@ -47,7 +47,7 @@ public class TableCommande {
 //		table.put("PENUP", new PenUp(curseur));
 //		table.put("REDO", new Redo());
 		table.put("REMEMBER", new Remember());
-//		table.put("REPEAT", new Repeat(this,listeFonctions,listeVariables));
+		table.put("REPEAT", new Repeat());
 		table.put("RIGHT", new Right());
 //		table.put("SAVE", new Save(listeHistorique,curseur));
 		table.put("TURN", new Turn());

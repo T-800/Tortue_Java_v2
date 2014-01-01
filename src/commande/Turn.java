@@ -8,7 +8,7 @@ public class Turn extends Commande {
     @Override
     public boolean execute(String commande,ListeVariables listeVariables ){
         String[] param = getCmdParam(commande);
-        Convert.printParam(param);
+        //Convert.printParam(param);
         if(param.length!=2){
             getListeHistorique().addToList(commande,ErrorToString("1",commande));
             return false;
@@ -36,7 +36,7 @@ public class Turn extends Commande {
         }
         getCurseur().setD(valeur%360);
         getListeHistorique().addToList(commande,"");
-        return false;
+        return true;
 
 
     }

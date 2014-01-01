@@ -22,7 +22,7 @@ public class Variables extends Commande {
     @Override
     public boolean execute(String commande, ListeVariables listeVariables){
         String[] param = getCmdParam(commande);
-        Convert.printParam(param);
+        //Convert.printParam(param);
 
         //declaration("aaaaa", listeVariables);
         //setListe_Local_Variables(new ListeVariables(listeVariables.getliste()));
@@ -46,8 +46,8 @@ public class Variables extends Commande {
                 variable.setValeur_Variable(valeur);
 
             }catch (NumberFormatException ignored){}
-            System.out.println("calcule avant = "+param[1]);
-            System.out.println("calcule apres = "+valeur);
+            //System.out.println("calcule avant = "+param[1]);
+            //System.out.println("calcule apres = "+valeur);
             //faire l'affectation
         }
         else {
