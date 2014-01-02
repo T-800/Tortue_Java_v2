@@ -41,6 +41,7 @@ public class ListeHistorique {
 			}
 			
 		}
+        if(msg.equalsIgnoreCase(""))return "<font color=#007FAE size=5>Wellcome</font><br> to <font color=#FF0000 size=5>Tortue Génial !</font>";
 		return msg;
 	}
 

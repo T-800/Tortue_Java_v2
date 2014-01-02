@@ -1,5 +1,7 @@
-package interfaceGraphique;
+package interfaceGraphique.sud;
 
+import interfaceGraphique.Fenetre;
+import interfaceGraphique.ouest.PanelOnglet;
 import liste.ListeFonctions;
 import liste.ListeHistorique;
 import liste.ListeVariables;
@@ -18,7 +20,7 @@ import java.awt.event.KeyListener;
 import java.util.ArrayList;
 
 public class PanelTerminal implements KeyListener{
-    JEditorPane jEditorPane;
+    public JEditorPane jEditorPane;
     int indent = 0;
     int carfinal = 0,carcurrent = 0;
     private ListeHistorique listeHistorique;

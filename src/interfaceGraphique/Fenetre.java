@@ -2,6 +2,9 @@ package interfaceGraphique;
 
 import com.intellij.ui.components.JBScrollPane;
 import dessin.Curseur;
+import interfaceGraphique.ouest.PanelOuest;
+import interfaceGraphique.sud.PanelInfo;
+import interfaceGraphique.sud.PanelSud;
 import liste.ListeCommande;
 import liste.ListeFonctions;
 import liste.ListeHistorique;
@@ -9,8 +12,10 @@ import liste.ListeVariables;
 import terminal.TableCommande;
 
 import javax.swing.*;
-import javax.swing.border.BevelBorder;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
 
 /**
  * Fenetre Principal
@@ -18,17 +23,39 @@ import java.awt.*;
  *
  */
 public class Fenetre extends JFrame{
-	
-	private static PanelDessin jDessin;
-    private static PanelInfo jInfos;
-	
-	private TableCommande table;
+
+    private static PanelOuest jOuest;
+    private static PanelDessin jDessin;
+    private static PanelSud panelSud;
+
+
+	private static TableCommande table;
 	private Curseur curseur;
 
 	private ListeCommande commandeListe;
 	private ListeHistorique historiqueListe;
 	private ListeFonctions fonctionsListe;
-	private ListeVariables variableListe;
+	private static ListeVariables variableListe;
+
+
+
+
+
+
+    private JMenuBar menuBar;
+    private JMenu fichier = new JMenu("Fichier");
+    private JMenu option = new JMenu("Option");
+    private JMenu save = new JMenu("Save");
+    private JMenu h = new JMenu("?");
+    private JMenuItem nouveau = new JMenuItem("Nouveau");
+    private JMenuItem ouvrir = new JMenuItem("Ouvrir");
+    private JMenuItem quitter = new JMenuItem("Quitter");
+    private JMenuItem saveAll = new JMenuItem("Save All");
+    private JMenuItem saveTxt = new JMenuItem("Save texte");
+    private JMenuItem saveJpg = new JMenuItem("Save Jpg");
+
+    private JMenuItem help = new JMenuItem("Help");
+    private JMenuItem about = new JMenuItem("À Propos");
 	/**
 	 * Constructeur de la fenetre initialise 
 	 */
@@ -55,40 +82,128 @@ public class Fenetre extends JFrame{
 		setSize(940,600); 
 		setLocationRelativeTo(null);
 		//setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-				
-		jDessin =new PanelDessin(curseur,commandeListe,historiqueListe,table);
-        PanelTerminal jTerminal = new PanelTerminal(table,historiqueListe, fonctionsListe, variableListe);
-        PanelOnglet jOnglet = new PanelOnglet(historiqueListe, fonctionsListe, variableListe);
-		jInfos = new PanelInfo(curseur,historiqueListe,table);
-		jInfos.setBorder(new javax.swing.border.BevelBorder(BevelBorder.RAISED));
-		jDessin.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-		
-		JPanel content = new JPanel();
-		content.setLayout(new BorderLayout());
-        JScrollPane scrollPane = new JBScrollPane(jTerminal.jEditorPane,ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED,
-                ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-		content.add(jDessin, BorderLayout.CENTER);
-        scrollPane.setPreferredSize(new Dimension(300, 70));
 
-        content.add(scrollPane, BorderLayout.SOUTH);
-		content.add(jOnglet, BorderLayout.EAST);
-		content.add(jInfos, BorderLayout.NORTH);
-		
-		this.setContentPane(content);
-		setVisible(true);
-		jTerminal.jEditorPane.requestFocus(); // Donne le focus au terminal
-		curseur.setPos(getCenterDessin());
-        /*this.addWindowListener(new WindowAdapter() {
-            @Override
-            public void windowClosing(WindowEvent we) {
-                String error = table.executerCommande("NEW");
-                System.out.print("efgrh");
-                if (!error.equalsIgnoreCase("cancel")) {
-                    System.exit(0);
+        jOuest = new PanelOuest(curseur,historiqueListe,table,fonctionsListe,variableListe);
+
+        jDessin =new PanelDessin(curseur,commandeListe,historiqueListe,table);
+        panelSud = new PanelSud(curseur,table,historiqueListe,fonctionsListe,variableListe);
+
+        JScrollPane scrollPaneDessin = new JBScrollPane(jDessin,ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED,
+                ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+
+
+        menuBar = new JMenuBar();
+
+
+        this.save.add(saveAll);
+        this.save.add(saveTxt);
+        this.save.add(saveJpg);
+
+        nouveau.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_N, KeyEvent.CTRL_MASK));
+        ouvrir.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_O, KeyEvent.CTRL_MASK));
+        saveAll.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S, KeyEvent.CTRL_MASK));
+        saveTxt.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_T, KeyEvent.CTRL_DOWN_MASK + KeyEvent.SHIFT_DOWN_MASK));
+        saveJpg.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_J, KeyEvent.CTRL_DOWN_MASK + KeyEvent.SHIFT_DOWN_MASK));
+        quitter.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Q, KeyEvent.CTRL_MASK));
+        help.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F1, KeyEvent.CTRL_MASK));
+        about.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F2, KeyEvent.CTRL_MASK));
+
+        nouveau.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent event){
+                historiqueListe.addToList("new","");
+                String error = table.executerCommande("new",variableListe);
+                try {
+                    historiqueListe.setLastErrorMsg(error);
+                }catch(ArrayIndexOutOfBoundsException ignored){
+
                 }
-
             }
-        });  */
+        });
+        ouvrir.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent event){
+                historiqueListe.addToList("open", "");
+                String error = table.executerCommande("open",variableListe);
+                try {
+                    historiqueListe.setLastErrorMsg(error);
+                }catch(ArrayIndexOutOfBoundsException ignored){
+
+                }
+            }
+        });
+        saveAll.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent event){
+                historiqueListe.addToList("save","");
+                String error = table.executerCommande("save",variableListe);
+                try {
+                    historiqueListe.setLastErrorMsg(error);
+                }catch(ArrayIndexOutOfBoundsException ignored){
+
+                }
+            }
+        });
+        help.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent event){
+                historiqueListe.addToList("help","");
+                String error = table.executerCommande("help",variableListe);
+                try {
+                    historiqueListe.setLastErrorMsg(error);
+                }catch(ArrayIndexOutOfBoundsException ignored){
+
+                }
+            }
+        });
+        about.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent event){
+                JFrame fenetre = new JFrame();
+
+                 String txt = "<font color=#FF0000 size=6>À Propos :</font><br> Tortue Génial <br><font color=#000000 size=5>ADEQUIN Renaud<br>" +
+                         "GHANDRI Ahmed<br>" +
+                         "LIM Steffie<br>" +
+                         "YOUNG Johnathan</font>";
+                 fenetre.setSize(275, 200);
+
+                JEditorPane cont = new JEditorPane();
+                cont.setEditable(false);
+                cont.setContentType("text/html");
+                cont.setText(txt);
+
+
+                fenetre.getContentPane().add(cont);
+                fenetre.setVisible(true);
+            }
+        });
+        quitter.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent event){
+                System.exit(0);
+            }
+        });
+
+        this.fichier.add(nouveau);
+        this.fichier.add(ouvrir);
+        this.fichier.add(save);
+        this.fichier.addSeparator();
+        this.fichier.add(quitter);
+        this.h.add(help);
+        this.h.addSeparator();
+        this.h.add(about);
+
+
+        this.menuBar.add(fichier);
+        this.menuBar.add(option);
+        this.menuBar.add(h);
+
+        this.setJMenuBar(menuBar);
+        this.setLayout(new BorderLayout());
+        this.add(jOuest,BorderLayout.WEST);
+        this.add(scrollPaneDessin,BorderLayout.CENTER);
+        this.add(panelSud, BorderLayout.SOUTH);
+
+
+
+        setVisible(true);
+        panelSud.panelTerminal.jEditorPane.requestFocus(); // Donne le focus au terminal
+        curseur.setPos(getCenterDessin());
+
 	}
 
     public static int[] getCenterDessin(){
@@ -97,9 +212,9 @@ public class Fenetre extends JFrame{
 	public static int[] getMaxDessin(){
         return new int[]{getPanelDessin().getSize().width, getPanelDessin().getSize().height};
 	}
-	
+
 	public static PanelInfo getPanelInfo(){
-		return jInfos;
+		return panelSud.panelInfo;
 	}
 	
 	public static PanelDessin getPanelDessin(){

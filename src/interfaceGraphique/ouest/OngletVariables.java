@@ -1,4 +1,4 @@
-package interfaceGraphique;
+package interfaceGraphique.ouest;
 
 import liste.ListeVariables;
 

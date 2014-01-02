@@ -1,6 +1,7 @@
 package interfaceGraphique;
 
 import dessin.Curseur;
+import interfaceGraphique.ouest.PanelOnglet;
 import liste.ListeCommande;
 import liste.ListeCommande.Ligne;
 import liste.ListeHistorique;
@@ -25,6 +26,7 @@ public class PanelDessin extends JPanel implements MouseListener, MouseMotionLis
         this.listeHistorique = listeHistorique;
         this.tableCommande = tableCommande;
 		int t[] = {this.getSize().width,this.getSize().height,55};
+        this.setPreferredSize(new Dimension(800,600));
 		curseur.setPos(t);
 		this.setSize(new Dimension(200, 200));
 		
