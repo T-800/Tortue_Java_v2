@@ -78,9 +78,9 @@ public class PanelOptions extends JPanel{
 
 
 
-        jbnew.setPreferredSize(new Dimension(40, 30));
-        jbopen.setPreferredSize(new Dimension(40,30));
-        jbsave.setPreferredSize(new Dimension(40, 30));
+        jbnew.setPreferredSize(new Dimension(30, 30));
+        jbopen.setPreferredSize(new Dimension(30,30));
+        jbsave.setPreferredSize(new Dimension(30, 30));
         jbpencolor.setPreferredSize(new Dimension(30, 30));
         jbdessine.setPreferredSize(new Dimension(30, 30));
         jbundo.setPreferredSize(new Dimension(30, 30));
@@ -89,14 +89,11 @@ public class PanelOptions extends JPanel{
         this.add(jbnew);
         this.add(jbopen);
         this.add(jbsave);
-        this.add(jbpencolor);
-        this.add(jbdessine);
         this.add(jbundo);
         this.add(jbredo);
+        this.add(jbdessine);
+        this.add(jbpencolor);
         this.add(jbbgcolor);
-
-        jbopen.setPreferredSize(new Dimension(10, 10));
-
     }
 
     @Override
