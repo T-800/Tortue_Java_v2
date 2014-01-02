@@ -7,39 +7,46 @@ import java.util.ArrayList;
 
 public class Repeat extends Commande {
 
-    TableCommande tableCommande;
-    ListeFonctions listeFonctions;
-    ListeVariables listeVariables;
 
-    public Repeat(TableCommande commande,ListeFonctions listeFonctions, ListeVariables listeVariables) {
-        this.tableCommande = commande;
-        this.listeFonctions = listeFonctions;
-        this.listeVariables = listeVariables;
-    }
 
     @Override
-    public String execute(String[] commande,ListeVariables listeVariables) {
-        if (commande.length != 3)return "1";
+    public boolean execute(String commande,ListeVariables listeVariables) {
+        String[] param = getCmdParam(commande);
+        //Convert.printParam(param);
+        setListe_Local_Variables(listeVariables);
+        ListeVariables list =getListe_Local_Variables();
+        if (param.length!= 3){
+            getListeHistorique().addToList(commande,ErrorToString("1",commande));
+            return false;
+        }
+
         int nb_repeat;
         ArrayList<String> instructions;
         try {
-            nb_repeat = Integer.parseInt(commande[1]);
+            nb_repeat = Integer.parseInt(param[1]);
         } catch (NumberFormatException e) {
-            return commande[1]+" n'est pas un nombre";
+            getListeHistorique().addToList(commande,param[1]+" n'est pas un nombre");
+            return false;
         }
-        if(!(commande[2].startsWith("[") && commande[2].endsWith("]")) || commande[2].length() < 3)return commande[2]+" n'est pas un cops de fonction correct";
-        instructions = Convert.complexArgToTab(commande[2]);
+        if(!(param[2].startsWith("[") && param[2].endsWith("]")) || param[2].length() < 3){
+            getListeHistorique().addToList(commande,param[2]+" n'est pas un cops de fonction correct");
+            return false;
+        }
+        instructions = Convert.valeurStringtArgument(param[2]);
         ListeVariables blocLocal = new ListeVariables(listeVariables.getliste());
         for (int i = 0;i<nb_repeat;i++){
 
             for (String instruction : instructions) {
-                String error = tableCommande.executerCommande(instruction,blocLocal);
-                if (!error.equals("")) return "Une erreur est survenue lors du REPEAT : <br>" + error;
+                boolean error = getTableCommande().executerCommande(instruction, blocLocal);
+                if (!error){
+                    getListeHistorique().addToList(commande,"Une erreur est survenue lors du REPEAT : <br>" + error);
+                    return false;
+                }
             }
 
         }
-
-        return "";
+        getListeHistorique().addToList(commande,"");
+        return true;
     }
 
 

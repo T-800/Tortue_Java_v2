@@ -1,47 +1,43 @@
 package commande;
 
 import algo.Convert;
-import algo.Verification;
-import dessin.Curseur;
 import liste.ListeVariables;
-import liste.ListeVariables.ObjetVariables;
 
 public class Turn extends Commande {
-	
-	Curseur curseur;
-	ListeVariables listeVariables;
-	
-	public Turn(Curseur curseur,ListeVariables listeVariables){
-		this.curseur = curseur;
-		this.listeVariables = listeVariables;
-	}
 
-	@Override
-	public String execute(String[] commande,ListeVariables listeVariables ){
-		if(commande.length!=2)return "1";
-		int valeur = 0;
-        String s = commande[1];
-		switch(commande[1].charAt(0)){
-			case '+' :
-			case '-' :
-			case '*' :
-			case '/' :
-				s ="("+curseur.getD()+" "+commande[1].charAt(0)+" "+  commande[1].substring(1)+")";
-		}
-        if(commande[1].toLowerCase().equals("random")){
-            valeur = 0 + (int)(Math.random()*(3600));
+    @Override
+    public boolean execute(String commande,ListeVariables listeVariables ){
+        String[] param = getCmdParam(commande);
+        //Convert.printParam(param);
+        if(param.length!=2){
+            getListeHistorique().addToList(commande,ErrorToString("1",commande));
+            return false;
+        }
+        int valeur;
+        String s = param[1];
+        switch(param[1].charAt(0)){
+            case '+' :
+            case '-' :
+            case '*' :
+            case '/' :
+                s ="("+getCurseur().getD()+" "+param[1].charAt(0)+" "+ param[1].substring(1)+")";
+        }
+        if(param[1].toLowerCase().equals("random")){
+            valeur = (int)(Math.random()*(3600));
         }
         else {
             try{
-                s = Convert.convertArg(s,listeVariables);
+                s = Convert.valeurIntArgument(s,listeVariables);
                 valeur = Integer.parseInt(s);
             }catch(NumberFormatException e1){
-                return "Erreur "+commande[1]+" n'est pas un nombre";
+                getListeHistorique().addToList(commande,"Erreur "+param[1]+" n'est pas un nombre");
+                return false;
             }
         }
-		curseur.setD(valeur%360);
-		return "";
-		
+        getCurseur().setD(valeur%360);
+        getListeHistorique().addToList(commande,"");
+        return true;
 
-	}
+
+    }
 }

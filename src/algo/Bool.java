@@ -69,31 +69,29 @@ public class Bool {
     public String doBooleanTest(String expression, ListeVariables listeVariables){
 
         if(Verification.bienP(expression)){
-            boolean canContinue = true;
-            while(canContinue && Verification.parenthese(expression)){
+            while(Verification.parenthese(expression)){
                 String subExpression = Convert.subParenthese(expression);
                 String ss_tmp = subExpression.trim();
                 String subS[] = ss_tmp.split(" ");
-                String cal = calculeex(subS, listeVariables);
-                try{
-                    //int i = Integer.parseInt(cal);
-                    expression = expression.replace("("+subExpression+")",cal);
-                }catch (NumberFormatException e1){
-                    canContinue = false;
-                    return(cal);
-                }
+                String cal = calculeExpr(subS, listeVariables);
+                expression = expression.replace("("+subExpression+")",cal);
 
             }
             return expression;
         }
-        else return "Ce calcul n'est pas bien parenthésé";
+        else return "Pas bien parenthésé";
     }
 
-    private String calculeex(String tab[],ListeVariables liste_Variables){
-        int a = 0,b = 0;
+    private String calculeExpr(String tab[],ListeVariables liste_Variables){
+        //System.out.println("---debut----");
+        /*for (String s : tab){
+            System.out.println(s);
+        }
+        System.out.println("---fin----"); */
+        int a,b;
         //System.out.println("TAB CLAC : "+tab[0]+" "+tab[1]+" "+tab[2]);
         if(tab.length == 1)return tab[0];
-        if(tab.length != 3)return "ERROR";
+        if(tab.length != 3)return "Erreur de syntaxe!";
         if(tab[0].charAt(0) == '_' ){
             ListeVariables.ObjetVariables v = Convert.get_Variable(liste_Variables, tab[0].substring(1));
             if(v != null) {
@@ -120,7 +118,7 @@ public class Bool {
             ListeVariables.ObjetVariables v = Convert.get_Variable(liste_Variables,tab[2]);
             if(v != null) {
                 String s = v.getValeur_Variable();
-                a = Integer.parseInt(s);
+                b = Integer.parseInt(s);
             }
             else return "Impossible de faire le calcul la variable "+tab[2]+" n'éxiste pas";
         }
@@ -141,34 +139,36 @@ public class Bool {
         switch(tab[1]){
 
             case "==" :
+                System.out.println(""+(a==b));
                 return ""+(a==b);
 
             case "!=" :
+                System.out.println(""+(a!=b));
                 return ""+(a!=b);
             case ">" :
+                System.out.println(""+(a>b));
                 return ""+(a>b);
             case ">=" :
+                System.out.println(""+(a>=b));
                 return ""+(a>=b);
             case "<" :
+                System.out.println(""+(a<b));
                 return ""+(a<b);
             case "<=" :
+                System.out.println(""+(a<=b));
                 return ""+(a<=b);
             case "||" :
 
-                if(a == 1)abis = true;
-                else abis = false;
-                if(b == 1)bbis = true;
-                else bbis = false;
+                abis = a == 1;
+                bbis = b == 1;
                 return "" + (abis || bbis);
             case "&&" :
-                if(a == 1)abis = true;
-                else abis = false;
-                if(b == 1)bbis = true;
-                else bbis = false;
+                abis = a == 1;
+                bbis = b == 1;
                 return "" + (abis && bbis);
 
             default :
-                return "ERRdfsdgh;j;OR";
+                return Convert.calculeTab(tab,liste_Variables);
 
         }
 
@@ -178,8 +178,8 @@ public class Bool {
     public static void main(String [] args){
          Bool bool = new Bool(null);
 
-        String s = "(!(10 < 5) || (false || !false))";
-        //System.out.print(bool.doBooleanTest(s,null));
+        String s = "(((100 - 20) - 20) >= 0)";
+        //System.out.print(bool.doBooleanTest(s,null)+"\nres : "+(((100 - 20) -20) >= 0));
 
     }
 

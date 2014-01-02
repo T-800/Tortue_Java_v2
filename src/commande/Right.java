@@ -1,21 +1,21 @@
 package commande;
 
-import dessin.Curseur;
+
 import liste.ListeVariables;
 
 public class Right extends Commande {
-	
-	private Curseur curseur;
-	
-	public Right(Curseur curseur) {
-		this.curseur = curseur;
-	}
 
 
-	@Override
-	public String execute(String[] commande, ListeVariables listeVariables) {
-		if(commande.length>1)return "1";
-		curseur.setD(0);
-		return "";
-	}
+
+
+    @Override
+    public boolean execute(String commande, ListeVariables listeVariables) {
+        if(!commande.equalsIgnoreCase("right")){
+            getListeHistorique().addToList(commande,this.ErrorToString("1",commande.split(" ",2)[0]));
+            return false;
+        }
+        getCurseur().setD(0);
+        getListeHistorique().addToList(commande,"");
+        return true;
+    }
 }

@@ -11,7 +11,7 @@ public class Curseur {
 	private int[] souris;
 	private Color couleurCurseur;
 	private Color couleurBg;
-	private int[] tabRemember;
+	private Curseur cursRemember;
 	private int penSize;
 	private boolean penDown;
 
@@ -23,7 +23,6 @@ public class Curseur {
 		this.pos[1] = y;
 		this.pos[2] = 0;
 		this.souris=new int[2];
-		this.tabRemember = new int[3];
 		this.couleurCurseur = Color.BLACK;
 		this.couleurBg = Color.WHITE;
 		this.penDown = true;
@@ -31,13 +30,25 @@ public class Curseur {
         this.drawCurs = true;
 	}
 
+    public void setCurseur(Curseur curseur) {
+        this.pos = new int[3];
+        this.pos[0] = curseur.getPos()[0];
+        this.pos[1] = curseur.getPos()[1];
+        this.pos[2] = curseur.getPos()[2];
+        this.souris=new int[2];
+        this.couleurCurseur = curseur.getCouleurCurseur();
+        this.couleurBg = curseur.getCouleurBg();
+        this.penDown = curseur.isPenDown();
+        this.penSize = curseur.getPenSize();
+        this.drawCurs = curseur.DrawCurs();
+    }
+
     public void reset(int x, int y){
         this.pos = new int[3];
         this.pos[0] = x;
         this.pos[1] = y;
         this.pos[2] = 0;
         this.souris=new int[2];
-        this.tabRemember = new int[3];
         this.couleurCurseur = Color.BLACK;
         this.couleurBg = Color.WHITE;
         this.penDown = true;
@@ -86,16 +97,15 @@ public class Curseur {
 		this.couleurCurseur = couleurCurseur;
 	}
 
-	public void getBAckRemember() {
-		 pos = tabRemember;
-	}
+
 	
-	public int[] getTabRemember() {
-		 return tabRemember;
+	public Curseur getCursRemember() {
+		 return cursRemember;
 	}
 
-	public void setTabRemember(int[] tabRemember) {
-		this.tabRemember = tabRemember;
+	public void setCursRemember(Curseur cursRemember) {
+        this.cursRemember = new Curseur(0,0);
+		this.cursRemember.setCurseur(cursRemember);
 	}
 
 	public int getPenSize() {

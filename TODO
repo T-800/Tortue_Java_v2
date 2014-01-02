@@ -42,4 +42,19 @@ Ajouter la couleur actuel dans les bouton pen color et bgcolor
 
 
 
-Fonction f 2 [_r= $1; _t= $2;if (_t > 0) [repeat 4 [move _r;turn +90; :f (_r / 4) (_t - 1); _r= $1; _t= $2]]]
+    Fonction f 2 [if ($2 > 0) [repeat 4 [move $1;turn +90; :f ($1 / 4) ($2 - 1)]]]
+
+fonction f 2 [if ($2 >= 0) [move $1] else [:f ($1 / 3) ($2 -1);turn +60;:f ($1 / 3) ($2 -1);turn -120;:f ($1 / 3) ($2 -1);turn +60;:f ($1 / 3) ($2 -1);]]
+fonction f 2 [_u = ($1 / 3); _d = ($2 - 1) if ($2 >= 0) [move $1] else [:f _u _d;turn +60;:f _u _d;turn -120;:f _u _d;turn +60;:f _u _d;]]
+
+def f(length, depth):
+   if depth == 0:
+     forward(length)
+   else:
+     f(length/3, depth-1)
+     right(60)
+     f(length/3, depth-1)
+     left(120)
+     f(length/3, depth-1)
+     right(60)
+     f(length/3, depth-1)

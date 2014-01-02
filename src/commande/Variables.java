@@ -1,110 +1,95 @@
 package commande;
 
 import algo.Convert;
-import algo.Verification;
 import liste.ListeVariables;
 import liste.ListeVariables.ObjetVariables;
 
 import javax.swing.*;
-import java.util.ArrayList;
 
 public class Variables extends Commande {
 
-    //TODO: Aojuter la suppression des variables
+    private String [] getTaAffection(String commande){
+        String tab[];
 
-	
-	public Variables() {
-        super();
-	}
-	
-	@Override
-	public String execute(String[] commande,ListeVariables listeVariables){
-        for (ObjetVariables o : listeVariables.getliste()){
-            System.out.println("var : "+o.getNom_Variable()+" = "+o.getValeur_Variable());
+        tab = commande.split("=");
+        for(int i = 0 ; i<tab.length;i++){
+            tab[i] = tab[i].trim();
         }
-		if (commande[0].charAt(0) == '_') { //affectation
-            String cmd="";
-            for (String s : commande) cmd+=s;
-			String tabArg[] = cmd.split("=");
-            /*if( commande[1].equalsIgnoreCase("remove")) {
-                listeFonctions.removeFonction(fonc);
-            }*/
-			if (tabArg.length!=2) {
-				return "1";
-			}
-            ObjetVariables var;
+        tab[0] = tab[0].substring(1);
+        if (tab.length != 2 )return null;
+        return tab;
+    }
+    @Override
+    public boolean execute(String commande, ListeVariables listeVariables){
+        String[] param = getCmdParam(commande);
+        //Convert.printParam(param);
 
-            var  = Convert.get_Variable(listeVariables, tabArg[0].substring(1).trim());
-			if (var != null) {
-				return affectation(var,tabArg[1].trim(),listeVariables);
-			}
+        //declaration("aaaaa", listeVariables);
+        //setListe_Local_Variables(new ListeVariables(listeVariables.getliste()));
+        ListeVariables list =getListe_Local_Variables();
+        //list.printVar("glob");
+        if(list == null){
 
-		}
-		else{ //VAR nom (Déclaration)
-			// TODO: syntaxe des noms de variable
-            ObjetVariables var;
-            var = listeVariables.getVar(commande[1]);
+            list = listeVariables;
+        }
+        ObjetVariables variable;
+        if (param[0].charAt(0) == '_'){
+            variable = Convert.get_Variable(list,param[0].substring(1));
+            if(variable == null) {
+                getListeHistorique().addToList(commande,"La variable "+param[0].substring(1)+"");
+                return false;
+            }
+            param = getTaAffection(commande);
+            String valeur = Convert.valeurIntArgument(param[1],list);
+            try{
+                Integer.parseInt(valeur);
+                variable.setValeur_Variable(valeur);
 
-            if (var != null)    {
+            }catch (NumberFormatException ignored){}
+            //System.out.println("calcule avant = "+param[1]);
+            //System.out.println("calcule apres = "+valeur);
+            //faire l'affectation
+        }
+        else {
+            if(!param[0].equalsIgnoreCase("var")){
+                getListeHistorique().addToList(commande,this.ErrorToString("1",param[0]));
+                return false;
+            }
+
+            //list.printVar("local");
+            variable = Convert.get_Variable(list, param[1]);
+            if (variable == null) declaration(param[1], list);
+            else {
                 int option = JOptionPane.showConfirmDialog(null,
-                        "La variable "+commande[1]+" éxiste déjà. Voulez-vous la remplacer?", "Tortue",
+                        "La variable " + param[1] + " éxiste déjà. Voulez-vous la remplacer?", "Tortue",
                         JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
-
-                if (option == JOptionPane.YES_OPTION) affectation(var,"0",listeVariables);
-                else return "";
+                if (option == JOptionPane.YES_OPTION)variable.setValeur_Variable("0");
+                else {
+                    getListeHistorique().addToList(commande,"déclaration annulée");
+                    return false;
+                }
             }
-            else{
-                declaration(commande[1],listeVariables);
+            if(param.length == 3){
+                variable = Convert.get_Variable(list, param[1]);
+                try{
+                    Integer.parseInt(param[2]);
+                    variable.setValeur_Variable(param[2]);
+
+                }catch (NumberFormatException ignored){
+                    getListeHistorique().addToList(commande,"Affectation inccorecte :"+param[2]);
+                    list.getliste().remove(variable);
+                }
             }
 
-		}
-		return "";
+            //list.printVar("glob");
+        }
+        list.printVar("var");
+        getListeHistorique().addToList(commande,"");
+        return true;
+    }
 
-	}
+    private void declaration(String nom_Variable,ListeVariables listeVariables){
 
-	private void declaration(String nom_Variable,ListeVariables listeVariables){
-
-		listeVariables.add(nom_Variable);
-	}
-
-	private String affectation(ObjetVariables var, String sAffectation,ListeVariables listeVariables){
-		int valeur = 0;
-		if( sAffectation.charAt(0) != '('){
-			try{
-				valeur = Integer.parseInt(sAffectation);
-				var.setValeur_Variable(sAffectation);
-
-			}catch (NumberFormatException e1){
-				return sAffectation+"n'est pas une affectation valide";
-			}
-		}
-		else if(Verification.bienP(sAffectation)){
-			boolean canContinue = true;
-			while(Verification.parenthese(sAffectation) && canContinue){
-				String ss = Convert.subParenthese(sAffectation);
-				String subS[] = ss.split(" ");
-				String cal = Convert.calculeTab(subS,listeVariables);
-				try{
-					int i = Integer.parseInt(cal);
-					sAffectation = sAffectation.replace("("+ss+")",""+i);
-				}catch (NumberFormatException e1){
-					canContinue = false;
-					System.out.println("Impossible de faire le calcul ("+ss+") n'est pas un nombre");
-				}			
-			}
-			try{
-				valeur = Integer.parseInt(sAffectation);
-                System.out.println("var : "+var.getNom_Variable()+" = "+valeur);
-				var.setValeur_Variable(sAffectation);
-
-			}catch (NumberFormatException e1){
-				return sAffectation+"n'est pas une affectation valide";
-			}
-		}
-		else {
-			return sAffectation+"n'est pas une affectation valide";
-		}
-		return "";
-	}
-	
+        listeVariables.add(nom_Variable);
+    }
 }
