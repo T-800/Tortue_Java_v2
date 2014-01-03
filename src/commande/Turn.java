@@ -53,6 +53,6 @@ public class Turn extends Commande{
         }
         getPanelDessin().getCurseur().setD(valeur%360);
 
-        return null;
+        return "";
     }
 }

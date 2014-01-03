@@ -14,7 +14,7 @@ public class Clear extends Commande{
         getPanelDessin().getCurseur().reset(Fenetre.getCenterDessin()[0], Fenetre.getCenterDessin()[1]);
 
 
-        return null;
+        return "";
     }
 
 }

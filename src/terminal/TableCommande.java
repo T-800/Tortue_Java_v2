@@ -3,7 +3,6 @@ package terminal;
 import commande.*;
 import liste.ListeFonctions;
 import liste.ListeHistorique;
-
 import java.util.Hashtable;
 
 
@@ -18,9 +17,6 @@ public class TableCommande {
         Commande.setListeFonctions(listeFonctions);
         TableCommande.listeHistorique = listeHistorique;
 
-
-
-//		table.put("BACKGROUNDCOLOR", new BackgroundColor(curseur,listeVariables));
 //		table.put("BGCOLOR", new BackgroundColor(curseur,listeVariables));
 		table.put("CENTER", new Center());
 		table.put("CLEAR", new Clear());
@@ -34,7 +30,7 @@ public class TableCommande {
 //		table.put("PENCOLOR", new PenColor(curseur,listeVariables));
 //		table.put("PENSIZE", new PenSize());
 //		table.put("REDO", new Redo());
-//		table.put("REPEAT", new Repeat());
+		table.put("REPEAT", new Repeat());
 //		table.put("SAVE", new Save());
 		table.put("TURN", new Turn());
 //		table.put("UNDO", new Undo());
@@ -58,22 +54,26 @@ public class TableCommande {
 
     }
 
-	public static void executerCommande(String commande){
-        executerCommande(commande,true);
+	public static String executerCommande(String commande){
+        return executerCommande(commande,true);
 	}
 
-    public static void executerCommande(String commande,boolean addtohist){
+    public static String executerCommande(String commande,boolean addtohist){
 
         commande = commande.replaceAll("\\s+", " ");
         String[] commandeTab = commande.split(" ", 2);
 
         Commande cmd = searchCmd(commandeTab[0]);
-
+        String return_Error_Msg = "";
         if(cmd != null){
-           String return_Error_Msg = cmd.execute(commande);
-           listeHistorique.addToList(commande,return_Error_Msg);
+           return_Error_Msg = cmd.execute(commande);
+           if(addtohist) listeHistorique.addToList(commande,return_Error_Msg);
         }
-        else listeHistorique.addToList(commande,"La commande "+ commandeTab[0]+" n'éxiste pas !");
+        else {
+            return_Error_Msg = "La commande "+ commandeTab[0]+" n'éxiste pas !";
+            if(addtohist)listeHistorique.addToList(commande,return_Error_Msg);
+        }
+        return return_Error_Msg;
     }
 	
 	

@@ -37,7 +37,7 @@ public class Move extends Commande{
         getPanelDessin().getListeCommande().addLigne(getPanelDessin().getCurseur().getX(),getPanelDessin().getCurseur().getY(),coor[0],coor[1],getPanelDessin().getCurseur().getCouleurCurseur(),getPanelDessin().getCurseur().getPenSize());
         getPanelDessin().getCurseur().setPos(coor);
 
-        return null;
+        return "";
     }
 
 

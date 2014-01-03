@@ -10,6 +10,6 @@ public class Center extends Commande{
     public String execute(String parametres) {
 
         Commande.getPanelDessin().getCurseur().setPos(Fenetre.getCenterDessin());
-        return null;
+        return "";
     }
 }
