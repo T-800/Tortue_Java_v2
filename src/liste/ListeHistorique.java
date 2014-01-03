@@ -31,7 +31,7 @@ public class ListeHistorique {
 			}
 			else{
 				msg = msg+ h.getCommande()+"<br>";
-				if(h.getError_msg() != null) msg+="<font color=#FF0000> "+h.getError_msg()+"</font><br>";
+				if(!h.getError_msg().equalsIgnoreCase("")) msg+="<font color=#FF0000> "+h.getError_msg()+"</font><br>";
 			}
 			
 		}

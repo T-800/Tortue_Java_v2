@@ -159,7 +159,7 @@ public class PanelDessin extends JPanel implements MouseListener, MouseMotionLis
             y = -(y - this.getHeight() / 2);
         }
 
-        tableCommande.executerCommande("GO " + x + " " + y);
+        TableCommande.executerCommande("GO " + x + " " + y);
         PanelOnglet.repaintOnglet();
         Fenetre.getPanelDessin().repaint();
         Fenetre.getPanelInfo().repaint();
