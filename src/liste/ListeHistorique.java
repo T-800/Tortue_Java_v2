@@ -15,13 +15,13 @@ public class ListeHistorique {
 		this.liste.add(new Historique(cmd, error_msg));
 	}
 
-    /*public void printHist(){
+    public void printHist(){
         System.out.println("Hist  :");
         for(Historique h : this.liste){
             System.out.println("\tnom : "+h.getCommande()+" = "+h.getError_msg()+"|");
         }
         System.out.println("Hist  Fin");
-    }*/
+    }
 
 	public String getHtmlmsg(){
 		String msg = "";
@@ -31,7 +31,7 @@ public class ListeHistorique {
 			}
 			else{
 				msg = msg+ h.getCommande()+"<br>";
-				if(!h.getError_msg().equals("")) msg+="<font color=#FF0000> "+h.getError_msg()+"</font><br>";
+				if(h.getError_msg() != null) msg+="<font color=#FF0000> "+h.getError_msg()+"</font><br>";
 			}
 			
 		}

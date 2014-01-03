@@ -116,46 +116,44 @@ public class PanelOptions extends JPanel{
 
 
         public void actionPerformed(ActionEvent e) {
-            /*if(e.getSource()==jbopen){
-                listeHistorique.addToList("open",tableCommande.executerCommande("open",true));
+            if(e.getSource()==jbopen){
+                tableCommande.executerCommande("open");
             }
             else if(e.getSource()==jbsave){
-                listeHistorique.addToList("save",tableCommande.executerCommande("save",null));
+                tableCommande.executerCommande("save");
             }
             else if(e.getSource()==jbdessine){
                 if (curseur.isPenDown()){
-                    listeHistorique.addToList("penup",tableCommande.executerCommande("penup",null));
+                    tableCommande.executerCommande("penup");
                 }
                 else {
-                    listeHistorique.addToList("pendown",tableCommande.executerCommande("pendown",null));
+                    tableCommande.executerCommande("pendown");
                 }
             }
             else if(e.getSource()==jbundo){
-                listeHistorique.addToList("undo",tableCommande.executerCommande("undo",null));
+                tableCommande.executerCommande("undo");
             }
             else if(e.getSource()==jbredo){
-                listeHistorique.addToList("redo",tableCommande.executerCommande("redo",null));
+                tableCommande.executerCommande("redo");
             }
             else if(e.getSource()==jbnew){
-                listeHistorique.addToList("new",tableCommande.executerCommande("new",null));
+                tableCommande.executerCommande("new");
             }
             else if(e.getSource()==jbpencolor){
                 Color color = JColorChooser.showDialog(null, "Choisir la couleur du pinceau",null);
                 if(color != null){
-                    listeHistorique.addToList("pencolor "+color.getRed()+" "+color.getGreen()+" "+color.getBlue()
-                            ,tableCommande.executerCommande("pencolor "+color.getRed()+" "+color.getGreen()+" "+color.getBlue(),null));
+                    tableCommande.executerCommande("pencolor "+color.getRed()+" "+color.getGreen()+" "+color.getBlue());
                 }
 
             }
             else if(e.getSource()==jbbgcolor){
                 Color color = JColorChooser.showDialog(null, "Choisir la couleur de l'arrière plan",null);
                 if(color != null){
-                    listeHistorique.addToList("backgroundcolor "+color.getRed()+" "+color.getGreen()+" "+color.getBlue()
-                            ,tableCommande.executerCommande("backgroundcolor "+color.getRed()+" "+color.getGreen()+" "+color.getBlue(),null));
+                    tableCommande.executerCommande("backgroundcolor "+color.getRed()+" "+color.getGreen()+" "+color.getBlue());
                 }
 
 
-            }    */
+            }
 
             PanelOnglet.repaintOnglet();
             Fenetre.getPanelDessin().repaint();

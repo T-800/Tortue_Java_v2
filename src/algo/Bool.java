@@ -32,7 +32,6 @@ package algo;
 
 import dessin.Curseur;
 import interfaceGraphique.Fenetre;
-import liste.ListeVariables;
 
 public class Bool {
     private int WIDTH;
@@ -66,14 +65,14 @@ public class Bool {
     *
     * */
 
-    public String doBooleanTest(String expression, ListeVariables listeVariables){
+    public String doBooleanTest(String expression){
 
         if(Verification.bienP(expression)){
             while(Verification.parenthese(expression)){
                 String subExpression = Convert.subParenthese(expression);
                 String ss_tmp = subExpression.trim();
                 String subS[] = ss_tmp.split(" ");
-                String cal = calculeExpr(subS, listeVariables);
+                String cal = calculeExpr(subS);
                 expression = expression.replace("("+subExpression+")",cal);
 
             }
@@ -82,7 +81,7 @@ public class Bool {
         else return "Pas bien parenthésé";
     }
 
-    private String calculeExpr(String tab[],ListeVariables liste_Variables){
+    private String calculeExpr(String tab[]){
         //System.out.println("---debut----");
         /*for (String s : tab){
             System.out.println(s);
@@ -92,16 +91,7 @@ public class Bool {
         //System.out.println("TAB CLAC : "+tab[0]+" "+tab[1]+" "+tab[2]);
         if(tab.length == 1)return tab[0];
         if(tab.length != 3)return "Erreur de syntaxe!";
-        if(tab[0].charAt(0) == '_' ){
-            ListeVariables.ObjetVariables v = Convert.get_Variable(liste_Variables, tab[0].substring(1));
-            if(v != null) {
-                String s = v.getValeur_Variable();
-                a = Integer.parseInt(s);
-            }
-            else return "Impossible de faire le calcul la variable "+tab[0]+" n'éxiste pas";
-        }
-        else {
-            if(tab[0].charAt(0) == '!' && tab[0].substring(1).equalsIgnoreCase("false"))a = 1;
+        if(tab[0].charAt(0) == '!' && tab[0].substring(1).equalsIgnoreCase("false"))a = 1;
             else if(tab[0].charAt(0) == '!' && tab[0].substring(1).equalsIgnoreCase("true"))a = 0;
             else if (tab[0].equalsIgnoreCase("true"))a = 1;
             else if (tab[0].equalsIgnoreCase("false"))a = 0;
@@ -112,19 +102,8 @@ public class Bool {
                     return "Impossible de faire le calcul "+tab[0]+" n'est pas un nombre";
                 }
             }
-
-        }
-        if(tab[2].charAt(0) == '_' ){
-            ListeVariables.ObjetVariables v = Convert.get_Variable(liste_Variables,tab[2]);
-            if(v != null) {
-                String s = v.getValeur_Variable();
-                b = Integer.parseInt(s);
-            }
-            else return "Impossible de faire le calcul la variable "+tab[2]+" n'éxiste pas";
-        }
-        else {
-            if(tab[2].charAt(0) == '!' && tab[2].substring(1).equalsIgnoreCase("false"))b = 1;
-            else if(tab[2].charAt(0) == '!' && tab[2].substring(1).equalsIgnoreCase("true"))b = 0;
+        if(tab[2].charAt(0) == '!' && tab[2].substring(1).equalsIgnoreCase("false"))b = 1;
+        else if(tab[2].charAt(0) == '!' && tab[2].substring(1).equalsIgnoreCase("true"))b = 0;
             else if (tab[2].equalsIgnoreCase("true"))b = 1;
             else if (tab[2].equalsIgnoreCase("false"))b = 0;
             else{
@@ -134,7 +113,6 @@ public class Bool {
                     return "Impossible de faire le calcul "+tab[2]+" n'est pas un nombre";
                 }
             }
-        }
         boolean abis,bbis;
         switch(tab[1]){
 
@@ -168,7 +146,7 @@ public class Bool {
                 return "" + (abis && bbis);
 
             default :
-                return Convert.calculeTab(tab,liste_Variables);
+                return Convert.calculeTab(tab);
 
         }
 

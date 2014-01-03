@@ -1,14 +1,15 @@
 package interfaceGraphique;
 
 import com.intellij.ui.components.JBScrollPane;
+import commande.Commande;
 import dessin.Curseur;
+import interfaceGraphique.ouest.PanelOnglet;
 import interfaceGraphique.ouest.PanelOuest;
 import interfaceGraphique.sud.PanelInfo;
 import interfaceGraphique.sud.PanelSud;
 import liste.ListeCommande;
 import liste.ListeFonctions;
 import liste.ListeHistorique;
-import liste.ListeVariables;
 import terminal.TableCommande;
 
 import javax.swing.*;
@@ -35,7 +36,6 @@ public class Fenetre extends JFrame{
 	private ListeCommande commandeListe;
 	private ListeHistorique historiqueListe;
 	private ListeFonctions fonctionsListe;
-	private static ListeVariables variableListe;
 
 
 
@@ -56,6 +56,7 @@ public class Fenetre extends JFrame{
 
     private JMenuItem help = new JMenuItem("Help");
     private JMenuItem about = new JMenuItem("À Propos");
+    private JMenuItem pOuest = new JMenuItem("Afficher Panel");
 	/**
 	 * Constructeur de la fenetre initialise 
 	 */
@@ -68,10 +69,9 @@ public class Fenetre extends JFrame{
 		this.commandeListe = new ListeCommande();
          this.curseur = new Curseur(0,0);
 		this.fonctionsListe = new ListeFonctions();
-		this.variableListe = new ListeVariables();
 		this.curseur = new Curseur(0, 0);
 		this.historiqueListe = new ListeHistorique();
-		this.table = new TableCommande(curseur,commandeListe,fonctionsListe,historiqueListe);
+		table = new TableCommande(fonctionsListe,historiqueListe);
 	}
 	
 	
@@ -83,13 +83,14 @@ public class Fenetre extends JFrame{
 		setLocationRelativeTo(null);
 		//setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        jOuest = new PanelOuest(curseur,historiqueListe,table,fonctionsListe,variableListe);
+        jOuest = new PanelOuest(curseur,historiqueListe,table,fonctionsListe);
 
-        jDessin =new PanelDessin(curseur,commandeListe,historiqueListe,table);
-        panelSud = new PanelSud(curseur,table,historiqueListe,fonctionsListe,variableListe);
+        jDessin =new PanelDessin(curseur,commandeListe,table);
+        Commande.setPanelDessin(jDessin);
 
-        JScrollPane scrollPaneDessin = new JBScrollPane(jDessin,ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED,
-                ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+        panelSud = new PanelSud(curseur,table,historiqueListe,fonctionsListe);
+
+        JScrollPane scrollPaneDessin;
 
 
         menuBar = new JMenuBar();
@@ -107,29 +108,30 @@ public class Fenetre extends JFrame{
         quitter.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Q, KeyEvent.CTRL_MASK));
         help.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F1, KeyEvent.CTRL_MASK));
         about.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F2, KeyEvent.CTRL_MASK));
+        pOuest.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_L, KeyEvent.CTRL_MASK));
 
         nouveau.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent event){
-                historiqueListe.addToList("new","");
-                table.executerCommande("new",variableListe);
+                table.executerCommande("new");
+                PanelOnglet.repaintOnglet();
             }
         });
         ouvrir.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent event){
-                historiqueListe.addToList("open", "");
-                table.executerCommande("open",variableListe);
+                table.executerCommande("open");
+                PanelOnglet.repaintOnglet();
             }
         });
         saveAll.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent event){
-                historiqueListe.addToList("save","");
-                table.executerCommande("save",variableListe);
+                table.executerCommande("save");
+                PanelOnglet.repaintOnglet();
             }
         });
         help.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent event){
-                historiqueListe.addToList("help","");
-                table.executerCommande("help",variableListe);
+                table.executerCommande("help");
+                PanelOnglet.repaintOnglet();
             }
         });
         about.addActionListener(new ActionListener(){
@@ -157,6 +159,11 @@ public class Fenetre extends JFrame{
                 System.exit(0);
             }
         });
+        pOuest.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent event){
+                jOuest.setVisible(!jOuest.isVisible());
+            }
+        });
 
         this.fichier.add(nouveau);
         this.fichier.add(ouvrir);
@@ -166,7 +173,7 @@ public class Fenetre extends JFrame{
         this.h.add(help);
         this.h.addSeparator();
         this.h.add(about);
-
+        this.option.add(pOuest);
 
         this.menuBar.add(fichier);
         this.menuBar.add(option);
@@ -175,6 +182,21 @@ public class Fenetre extends JFrame{
         this.setJMenuBar(menuBar);
         this.setLayout(new BorderLayout());
         this.add(jOuest,BorderLayout.WEST);
+        JLayeredPane layeredPane = new JLayeredPane();
+        layeredPane.setBackground(Color.DARK_GRAY);
+        layeredPane.setPreferredSize(new Dimension(jDessin.getPreferredSize().width+10, jDessin.getPreferredSize().height+10));
+        JPanel gray = new JPanel();
+        gray.setBackground(Color.lightGray);
+        layeredPane.add(jDessin, new Integer(1));
+        jDessin.setOpaque(true);
+        layeredPane.add(gray, new Integer(0));
+        gray.setOpaque(true);
+        gray.setBounds(0, 0, 40000, 400000);
+
+        jDessin.setBounds(5, 5, jDessin.getPreferredSize().width, jDessin.getPreferredSize().height);
+        scrollPaneDessin = new JBScrollPane(layeredPane,ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED,ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+        scrollPaneDessin.setBounds(0, 0, jDessin.getPreferredSize().width, jDessin.getPreferredSize().height);
+
         this.add(scrollPaneDessin,BorderLayout.CENTER);
         this.add(panelSud, BorderLayout.SOUTH);
 

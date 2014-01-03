@@ -4,7 +4,6 @@ import interfaceGraphique.Fenetre;
 import interfaceGraphique.ouest.PanelOnglet;
 import liste.ListeFonctions;
 import liste.ListeHistorique;
-import liste.ListeVariables;
 import terminal.AutoCompletion;
 import terminal.HistoriqueTerm;
 import terminal.TableCommande;
@@ -30,10 +29,9 @@ public class PanelTerminal implements KeyListener{
     String rem = "";
     private HistoriqueTerm h = new HistoriqueTerm() ;
     private TableCommande tableCommande;
-    private ListeVariables listeVariables;
 
 
-	public PanelTerminal(TableCommande tableCommande,ListeHistorique listeHistorique, ListeFonctions listeFonctions, ListeVariables listeVariables) {
+	public PanelTerminal(TableCommande tableCommande,ListeHistorique listeHistorique, ListeFonctions listeFonctions) {
         this.jEditorPane = new JEditorPane();
         Document doc = this.jEditorPane.getDocument();
         if (doc instanceof PlainDocument) {
@@ -58,9 +56,8 @@ public class PanelTerminal implements KeyListener{
 
 
         this.listeHistorique = listeHistorique;
-        this.autoCompletion = new AutoCompletion(listeFonctions,listeVariables);
+        this.autoCompletion = new AutoCompletion(listeFonctions);
         this.tableCommande = tableCommande;
-        this.listeVariables = listeVariables;
 
 	}
 
@@ -132,14 +129,13 @@ public class PanelTerminal implements KeyListener{
                         keyboard = keyboard.trim();
                         keyboard = keyboard.replace("\n","");
                         keyboard = keyboard.replace("\t","");
-                        tableCommande.executerCommande(keyboard,listeVariables);
-
+                        tableCommande.executerCommande(keyboard);
                         PanelOnglet.repaintOnglet();
                         Fenetre.getPanelDessin().repaint();
                         Fenetre.getPanelInfo().repaint();
                         up = true;
                         rem = "";
-                        //listeHistorique.printHist();
+                        listeHistorique.printHist();
                         h.addToList(keyboard);
                         jEditorPane.setText("");
                         jEditorPane.setCaretPosition(0);

@@ -1,20 +1,18 @@
 package algo;
 
-import liste.ListeVariables;
-import liste.ListeVariables.ObjetVariables;
 
 import java.util.ArrayList;
 
 public class Convert {
 
     public static void main(String [] args){
-        String[] tab = {"(5 + 5)","((1 + 1) * (( 10 + 10) % 3)) ()","(5+4)"};
+        String[] tab = {"(5 + 5)","((1 + 1) * ( 10 * 10) )","(5 / 0)"};
         for (String s : tab){
-            System.out.println(s + " = " +valeurIntArgument(s, null));
+            System.out.println(s + " = " +valeurIntArgument(s));
         }
     }
 
-    public static String valeurIntArgument(String arg,ListeVariables listeVariables){
+    public static String valeurIntArgument(String arg){
         switch (arg.charAt(0)){
             case '(' : // forme (5 + 5)
                 // test la syntaxe
@@ -24,7 +22,7 @@ public class Convert {
                         String ss = subParenthese(arg);
                         String ss_tmp = ss.trim();
                         String subS[] = ss_tmp.split(" ");
-                        String cal = Convert.calculeTab(subS,listeVariables);
+                        String cal = Convert.calculeTab(subS);
                         try{
                             int i = Integer.parseInt(cal);
                             arg = arg.replace("("+ss+")",""+i);
@@ -36,11 +34,7 @@ public class Convert {
                     return arg;
                 }
                 else return "Pas bien parenthésé";
-            case '_':// forme _variable
-                String varNameString = arg.substring(1);
-                ObjetVariables var = Convert.get_Variable(listeVariables,varNameString);
-                if(var == null) return "La variable "+ arg+" n'éxiste pas.";
-                return ""+var.getValeur_Variable();
+
             default : // 10 ou valeur inccorecte foo
                 return arg;
         }
@@ -70,14 +64,7 @@ public class Convert {
 
 
 
-	public static  ObjetVariables get_Variable(ListeVariables liste_Variables,String nom_Variable){
-		for (ObjetVariables var : liste_Variables.getliste()) {
-				if(var.getNom_Variable().equals(nom_Variable)) {
-					return var;
-				}
-		}
-		return null;
-	}
+
 
     /*public static void printParam(String[] commande){
         System.out.println("Param Cmd :");
@@ -87,48 +74,26 @@ public class Convert {
         System.out.println("Param Cmd Fin");
     } */
 
-	protected static String calculeTab(String tab[],ListeVariables liste_Variables){
+	protected static String calculeTab(String tab[]){
 		int a,b;
         if(tab.length == 1)return tab[0];
 		if(tab.length != 3)return "Pas bien parenthésé";
-
-		if(tab[0].charAt(0) == '_' ){
-			ObjetVariables v = Convert.get_Variable(liste_Variables, tab[0].substring(1));
-			if(v != null) {
-                String s = v.getValeur_Variable();
-                a = Integer.parseInt(s);
-            }
-			else return "La variable "+tab[0]+" n'éxiste pas";
+        try{
+			a = Integer.parseInt(tab[0]);
+		}catch (NumberFormatException e1){
+			return tab[0]+" n'est pas un nombre";
 		}
-		else {
-			try{
-				a = Integer.parseInt(tab[0]);
-			}catch (NumberFormatException e1){
-				return tab[0]+" n'est pas un nombre";
-			}
-		}
-		if(tab[2].charAt(0) == '_' ){
-			ObjetVariables v = Convert.get_Variable(liste_Variables,tab[2].substring(1));
-			if(v != null) {
-                String s = v.getValeur_Variable();
-                b = Integer.parseInt(s);
-            }
-			else return tab[2]+" n'éxiste pas";
-		}
-		else {
-			try{
-				b = Integer.parseInt(tab[2]);
-			}catch (NumberFormatException e1){
-				return tab[2]+" n'est pas un nombre";
-			}
+		try{
+			b = Integer.parseInt(tab[2]);
+		}catch (NumberFormatException e1){
+			return tab[2]+" n'est pas un nombre";
 		}
 		switch(tab[1]){
 			case "/" :
-
-				try{
+                try{
 					return ""+(a/b);
 				}catch (ArithmeticException e1){
-					return tab[2];
+					return "division par 0";
 				}
 
 			case "*" :
@@ -140,7 +105,7 @@ public class Convert {
 			case "-" :
 			 	return ""+(a-b);
 			default :
-				return "E";
+				return tab[1]+" n'est pas un opérateur valide";
 
 		}
 	}

@@ -1,21 +1,13 @@
 package commande;
 
-
-import liste.ListeVariables;
-
-public class Left extends Commande {
-
-
-
-
+/**
+ * Created by renaud on 03/01/14.
+ */
+public class Left extends Commande{
     @Override
-    public boolean execute(String commande, ListeVariables listeVariables) {
-        if(!commande.equalsIgnoreCase("left")){
-            getListeHistorique().addToList(commande,this.ErrorToString("1",commande.split(" ",2)[0]));
-            return false;
-        }
-        getCurseur().setD(180);
-        getListeHistorique().addToList(commande,"");
-        return true;
+    public String execute(String parametres) {
+
+        Commande.getPanelDessin().getCurseur().setD(180);
+        return null;
     }
 }

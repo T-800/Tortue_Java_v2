@@ -2,74 +2,50 @@ package commande;
 
 import algo.Convert;
 import interfaceGraphique.Fenetre;
-import liste.ListeVariables;
+import liste.ListeCommande;
 
-
-public class Move extends Commande {
-
-
+/**
+ * Created by renaud on 03/01/14.
+ */
+public class Move extends Commande{
     @Override
-    public boolean execute(String commande,ListeVariables listeVariables){
-        String[] param = getCmdParam(commande);
-       // Convert.printParam(param);
-        if(param.length < 2 || param.length > 3){
-            getListeHistorique().addToList(commande,ErrorToString("1",commande));
-            return false;
-        }
-        if(!getCurseur().isPenDown()){
-            getListeHistorique().addToList(commande,"Votre crayon est levé!!");
-            return false;
-        }
+    public String execute(String parametres) {
 
-        int coor[] = new int[2];
-        String argsString[] = new String[param.length-1];
-        for(int i = 0; i<argsString.length; i++){
-            argsString[i] = Convert.valeurIntArgument(param[i+1],listeVariables);
+        String [] argument = getCmdParam(parametres);
+        int[] coor;
+        if (argument.length == 2){
+            String valeur = Convert.valeurIntArgument(argument[1]);
+            try {
+                int distance = Integer.parseInt(valeur);
+                coor = calculeCoordArrive(distance);
+            }catch (NumberFormatException e){return valeur;}
         }
-        if(argsString.length == 2){
-            for(int i = 0; i<argsString.length; i++){
-                try{
-                    coor[i] = Integer.parseInt(argsString[i]);
+        else if (argument.length == 3){
+             coor = new int[2];
+            try {
+                coor[0] = Integer.parseInt(argument[1]);
+                coor[1] = Integer.parseInt(argument[2]);
 
-                }catch(NumberFormatException e1){
-                    getListeHistorique().addToList(commande,"Erreur "+argsString[0]+" n'est pas un nombre");
-                    return false;
-                }
-            }
-            coor[0] += (Fenetre.getCenterDessin()[0]);
-            coor[1] = (Fenetre.getCenterDessin()[1])-coor[1];
+
+            }catch (NumberFormatException e){return ErrorToString("1",argument[0]);}
+            coor[0] += (getPanelDessin().getPreferredSize().width/2);
+            coor[1] = (getPanelDessin().getPreferredSize().height/2)-coor[1];
         }
-        else {
-            int distance;
-            if(argsString[0].toLowerCase().equals("random")){
-                coor = randomCoor();
-            }
-            else {
-                try{
-                    distance = Integer.parseInt(argsString[0]);
-                    //System.out.println("move : "+argsString[0]+"|");
-                }catch(NumberFormatException e1){
-                    getListeHistorique().addToList(commande,"Erreur "+argsString[0]+" n'est pas un nombre");
-                    return false;
-                }
-
-                coor=calculeCoordArrive(distance);
-            }
-
+        else return ErrorToString("1",argument[1]);
+        if (!dans_Le_Dessin(coor)){
+          return "coordonnées pas dans le dessin";
         }
-        getListeCommande().addLigne(getCurseur().getX(), getCurseur().getY(), coor[0], coor[1], getCurseur().getCouleurCurseur(), getCurseur().getPenSize());
+        getPanelDessin().getListeCommande().addLigne(getPanelDessin().getCurseur().getX(),getPanelDessin().getCurseur().getY(),coor[0],coor[1],getPanelDessin().getCurseur().getCouleurCurseur(),getPanelDessin().getCurseur().getPenSize());
+        getPanelDessin().getCurseur().setPos(coor);
 
-        getCurseur().setX(coor[0]);
-        getCurseur().setY(coor[1]);
-        getListeHistorique().addToList(commande,"");
-        Fenetre.getPanelDessin().repaint();
-        return true;
+        return null;
     }
+
 
     private int[] calculeCoordArrive(int distance){
         int coor[] = new int[2];
-        coor[0] = (int)Math.round(getCurseur().getX() + distance * Math.cos(Math.toRadians(getCurseur().getD())));
-        coor[1] = (int)Math.round(getCurseur().getY() + distance * Math.sin(Math.toRadians(180 + getCurseur().getD())));
+        coor[0] = (int)Math.round(getPanelDessin().getCurseur().getX() + distance * Math.cos(Math.toRadians(getPanelDessin().getCurseur().getD())));
+        coor[1] = (int)Math.round(getPanelDessin().getCurseur().getY() + distance * Math.sin(Math.toRadians(180 + getPanelDessin().getCurseur().getD())));
 
 
 
@@ -79,7 +55,7 @@ public class Move extends Commande {
     }
 
     private boolean dans_Le_Dessin( int [] coor){
-        return !(coor[0] > Fenetre.getMaxDessin()[0] || coor[0] < 0) && !(coor[1] > Fenetre.getMaxDessin()[1] || coor[1] < 0);
+        return (coor[0] >= 0 && coor[0] <= getPanelDessin().getPreferredSize().width) && (coor[1] >= 0 || coor[1] <= getPanelDessin().getPreferredSize().height);
     }
 
     private int[] randomCoor(){

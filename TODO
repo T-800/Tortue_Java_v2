@@ -2,6 +2,7 @@ TODO :
 réécrire le moteur table commande
 organiser les commande bloc comme des piles avec variable local
 reecrire les éxécutions de commande (historique, transformation arguments)
+suppression des variables
 
 
 

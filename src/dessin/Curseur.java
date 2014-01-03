@@ -1,6 +1,5 @@
 package dessin;
 
-import interfaceGraphique.Fenetre;
 
 import java.awt.*;
 
@@ -11,7 +10,6 @@ public class Curseur {
 	private int[] souris;
 	private Color couleurCurseur;
 	private Color couleurBg;
-	private Curseur cursRemember;
 	private int penSize;
 	private boolean penDown;
 
@@ -42,7 +40,6 @@ public class Curseur {
         this.penDown = curseur.isPenDown();
         this.penSize = curseur.getPenSize();
         this.drawCurs = curseur.DrawCurs();
-        setCursRemember(new Curseur(this.pos[0],this.pos[1]));
     }
 
     public void reset(int x, int y){
@@ -100,14 +97,6 @@ public class Curseur {
 	}
 
 
-	
-	public Curseur getCursRemember() {
-		 return cursRemember;
-	}
-
-	public void setCursRemember(Curseur cursRemember) {
-		this.cursRemember.setCurseur(cursRemember);
-	}
 
 	public int getPenSize() {
 		return penSize;

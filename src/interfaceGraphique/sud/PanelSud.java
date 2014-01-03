@@ -4,7 +4,6 @@ import com.intellij.ui.components.JBScrollPane;
 import dessin.Curseur;
 import liste.ListeFonctions;
 import liste.ListeHistorique;
-import liste.ListeVariables;
 import terminal.TableCommande;
 
 import javax.swing.*;
@@ -15,8 +14,8 @@ public class PanelSud extends JPanel {
     public PanelTerminal panelTerminal;
     public PanelInfo panelInfo;
 
-    public PanelSud(Curseur curseur,TableCommande tableCommande, ListeHistorique listeHistorique, ListeFonctions listeFonctions, ListeVariables listeVariables){
-        this.panelTerminal = new PanelTerminal(tableCommande,listeHistorique,listeFonctions,listeVariables);
+    public PanelSud(Curseur curseur,TableCommande tableCommande, ListeHistorique listeHistorique, ListeFonctions listeFonctions){
+        this.panelTerminal = new PanelTerminal(tableCommande,listeHistorique,listeFonctions);
         this.panelInfo = new PanelInfo(curseur);
         this.setLayout(new BorderLayout());
 

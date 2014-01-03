@@ -9,7 +9,6 @@ public class PanelInfo extends JPanel{
 	
 	private JLabel jlsouris;
 	private JLabel jlcurseur;
-	private JLabel jlsaved ;
 	private JLabel jltaille;
 	private Curseur curseur;
 
@@ -23,7 +22,6 @@ public class PanelInfo extends JPanel{
 		
 		jlsouris = new JLabel("(0;0)");
 		jlcurseur = new JLabel("Curseur ("+this.curseur.getX()+";"+this.curseur.getY()+"|°D)", JLabel.LEFT);
-		jlsaved = new JLabel("Save (X;Y|°D)", JLabel.LEFT);
 		
 
 		
@@ -31,7 +29,6 @@ public class PanelInfo extends JPanel{
 		
 		jltaille = new JLabel("Taille : "+curseur.getPenSize());//Image Texte Image
 		this.add(jlcurseur);
-        this.add(jlsaved);
         this.add(jltaille);
         this.add(jlsouris);
 		
@@ -48,9 +45,6 @@ public class PanelInfo extends JPanel{
 	public void setCurseur(){
 		this.jlsouris.setText("("+(curseur.getSourisX()- Fenetre.getCenterDessin()[0])+";"+(Fenetre.getCenterDessin()[1]-curseur.getSourisY())+")");
 		this.jlcurseur.setText("Curseur ("+(curseur.getX()-Fenetre.getCenterDessin()[0])+";"+(Fenetre.getCenterDessin()[1]-curseur.getY())+"|°"+curseur.getD()+")");
-		Curseur rem = curseur.getCursRemember();
-        if (rem == null)this.jlsaved.setText("Save (0;0|°0)");
-        else this.jlsaved.setText("Save ("+curseur.getCursRemember().getPos()[0]+";"+curseur.getCursRemember().getPos()[1]+"|°"+curseur.getCursRemember().getD()+")");
         this.jltaille.setText("Taille : "+curseur.getPenSize());//Image Texte Image
 		
 		//this.jldessine

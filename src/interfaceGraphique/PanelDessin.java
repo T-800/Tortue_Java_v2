@@ -4,7 +4,6 @@ import dessin.Curseur;
 import interfaceGraphique.ouest.PanelOnglet;
 import liste.ListeCommande;
 import liste.ListeCommande.Ligne;
-import liste.ListeHistorique;
 import terminal.TableCommande;
 
 import javax.swing.*;
@@ -17,24 +16,35 @@ public class PanelDessin extends JPanel implements MouseListener, MouseMotionLis
 	
 	private Curseur curseur;
 	private ListeCommande listeCommande;
-    private  ListeHistorique listeHistorique;
     private TableCommande tableCommande;
 
-    public PanelDessin(Curseur curseur, ListeCommande listeCommande, ListeHistorique listeHistorique,TableCommande tableCommande) {
+    public PanelDessin(Curseur curseur, ListeCommande listeCommande,TableCommande tableCommande) {
 		this.curseur = curseur;
 		this.listeCommande = listeCommande;
-        this.listeHistorique = listeHistorique;
         this.tableCommande = tableCommande;
 		int t[] = {this.getSize().width,this.getSize().height,55};
-        this.setPreferredSize(new Dimension(800,600));
+        this.setPreferredSize(new Dimension(1024, 720));
 		curseur.setPos(t);
-		this.setSize(new Dimension(200, 200));
 		
 		addMouseMotionListener(this);
         addMouseListener(this);
 		setBackground(curseur.getCouleurBg());
 		
 	}
+
+    /**GET**/
+    public Curseur getCurseur() {
+        return curseur;
+    }
+
+    public ListeCommande getListeCommande() {
+        return listeCommande;
+    }
+
+    /**SET**/
+
+
+
 	@Override
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
@@ -87,15 +97,13 @@ public class PanelDessin extends JPanel implements MouseListener, MouseMotionLis
 
         Cx = (int) Math.round(curseur.getX() + 5
                 * Math.cos(Math.toRadians(curseur.getD() - 90)));
-        ;
         Cy = (int) Math.round(curseur.getY() + 5
                 * Math.sin(Math.toRadians(180 + curseur.getD() - 90)));
 
         int[] xPoints = { Ax, Bx, Cx };
         int[] yPoints = { Ay, By, Cy };
-        Polygon curs = new Polygon(xPoints, yPoints, 3);
 
-        return curs;
+        return new Polygon(xPoints, yPoints, 3);
     }
 
     private Polygon drawCursOmbre() {
@@ -114,15 +122,13 @@ public class PanelDessin extends JPanel implements MouseListener, MouseMotionLis
 
         Cx = (int) Math.round(curseur.getX() + 5
                 * Math.cos(Math.toRadians(curseur.getD() - 90)));
-        ;
         Cy = (int) Math.round(curseur.getY() + 5
                 * Math.sin(Math.toRadians(180 + curseur.getD() - 90)));
 
         int[] xPoints = { Ax + 1, Bx + 1, Cx + 1 };
         int[] yPoints = { Ay + 1, By + 1, Cy + 1 };
-        Polygon curs = new Polygon(xPoints, yPoints, 3);
 
-        return curs;
+        return new Polygon(xPoints, yPoints, 3);
     }
 	
 
@@ -153,8 +159,7 @@ public class PanelDessin extends JPanel implements MouseListener, MouseMotionLis
             y = -(y - this.getHeight() / 2);
         }
 
-        //listeHistorique.addToList("GO "+x+" "+y
-                //,tableCommande.executerCommande("GO "+x+" "+y,null));
+        tableCommande.executerCommande("GO " + x + " " + y);
         PanelOnglet.repaintOnglet();
         Fenetre.getPanelDessin().repaint();
         Fenetre.getPanelInfo().repaint();

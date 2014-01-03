@@ -1,23 +1,20 @@
 package terminal;
 
 import liste.ListeFonctions;
-import liste.ListeVariables;
 
 import java.util.ArrayList;
 
 public class AutoCompletion {
 
     private ListeFonctions fonctionsListe;
-    private ListeVariables variableListe;
     private final String[] commande = { "BACK", "BACKGROUNDCOLOR","BGCOLOR", "CENTER",
             "CLEAR", "DOWN", "ERASE","FONCTION" ,"HELP", "LEFT", "MOVE", "NEW",
             "OPEN", "PENCOLOR", "PENDOWN", "PENSIZE", "PENUP", "REDO",
             "REMEMBER", "REPEAT", "RIGHT", "SAVE", "TURN", "UNDO", "UP", "VAR","RANDOM" };
 
-    public AutoCompletion(ListeFonctions fonctionsListe, ListeVariables variableListe){
+    public AutoCompletion(ListeFonctions fonctionsListe){
 
         this.fonctionsListe=fonctionsListe;
-        this.variableListe=variableListe;
     }
 
     private String getLastWord(int currentposition,String phrase){
@@ -55,20 +52,7 @@ public class AutoCompletion {
                     }
                 }
                 break;
-            case '_' :
-                for (ListeVariables.ObjetVariables o : variableListe.getliste()){
-                    String s = o.getNom_Variable();
-                    String sub ="";
-                    try{
-                        sub = s.substring(0,word.length()-1);
-                    }
-                    catch (IndexOutOfBoundsException ignored){}
-                    if(sub.equalsIgnoreCase(word.substring(1))){
 
-                        list.add(" "+s);
-                    }
-                }
-                break;
             default:
                 for (String s : commande){
                     String sub ="";
