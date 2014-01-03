@@ -23,7 +23,7 @@ public class PanelDessin extends JPanel implements MouseListener, MouseMotionLis
 		this.listeCommande = listeCommande;
         this.tableCommande = tableCommande;
 		int t[] = {this.getSize().width,this.getSize().height,55};
-        this.setPreferredSize(new Dimension(1024, 720));
+        this.setPreferredSize(new Dimension(1024, 600));
 		curseur.setPos(t);
 		
 		addMouseMotionListener(this);

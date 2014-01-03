@@ -2,7 +2,6 @@ package commande;
 
 import algo.Convert;
 import interfaceGraphique.Fenetre;
-import liste.ListeCommande;
 
 /**
  * Created by renaud on 03/01/14.

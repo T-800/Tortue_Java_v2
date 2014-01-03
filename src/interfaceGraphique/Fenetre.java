@@ -57,6 +57,9 @@ public class Fenetre extends JFrame{
     private JMenuItem help = new JMenuItem("Help");
     private JMenuItem about = new JMenuItem("À Propos");
     private JMenuItem pOuest = new JMenuItem("Afficher Panel");
+
+
+
 	/**
 	 * Constructeur de la fenetre initialise 
 	 */
@@ -94,7 +97,6 @@ public class Fenetre extends JFrame{
 
 
         menuBar = new JMenuBar();
-
 
         this.save.add(saveAll);
         this.save.add(saveTxt);
@@ -134,6 +136,7 @@ public class Fenetre extends JFrame{
                 PanelOnglet.repaintOnglet();
             }
         });
+
         about.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent event){
                 JFrame fenetre = new JFrame();

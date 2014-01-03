@@ -1,8 +1,6 @@
 package terminal;
 
 import commande.*;
-import dessin.Curseur;
-import interfaceGraphique.PanelDessin;
 import liste.ListeFonctions;
 import liste.ListeHistorique;
 
@@ -11,7 +9,7 @@ import java.util.Hashtable;
 
 public class TableCommande {
 
-    private static ListeHistorique listeHistorique;
+    public static ListeHistorique listeHistorique;
 	public static Hashtable<String, Commande> table = new Hashtable<>();
 	/**
 	 * déclaration de la table de hashage
@@ -21,35 +19,29 @@ public class TableCommande {
         TableCommande.listeHistorique = listeHistorique;
 
 
-//		table.put("BACK", new Back());
+
 //		table.put("BACKGROUNDCOLOR", new BackgroundColor(curseur,listeVariables));
 //		table.put("BGCOLOR", new BackgroundColor(curseur,listeVariables));
 		table.put("CENTER", new Center());
-//		table.put("CLEAR", new Clear());
-		table.put("DOWN", new Down());
-//		table.put("ERASE", new Erase());
+		table.put("CLEAR", new Clear());
 //		table.put("FONCTION", new Fonctions());// tester avec instruction composée
 //		table.put("GO", new Go(curseur,listeVariables));
 //		table.put("HELP", new Help());
 //		table.put("IF", new If());
-		table.put("LEFT", new Left());
-		table.put("MOVE", new Move()); // tester avec les variables et refaire random random
+		table.put("MOVE", new Move()); // move random
 //      table.put("NEW", new New(this,listeCommande,curseur,listeHistorique,listeVariables,listeFonctions));
 //		table.put("OPEN", new Open(this,listeHistorique));
 //		table.put("PENCOLOR", new PenColor(curseur,listeVariables));
-//		table.put("PENSIZE", new PenSize(curseur,listeVariables));
+//		table.put("PENSIZE", new PenSize());
 //		table.put("REDO", new Redo());
 //		table.put("REPEAT", new Repeat());
-		table.put("RIGHT", new Right());
-//		table.put("TURN", new Turn());
+//		table.put("SAVE", new Save());
+		table.put("TURN", new Turn());
 //		table.put("UNDO", new Undo());
-		table.put("UP", new Up());
-//		table.put("VAR", new Variables());
-//		table.put("WHILE", new While());
 
 	}
 
-    public Commande searchCmd(String name){
+    public static Commande searchCmd(String name){
         Commande cmd = table.get(name.toUpperCase());
 
         if (cmd == null) {
@@ -66,11 +58,11 @@ public class TableCommande {
 
     }
 
-	public void executerCommande(String commande){
+	public static void executerCommande(String commande){
         executerCommande(commande,true);
 	}
 
-    public void executerCommande(String commande,boolean addtohist){
+    public static void executerCommande(String commande,boolean addtohist){
 
         commande = commande.replaceAll("\\s+", " ");
         String[] commandeTab = commande.split(" ", 2);
