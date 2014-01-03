@@ -1,6 +1,5 @@
 package terminal;
 
-import algo.Convert;
 import commande.*;
 import dessin.Curseur;
 import interfaceGraphique.Fenetre;
@@ -55,10 +54,30 @@ public class TableCommande {
 		table.put("UP", new Up());
 		table.put("VAR", new Variables());
 //		table.put("WHILE", new While());
-		
-		
 
 	}
+
+    public Commande searchCmd(String name){
+        Commande cmd = table.get(name);
+
+        if (cmd == null) {
+            for(ListeFonctions.ObjetFonction h: Commande.getListeFonctions().getliste()){
+                if (h.getNom_Fonction().equalsIgnoreCase(name)){
+                    return new ExFonction();
+                }
+            }
+            for(ListeVariables.ObjetVariables h: Commande.getListe_Local_Variables().getliste()){
+                if (h.getNom_Variable().equalsIgnoreCase(name)){
+                    return new ExVariable();
+                }
+            }
+        }
+        else return cmd;
+
+
+        return null;
+
+    }
 
 
 	public boolean executerCommande(String commande, ListeVariables listeVariables){
