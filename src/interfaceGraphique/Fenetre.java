@@ -66,7 +66,7 @@ public class Fenetre extends JFrame{
 	
 	private void initialisationComposant(){
 		this.commandeListe = new ListeCommande();
-
+         this.curseur = new Curseur(0,0);
 		this.fonctionsListe = new ListeFonctions();
 		this.variableListe = new ListeVariables();
 		this.curseur = new Curseur(0, 0);
@@ -111,45 +111,25 @@ public class Fenetre extends JFrame{
         nouveau.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent event){
                 historiqueListe.addToList("new","");
-                String error = table.executerCommande("new",variableListe);
-                try {
-                    historiqueListe.setLastErrorMsg(error);
-                }catch(ArrayIndexOutOfBoundsException ignored){
-
-                }
+                table.executerCommande("new",variableListe);
             }
         });
         ouvrir.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent event){
                 historiqueListe.addToList("open", "");
-                String error = table.executerCommande("open",variableListe);
-                try {
-                    historiqueListe.setLastErrorMsg(error);
-                }catch(ArrayIndexOutOfBoundsException ignored){
-
-                }
+                table.executerCommande("open",variableListe);
             }
         });
         saveAll.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent event){
                 historiqueListe.addToList("save","");
-                String error = table.executerCommande("save",variableListe);
-                try {
-                    historiqueListe.setLastErrorMsg(error);
-                }catch(ArrayIndexOutOfBoundsException ignored){
-
-                }
+                table.executerCommande("save",variableListe);
             }
         });
         help.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent event){
                 historiqueListe.addToList("help","");
-                String error = table.executerCommande("help",variableListe);
-                try {
-                    historiqueListe.setLastErrorMsg(error);
-                }catch(ArrayIndexOutOfBoundsException ignored){
-
-                }
+                table.executerCommande("help",variableListe);
             }
         });
         about.addActionListener(new ActionListener(){

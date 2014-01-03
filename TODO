@@ -1,7 +1,20 @@
 TODO :
-changer la taille des boutons
-Ajouter les boutons pour augmenter et diminuer la taille du pinceau
+réécrire le moteur table commande
 organiser les commande bloc comme des piles avec variable local
+reecrire les éxécutions de commande (historique, transformation arguments)
+
+
+
+
+
+                                                                    g
+
+
+
+
+
+
+
 
 commande :
 
@@ -42,7 +55,13 @@ Ajouter la couleur actuel dans les bouton pen color et bgcolor
 
 
 
-    Fonction f 2 [if ($2 > 0) [repeat 4 [move $1;turn +90; :f ($1 / 4) ($2 - 1)]]]
+
+
+
+
+
+Exemple de fractal :
+Fonction f 2 [if ($2 > 0) [repeat 4 [move $1;turn +90; :f ($1 / 4) ($2 - 1)]]]
 
 fonction f 2 [if ($2 >= 0) [move $1] else [:f ($1 / 3) ($2 -1);turn +60;:f ($1 / 3) ($2 -1);turn -120;:f ($1 / 3) ($2 -1);turn +60;:f ($1 / 3) ($2 -1);]]
 fonction f 2 [_u = ($1 / 3); _d = ($2 - 1) if ($2 >= 0) [move $1] else [:f _u _d;turn +60;:f _u _d;turn -120;:f _u _d;turn +60;:f _u _d;]]

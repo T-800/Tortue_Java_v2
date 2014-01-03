@@ -116,8 +116,8 @@ public class PanelOptions extends JPanel{
 
 
         public void actionPerformed(ActionEvent e) {
-            if(e.getSource()==jbopen){
-                listeHistorique.addToList("open",tableCommande.executerCommande("open",null));
+            /*if(e.getSource()==jbopen){
+                listeHistorique.addToList("open",tableCommande.executerCommande("open",true));
             }
             else if(e.getSource()==jbsave){
                 listeHistorique.addToList("save",tableCommande.executerCommande("save",null));
@@ -155,7 +155,7 @@ public class PanelOptions extends JPanel{
                 }
 
 
-            }
+            }    */
 
             PanelOnglet.repaintOnglet();
             Fenetre.getPanelDessin().repaint();

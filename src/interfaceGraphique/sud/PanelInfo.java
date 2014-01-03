@@ -1,15 +1,9 @@
 package interfaceGraphique.sud;
 
-import com.intellij.ui.Gray;
 import dessin.Curseur;
 import interfaceGraphique.Fenetre;
-import liste.ListeHistorique;
-import terminal.TableCommande;
-
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class PanelInfo extends JPanel{
 	
@@ -54,7 +48,9 @@ public class PanelInfo extends JPanel{
 	public void setCurseur(){
 		this.jlsouris.setText("("+(curseur.getSourisX()- Fenetre.getCenterDessin()[0])+";"+(Fenetre.getCenterDessin()[1]-curseur.getSourisY())+")");
 		this.jlcurseur.setText("Curseur ("+(curseur.getX()-Fenetre.getCenterDessin()[0])+";"+(Fenetre.getCenterDessin()[1]-curseur.getY())+"|°"+curseur.getD()+")");
-		this.jlsaved.setText("Save ("+curseur.getTabRemember()[0]+";"+curseur.getTabRemember()[1]+"|°"+curseur.getTabRemember()[2]+")");
+		Curseur rem = curseur.getCursRemember();
+        if (rem == null)this.jlsaved.setText("Save (0;0|°0)");
+        else this.jlsaved.setText("Save ("+curseur.getCursRemember().getPos()[0]+";"+curseur.getCursRemember().getPos()[1]+"|°"+curseur.getCursRemember().getD()+")");
         this.jltaille.setText("Taille : "+curseur.getPenSize());//Image Texte Image
 		
 		//this.jldessine

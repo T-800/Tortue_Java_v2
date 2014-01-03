@@ -177,7 +177,7 @@ public class PanelInfo extends JPanel{
 
 	    	  }
 	          */
-	    	  PanelOnglet.repaintOnglet();
+
 	    	  Fenetre.getPanelDessin().repaint();
 	    	  Fenetre.getPanelInfo().repaint();
 	      }

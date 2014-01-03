@@ -28,6 +28,7 @@ public class Curseur {
 		this.penDown = true;
         this.penSize = 1;
         this.drawCurs = true;
+
 	}
 
     public void setCurseur(Curseur curseur) {
@@ -41,6 +42,7 @@ public class Curseur {
         this.penDown = curseur.isPenDown();
         this.penSize = curseur.getPenSize();
         this.drawCurs = curseur.DrawCurs();
+        setCursRemember(new Curseur(this.pos[0],this.pos[1]));
     }
 
     public void reset(int x, int y){
@@ -104,7 +106,6 @@ public class Curseur {
 	}
 
 	public void setCursRemember(Curseur cursRemember) {
-        this.cursRemember = new Curseur(0,0);
 		this.cursRemember.setCurseur(cursRemember);
 	}
 
