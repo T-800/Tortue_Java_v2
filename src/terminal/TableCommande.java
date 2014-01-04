@@ -17,7 +17,7 @@ public class TableCommande {
         Commande.setListeFonctions(listeFonctions);
         TableCommande.listeHistorique = listeHistorique;
 
-//		table.put("BGCOLOR", new BackgroundColor(curseur,listeVariables));
+		table.put("BGCOLOR", new BackgroundColor());
 		table.put("CENTER", new Center());
 		table.put("CLEAR", new Clear());
 		table.put("FONCTION", new Fonctions());// tester avec instruction composée
@@ -27,7 +27,7 @@ public class TableCommande {
 		table.put("MOVE", new Move()); // move random
         table.put("NEW", new New());
 //		table.put("OPEN", new Open(this,listeHistorique));
-//		table.put("PENCOLOR", new PenColor(curseur,listeVariables));
+		table.put("PENCOLOR", new Pencolor());
 		table.put("PENSIZE", new PenSize());
 //		table.put("REDO", new Redo());
 		table.put("REPEAT", new Repeat());

@@ -6,9 +6,29 @@ import javax.swing.*;
 public class Test extends JFrame {
 
     public static void main(String[] args) {
-        Test test=new Test();
-        test.setVisible(true);
+         String s = "FF550a";
+
+        int t[] = stringHexTotab(s);
+        for(int i = 0; i<t.length;i++){
+            System.out.println(t[i]);
+        }
+
+
+
+        //Test test=new Test();
+        //test.setVisible(true);
     }
+
+    public static int[] stringHexTotab(String s){
+        int tab[] = new int[3];
+        tab[0] = (int) Long.parseLong(s.substring(0,2),16);
+        tab[1] = (int) Long.parseLong(s.substring(2,4),16);
+        tab[2] = (int) Long.parseLong(s.substring(4),16);
+        return tab;
+
+    }
+
+
 
     public Test() {
         super("test Pli/Depli");
