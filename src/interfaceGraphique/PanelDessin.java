@@ -56,7 +56,7 @@ public class PanelDessin extends JPanel implements MouseListener, MouseMotionLis
 			if(l.getTaille() != 1){
 				
 				g2.setStroke(new BasicStroke(l.getTaille(),
-						BasicStroke.CAP_ROUND, BasicStroke.JOIN_MITER));
+						BasicStroke.CAP_BUTT, BasicStroke.JOIN_MITER));
 			}
 			g2.drawLine(l.getxDepart(), l.getyDepart(), l.getxArrivee(),
 						l.getyArrivee());

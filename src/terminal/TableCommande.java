@@ -28,7 +28,7 @@ public class TableCommande {
         table.put("NEW", new New());
 //		table.put("OPEN", new Open(this,listeHistorique));
 //		table.put("PENCOLOR", new PenColor(curseur,listeVariables));
-//		table.put("PENSIZE", new PenSize());
+		table.put("PENSIZE", new PenSize());
 //		table.put("REDO", new Redo());
 		table.put("REPEAT", new Repeat());
 		table.put("SAVE", new Save());

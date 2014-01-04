@@ -1,0 +1,4 @@
+Fonction car 2 [if ($2 > 0) [repeat 4 [move $1;turn +90; car ($1 / 4) ($2 - 1)]]]
+//fractal carre test car 200 5
+fonction frac 2 [if ($2 == 0) [move $1] else [frac ($1 / 3) ($2 - 1);turn +60;frac ($1 / 3) ($2 - 1);turn -120; frac ($1 / 3) ($2 - 1);turn +60;frac ($1 / 3) ($2 - 1)]]
+//fractal test frac 200 3
