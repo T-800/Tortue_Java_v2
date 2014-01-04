@@ -23,6 +23,16 @@ public class ListeHistorique {
         System.out.println("Hist  Fin");
     }
 
+    public ArrayList getSaveHistory(){
+
+        ArrayList<String> liste2 = new ArrayList<>();
+        for(Historique h : this.liste){
+            if(h.getError_msg().equalsIgnoreCase("")) liste2.add(h.getCommande());
+
+        }
+        return liste2;
+
+    }
 	public String getHtmlmsg(){
 		String msg = "";
 		for(Historique h : this.liste){

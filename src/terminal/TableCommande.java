@@ -23,15 +23,15 @@ public class TableCommande {
 		table.put("FONCTION", new Fonctions());// tester avec instruction composée
 		table.put("GO", new Go());
 //		table.put("HELP", new Help());
-//		table.put("IF", new If());
+		table.put("IF", new If());
 		table.put("MOVE", new Move()); // move random
-//      table.put("NEW", new New(this,listeCommande,curseur,listeHistorique,listeVariables,listeFonctions));
+        table.put("NEW", new New());
 //		table.put("OPEN", new Open(this,listeHistorique));
 //		table.put("PENCOLOR", new PenColor(curseur,listeVariables));
 //		table.put("PENSIZE", new PenSize());
 //		table.put("REDO", new Redo());
 		table.put("REPEAT", new Repeat());
-//		table.put("SAVE", new Save());
+		table.put("SAVE", new Save());
 		table.put("TURN", new Turn());
 //		table.put("UNDO", new Undo());
 
