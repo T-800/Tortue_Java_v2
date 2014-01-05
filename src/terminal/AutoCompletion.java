@@ -1,5 +1,7 @@
 package terminal;
 
+import commande.Commande;
+import commande.ExFonction;
 import liste.ListeFonctions;
 
 import java.util.ArrayList;
@@ -7,10 +9,10 @@ import java.util.ArrayList;
 public class AutoCompletion {
 
     private ListeFonctions fonctionsListe;
-    private final String[] commande = { "BACK", "BACKGROUNDCOLOR","BGCOLOR", "CENTER",
-            "CLEAR", "DOWN", "ERASE","FONCTION" ,"HELP", "LEFT", "MOVE", "NEW",
-            "OPEN", "PENCOLOR", "PENDOWN", "PENSIZE", "PENUP", "REDO",
-            "REMEMBER", "REPEAT", "RIGHT", "SAVE", "TURN", "UNDO", "UP", "VAR","RANDOM" };
+    private final String[] commande = { "BGCOLOR", "CENTER",
+            "CLEAR",  "ERASE","FONCTION" ,"HELP",  "MOVE", "NEW",
+            "OPEN", "PENCOLOR", "PENSIZE", "REDO",
+            "REPEAT","SAVE", "TURN", "UNDO","RANDOM" };
 
     public AutoCompletion(ListeFonctions fonctionsListe){
 
@@ -36,37 +38,24 @@ public class AutoCompletion {
         String word = getLastWord(currentposition,phrase);
         ArrayList<String> list = new ArrayList<>();
         if(word.equals(""))return null;
-        switch (word.charAt(0)){
-            case ':' :
-                for (ListeFonctions.ObjetFonction o : fonctionsListe.getliste()){
-                    String s = o.getNom_Fonction();
-                    String sub ="";
-                    try{
-                        sub = s.substring(0,word.length()-1);
-                    }
-                    catch (IndexOutOfBoundsException ignored){
-
-                    }
-                    if(sub.equalsIgnoreCase(word.substring(1))){
-                        list.add(" "+s);
-                    }
-                }
-                break;
-
-            default:
-                for (String s : commande){
-                    String sub ="";
-                    try{
-                        sub = s.substring(0,word.length());
-                    }
-                    catch (IndexOutOfBoundsException ignored){}
-                    if(sub.equalsIgnoreCase(word)){
-                        if (!Character.isUpperCase(word.charAt(word.length()-1))) s = s.toLowerCase();
-                        list.add(s);
-                    }
-                }
+        for (String s : commande){
+            String sub ="";
+            try{
+                sub = s.substring(0,word.length());
+            }
+            catch (IndexOutOfBoundsException ignored){}
+            if(sub.equalsIgnoreCase(word)){
+                if (!Character.isUpperCase(word.charAt(word.length()-1))) s = s.toLowerCase();
+                list.add(s);
+            }
         }
-        if(list.size()==0)return null;
+        for(ListeFonctions.ObjetFonction h: Commande.getListeFonctions().getliste()){
+            String sub ="";
+            sub = h.getNom_Fonction().substring(0,word.length());
+            if (sub.equalsIgnoreCase(word)){
+                list.add(h.getNom_Fonction());
+            }
+        }
         return list;
     }
 
