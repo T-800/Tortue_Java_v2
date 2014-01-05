@@ -12,7 +12,9 @@ public class ListeHistorique {
 	}
 	
 	public void addToList(String cmd,String error_msg){
-		this.liste.add(new Historique(cmd, error_msg));
+        String[] commandeTab = cmd.split(" ", 2);
+        if(commandeTab[0].equalsIgnoreCase("new") ||commandeTab[0].equalsIgnoreCase("open") ||commandeTab[0].equalsIgnoreCase("save") || commandeTab[0].equalsIgnoreCase("clear") ||commandeTab[0].equalsIgnoreCase("undo") ||commandeTab[0].equalsIgnoreCase("redo")) return;
+        this.liste.add(new Historique(cmd, error_msg));
 	}
 
     public void printHist(){
