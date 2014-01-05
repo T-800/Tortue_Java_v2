@@ -22,7 +22,7 @@ public class TableCommande {
 		table.put("CLEAR", new Clear());
 		table.put("FONCTION", new Fonctions());// tester avec instruction composée
 		table.put("GO", new Go());
-//		table.put("HELP", new Help());
+		table.put("HELP", new Help());
 		table.put("IF", new If());
 		table.put("MOVE", new Move()); // move random
         table.put("NEW", new New());
