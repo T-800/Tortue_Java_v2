@@ -54,7 +54,7 @@ public class Move extends Commande{
     }
 
     private boolean dans_Le_Dessin( int [] coor){
-        return (coor[0] >= 0 && coor[0] <= getPanelDessin().getPreferredSize().width) && (coor[1] >= 0 || coor[1] <= getPanelDessin().getPreferredSize().height);
+        return ((coor[0] >= 0 && coor[0] <= getPanelDessin().getSize().width) && (coor[1] >= 0 && coor[1] <= getPanelDessin().getSize().height));
     }
 
     private int[] randomCoor(){

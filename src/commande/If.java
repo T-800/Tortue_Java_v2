@@ -19,10 +19,9 @@ public class If extends Commande{
         Bool bool = new Bool(getPanelDessin().getCurseur());
         if(bool.doBooleanTest(argument[1]).equalsIgnoreCase("true")){
             for (String instruction : instructions) {
-                System.out.println("inst -> "+instruction);
                 String error = TableCommande.executerCommande(instruction,false);
                 if (!error.equalsIgnoreCase("")){
-                    return "Une erreur est survenue lors du IF/ELSE : <br>" + instruction;
+                    return "Une erreur est survenue lors du IF/ELSE : <br>" + error;
 
                 }
             }
@@ -30,7 +29,6 @@ public class If extends Commande{
         else if (argument.length == 5 && argument[3].equalsIgnoreCase("else")){
             instructions = Convert.valeurStringtArgument(argument[4]);
             for (String instruction : instructions) {
-                System.out.println("inst -> "+instruction);
                 String error = TableCommande.executerCommande(instruction,false);
                 if (!error.equalsIgnoreCase("")){
                     return "Une erreur est survenue lors du IF/ELSE : <br>" + instruction;

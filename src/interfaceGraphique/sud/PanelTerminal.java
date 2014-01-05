@@ -135,7 +135,7 @@ public class PanelTerminal implements KeyListener{
                         Fenetre.getPanelInfo().repaint();
                         up = true;
                         rem = "";
-                        listeHistorique.printHist();
+                        //listeHistorique.printHist();
                         h.addToList(keyboard);
                         jEditorPane.setText("");
                         jEditorPane.setCaretPosition(0);

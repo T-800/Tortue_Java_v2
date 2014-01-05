@@ -26,14 +26,14 @@ public class TableCommande {
 		table.put("IF", new If());
 		table.put("MOVE", new Move()); // move random
         table.put("NEW", new New());
-//		table.put("OPEN", new Open(this,listeHistorique));
+		table.put("OPEN", new Open());
 		table.put("PENCOLOR", new Pencolor());
 		table.put("PENSIZE", new PenSize());
-//		table.put("REDO", new Redo());
+		table.put("REDO", new Redo());
 		table.put("REPEAT", new Repeat());
 		table.put("SAVE", new Save());
 		table.put("TURN", new Turn());
-//		table.put("UNDO", new Undo());
+		table.put("UNDO", new Undo());
 
 	}
 
@@ -70,8 +70,12 @@ public class TableCommande {
            if(addtohist) listeHistorique.addToList(commande,return_Error_Msg);
         }
         else {
-            return_Error_Msg = "La commande "+ commandeTab[0]+" n'éxiste pas !";
-            if(addtohist)listeHistorique.addToList(commande,return_Error_Msg);
+            if(!commandeTab[0].startsWith("//")){
+                return_Error_Msg = "La commande "+ commandeTab[0]+" n'éxiste pas !";
+                if(addtohist)listeHistorique.addToList(commande,return_Error_Msg);
+            }
+            else listeHistorique.addToList(commande,"");
+
         }
         return return_Error_Msg;
     }

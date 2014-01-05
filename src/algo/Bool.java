@@ -117,23 +117,17 @@ public class Bool {
         switch(tab[1]){
 
             case "==" :
-                System.out.println(""+(a==b));
                 return ""+(a==b);
 
             case "!=" :
-                System.out.println(""+(a!=b));
                 return ""+(a!=b);
             case ">" :
-                System.out.println(""+(a>b));
                 return ""+(a>b);
             case ">=" :
-                System.out.println(""+(a>=b));
                 return ""+(a>=b);
             case "<" :
-                System.out.println(""+(a<b));
                 return ""+(a<b);
             case "<=" :
-                System.out.println(""+(a<=b));
                 return ""+(a<=b);
             case "||" :
 
