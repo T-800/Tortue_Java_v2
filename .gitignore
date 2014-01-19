@@ -1,7 +1,11 @@
+###JAVA###
 *.class
 
 # Package Files #
 *.jar
 *.war
 *.ear
-.idea/*
+
+
+.tags
+.idea
