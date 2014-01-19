@@ -11,7 +11,6 @@ public class Curseur {
 	private Color couleurCurseur;
 	private Color couleurBg;
 	private int penSize;
-	private boolean penDown;
 
     private boolean drawCurs;
 	
@@ -23,7 +22,6 @@ public class Curseur {
 		this.souris=new int[2];
 		this.couleurCurseur = Color.BLACK;
 		this.couleurBg = Color.WHITE;
-		this.penDown = true;
         this.penSize = 1;
         this.drawCurs = true;
 
@@ -37,7 +35,6 @@ public class Curseur {
         this.souris=new int[2];
         this.couleurCurseur = curseur.getCouleurCurseur();
         this.couleurBg = curseur.getCouleurBg();
-        this.penDown = curseur.isPenDown();
         this.penSize = curseur.getPenSize();
         this.drawCurs = curseur.DrawCurs();
     }
@@ -50,7 +47,6 @@ public class Curseur {
         this.souris=new int[2];
         this.couleurCurseur = Color.BLACK;
         this.couleurBg = Color.WHITE;
-        this.penDown = true;
         this.penSize = 1;
         this.drawCurs = true;
     }
@@ -104,14 +100,6 @@ public class Curseur {
 
 	public void setPenSize(int penSize) {
 		this.penSize = penSize;
-	}
-
-	public boolean isPenDown() {
-		return penDown;
-	}
-
-	public void setPenDown(boolean penDown) {
-		this.penDown = penDown;
 	}
 
 	public void setCouleurBg(Color couleurBg) {

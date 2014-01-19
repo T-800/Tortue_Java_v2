@@ -1,5 +1,6 @@
 package interfaceGraphique.sud;
 
+import com.intellij.ui.Gray;
 import dessin.Curseur;
 import interfaceGraphique.Fenetre;
 import javax.swing.*;
@@ -13,7 +14,7 @@ public class PanelInfo extends JPanel{
 	private Curseur curseur;
 
 	public PanelInfo(Curseur curseur) {
-		this.setBackground(new Color(0xE6,0xE6,0xE6));
+		this.setBackground(Gray._230);
 		this.curseur = curseur;
 		setLayout(new GridLayout());
 		

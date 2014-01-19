@@ -16,12 +16,10 @@ public class PanelDessin extends JPanel implements MouseListener, MouseMotionLis
 	
 	private Curseur curseur;
 	private ListeCommande listeCommande;
-    private TableCommande tableCommande;
 
-    public PanelDessin(Curseur curseur, ListeCommande listeCommande,TableCommande tableCommande) {
+    public PanelDessin(Curseur curseur, ListeCommande listeCommande) {
 		this.curseur = curseur;
 		this.listeCommande = listeCommande;
-        this.tableCommande = tableCommande;
 		int t[] = {this.getSize().width,this.getSize().height,55};
         this.setPreferredSize(new Dimension(1024, 600));
 		curseur.setPos(t);
@@ -63,19 +61,9 @@ public class PanelDessin extends JPanel implements MouseListener, MouseMotionLis
 
 		}
         if (curseur.DrawCurs()) {
-            if(curseur.isPenDown()){
-                g2.setColor(Color.DARK_GRAY);
-            }
-            else {
-                g2.setColor(curseur.getCouleurCurseur());
-            }
+            g2.setColor(Color.DARK_GRAY);
             g2.fillPolygon(this.drawCursOmbre());
-            if(!curseur.isPenDown()){
-                g2.setColor(Color.DARK_GRAY);
-            }
-            else {
-                g2.setColor(curseur.getCouleurCurseur());
-            }
+            g2.setColor(curseur.getCouleurCurseur());
             g2.fillPolygon(this.drawCurs());
         }
         this.setBackground(curseur.getCouleurBg());

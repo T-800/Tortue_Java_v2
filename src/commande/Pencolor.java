@@ -2,9 +2,6 @@ package commande;
 
 import java.awt.*;
 
-/**
- * Created by renaud on 04/01/14.
- */
 public class Pencolor extends Commande{
     @Override
     public String execute(String parametres) {

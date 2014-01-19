@@ -2,9 +2,7 @@ package commande;
 
 import java.awt.*;
 
-/**
- * Created by renaud on 05/01/14.
- */
+
 public class BackgroundColor extends Commande{
     @Override
     public String execute(String parametres) {
@@ -27,9 +25,6 @@ public class BackgroundColor extends Commande{
                 color_tab[0] = (int) Long.parseLong(argument[1].substring(0, 3),10);
                 color_tab[1] = (int) Long.parseLong(argument[1].substring(3, 6),10);
                 color_tab[2] = (int) Long.parseLong(argument[1].substring(6),10);
-                for(int i = 0; i<color_tab.length;i++){
-                    System.out.println(color_tab[i]);
-                }
             }
             else return ErrorToString("2",argument[0]);
         }else {

@@ -129,7 +129,7 @@ public class PanelTerminal implements KeyListener{
                         keyboard = keyboard.trim();
                         keyboard = keyboard.replace("\n","");
                         keyboard = keyboard.replace("\t","");
-                        tableCommande.executerCommande(keyboard);
+                        TableCommande.executerCommande(keyboard);
                         PanelOnglet.repaintOnglet();
                         Fenetre.getPanelDessin().repaint();
                         Fenetre.getPanelInfo().repaint();

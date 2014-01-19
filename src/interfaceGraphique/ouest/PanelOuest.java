@@ -9,9 +9,6 @@ import terminal.TableCommande;
 import javax.swing.*;
 import java.awt.*;
 
-/**
- * Created by renaud on 02/01/14.
- */
 public class PanelOuest extends JPanel{
 
     private PanelOptions panelOptions;
@@ -29,7 +26,4 @@ public class PanelOuest extends JPanel{
         this.add(panelOnglet,BorderLayout.CENTER);
     }
 
-    public PanelOnglet getPanelOnglet() {
-        return panelOnglet;
-    }
 }

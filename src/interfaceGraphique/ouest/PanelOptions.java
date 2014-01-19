@@ -100,7 +100,7 @@ public class PanelOptions extends JPanel{
     protected void paintComponent(Graphics g) {
 
         super.paintComponent(g);
-        if (curseur.isPenDown()){
+        if (true){
             jbdessine.setIcon(new ImageIcon("./Images/dessine.png"));
         }
         else {
@@ -117,39 +117,31 @@ public class PanelOptions extends JPanel{
 
         public void actionPerformed(ActionEvent e) {
             if(e.getSource()==jbopen){
-                tableCommande.executerCommande("open");
+                TableCommande.executerCommande("open");
             }
             else if(e.getSource()==jbsave){
-                tableCommande.executerCommande("save");
-            }
-            else if(e.getSource()==jbdessine){
-                if (curseur.isPenDown()){
-                    tableCommande.executerCommande("penup");
-                }
-                else {
-                    tableCommande.executerCommande("pendown");
-                }
+                TableCommande.executerCommande("save");
             }
             else if(e.getSource()==jbundo){
-                tableCommande.executerCommande("undo");
+                TableCommande.executerCommande("undo");
             }
             else if(e.getSource()==jbredo){
-                tableCommande.executerCommande("redo");
+                TableCommande.executerCommande("redo");
             }
             else if(e.getSource()==jbnew){
-                tableCommande.executerCommande("new");
+                TableCommande.executerCommande("new");
             }
             else if(e.getSource()==jbpencolor){
                 Color color = JColorChooser.showDialog(null, "Choisir la couleur du pinceau",null);
                 if(color != null){
-                    tableCommande.executerCommande("pencolor "+color.getRed()+" "+color.getGreen()+" "+color.getBlue());
+                    TableCommande.executerCommande("pencolor "+color.getRed()+" "+color.getGreen()+" "+color.getBlue());
                 }
 
             }
             else if(e.getSource()==jbbgcolor){
                 Color color = JColorChooser.showDialog(null, "Choisir la couleur de l'arrière plan",null);
                 if(color != null){
-                    tableCommande.executerCommande("backgroundcolor "+color.getRed()+" "+color.getGreen()+" "+color.getBlue());
+                    TableCommande.executerCommande("backgroundcolor "+color.getRed()+" "+color.getGreen()+" "+color.getBlue());
                 }
 
 

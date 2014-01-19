@@ -2,9 +2,6 @@ package commande;
 
 import algo.Convert;
 
-/**
- * Created by renaud on 03/01/14.
- */
 public class Turn extends Commande{
     @Override
     public String execute(String parametres) {

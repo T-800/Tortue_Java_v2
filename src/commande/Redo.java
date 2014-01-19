@@ -3,9 +3,6 @@ package commande;
 import liste.ListeHistorique;
 import terminal.TableCommande;
 
-/**
- * Created by renaud on 05/01/14.
- */
 public class Redo extends Commande{
     @Override
     public String execute(String parametres) {

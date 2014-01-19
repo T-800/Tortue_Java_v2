@@ -9,7 +9,7 @@ public class PenSize extends Commande{
         try {
             int taille = Integer.parseInt(argument[1]);
             Commande.getPanelDessin().getCurseur().setPenSize(taille);
-        } catch (NumberFormatException e){}
+        } catch (NumberFormatException ignored){}
 
 
         return "";

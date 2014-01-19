@@ -2,14 +2,10 @@ package commande;
 
 import algo.Convert;
 import liste.ListeFonctions;
-import terminal.TableCommande;
 
 import javax.swing.*;
 import java.util.ArrayList;
 
-/**
- * Created by renaud on 03/01/14.
- */
 public class Fonctions extends Commande{
     @Override
     public String execute(String parametres) {

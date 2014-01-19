@@ -88,7 +88,7 @@ public class Fenetre extends JFrame{
 
         jOuest = new PanelOuest(curseur,historiqueListe,table,fonctionsListe);
 
-        jDessin =new PanelDessin(curseur,commandeListe,table);
+        jDessin =new PanelDessin(curseur,commandeListe);
         Commande.setPanelDessin(jDessin);
 
         panelSud = new PanelSud(curseur,table,historiqueListe,fonctionsListe);
@@ -114,25 +114,25 @@ public class Fenetre extends JFrame{
 
         nouveau.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent event){
-                table.executerCommande("new");
+                TableCommande.executerCommande("new");
                 PanelOnglet.repaintOnglet();
             }
         });
         ouvrir.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent event){
-                table.executerCommande("open");
+                TableCommande.executerCommande("open");
                 PanelOnglet.repaintOnglet();
             }
         });
         saveAll.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent event){
-                table.executerCommande("save");
+                TableCommande.executerCommande("save");
                 PanelOnglet.repaintOnglet();
             }
         });
         help.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent event){
-                table.executerCommande("help");
+                TableCommande.executerCommande("help");
                 PanelOnglet.repaintOnglet();
             }
         });

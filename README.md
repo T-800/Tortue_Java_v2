@@ -1,2 +1,6 @@
-Tortue_Java_v2
-==============
+Tortue v2 (Java)
+==========
+
+ADEQUIN Renaud
+
+ré-écriture du projet Tortue ->

@@ -59,7 +59,7 @@ public class ListeHistorique {
         System.out.println("Undo  Fin");
     }
 
-    public ArrayList getSaveHistory(){
+    public ArrayList<String> getSaveHistory(){
 
         ArrayList<String> liste2 = new ArrayList<>();
         for(Historique h : this.liste){

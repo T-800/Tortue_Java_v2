@@ -97,6 +97,7 @@ public class Save extends Commande{
             output = new BufferedWriter(new FileWriter(destination));
         } catch (IOException e) {
             e.printStackTrace();
+            //return error
         }
 
         int ligne = 0;
